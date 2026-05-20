@@ -1,0 +1,401 @@
+// @import "./common/variables.scss", "./common/mixins";
+
+.wp-toolbar:has(.adminify-ui) {
+    padding-top: 0;
+}
+
+.adminify-ui,
+.wp-adminify {
+    &.folded {
+        .navbar-brand {
+            min-width: 62px !important;
+            padding: 0.5rem !important;
+            justify-content: center;
+
+            .logo-light,
+            .logo-dark {
+                display: none !important;
+            }
+
+            // img {
+            //     width: 38px;
+            // }
+        }
+
+        .adminify-admin-wrapper {
+            width: calc(100% - 40px) !important;
+        }
+    }
+
+    &.adminify-light-mode {
+        .logo-dark,
+        .mini-logo-dark {
+            display: none;
+        }
+    }
+
+    &.adminify-dark-mode:not(.folded),
+    &.adminify-light-mode:not(.folded) {
+        .adminify-top-navbar {
+            .navbar-brand {
+                .mini-logo-light,
+                .mini-logo-dark {
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    .adminify-top_bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: 0.6s;
+        z-index: 9999;
+        border-bottom: 1px solid $border;
+
+        .adminify-top-navbar {
+            @include flex_between;
+            align-items: center;
+            background-color: $menuBg;
+
+            // logo
+            .navbar-brand {
+                @include flex_center;
+                min-width: var(--adminify-menu-width);
+                padding: 8px 16px;
+                transition: all 0.15s;
+                position: relative;
+                box-sizing: border-box;
+
+                // img {
+                //     @include dimension(108px, 32px);
+                // }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: -1px;
+                    bottom: -10px;
+                    width: 100%;
+                    height: 6px;
+                    background: $menuBg;
+                }
+            }
+
+            .adminify-admin-wrapper {
+                @include display(center, space-between);
+                @include dimension(calc(100% - 200px), 48px);
+                padding: 8px 16px;
+                transition: all 0.15s;
+                // border-bottom: 1px solid $border;
+                // background: $white;
+
+                .adminify-legacy-admin {
+                    @include display(center, space-between);
+                    width: 100%;
+
+                    > .adminify-hamburger {
+                        margin-right: 1rem;
+                        display: flex;
+
+                        > svg {
+                            padding: 4px;
+                            width: 20px;
+                            height: 20px;
+                            cursor: pointer;
+
+                            path {
+                                fill: var(--adminify-menu-text-color);
+                            }
+                        }
+                    }
+                }
+
+                #wpadminbar {
+                    position: relative;
+                    height: auto;
+                    background-color: transparent;
+
+                    //toolbar
+                    #wp-toolbar {
+                        @include display(center, space-between);
+
+                        #wp-admin-bar-root-default {
+                            @include flex_center;
+                            gap: 12px;
+
+                            #wp-admin-bar-menu-toggle,
+                            #wp-admin-bar-wp-logo,
+                            #wp-admin-bar-site-name,
+                            #wp-admin-bar-updates,
+                            #wp-admin-bar-comments {
+                                display: none;
+                            }
+
+                            > li {
+                                > .ab-item,
+                                .ab-label {
+                                    font: {
+                                        size: 13px;
+                                        weight: 600;
+                                    }
+
+                                    color: $menuText;
+                                    background-color: transparent;
+                                    padding: 0;
+                                    &::before {
+                                        display: none;
+                                    }
+                                }
+
+                                &:hover {
+                                    > .ab-item,
+                                    .ab-label,
+                                    .ab-icon {
+                                        color: $primary;
+                                    }
+                                }
+
+                                &#wp-admin-bar-new-content {
+                                    > .ab-item {
+                                        @include flex_center;
+                                        gap: 6px;
+                                        border-radius: $wpRadius;
+                                        padding: 2px 10px !important;
+                                        background: $primary;
+
+                                        .ab-label {
+                                            color: $white;
+                                        }
+
+                                        .ab-icon {
+                                            padding: 0;
+                                            margin: 0;
+
+                                            &::before {
+                                                color: $white;
+                                                top: 2px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .ab-sub-wrapper {
+                                    border: 1px solid $border;
+                                    background: $menuBg;
+                                    border-radius: $wpRadius;
+                                    top: 40px;
+
+                                    .ab-submenu {
+                                        padding: 12px 0;
+                                        background-color: var(--adminify-menu-bg);
+
+                                        li {
+                                            .ab-item {
+                                                color: $menuText;
+                                                padding: 2px 1rem;
+                                                font-size: 13px;
+                                                font-weight: 500;
+                                                display: flex;
+                                                align-items: center;
+
+                                                .adminify {
+                                                    font-weight: 500;
+                                                }
+                                                .blavatar {
+                                                    &::before {
+                                                        color: var(--adminify-menu-text-color);
+                                                    }
+                                                }
+                                                &:hover {
+                                                    color: $primary;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        #wp-admin-bar-top-secondary {
+                            > li {
+                                display: none;
+                            }
+                        }
+
+                        //search bar
+                        .top-header--search--form {
+                            @include flex_center;
+                            flex-direction: row-reverse;
+                            @include dimension(224px, 24px);
+                            padding: 4px 8px;
+                            border-radius: 2px;
+                            border: 1px solid $border;
+
+                            .adminify-search-expand {
+                                position: relative;
+                                right: 0;
+                                @include dimension(40px, 24px);
+                                background-color: $white;
+                            }
+
+                            .top-header-search-input {
+                                @include dimension(100%, auto);
+                                border: 0;
+
+                                &:focus-visible {
+                                    box-shadow: none !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // top action
+                #wp-adminify-top-adminbar {
+                    .field {
+                        &.is-grouped {
+                            @include flex_center;
+                            gap: 10px;
+
+                            .wp-admnify--mode--switcher {
+                                padding-right: 16px;
+                                border-right: 1px solid $whitegray;
+
+                                .admnify-switcher {
+                                    .slider {
+                                        &:before {
+                                            background: url(../images/header/sun.svg) center
+                                                no-repeat $white;
+                                        }
+                                    }
+
+                                    input[type="checkbox"]:checked + .slider {
+                                        background-color: $blackplaceholder;
+
+                                        &:before {
+                                            background: url(../images/header/moon.svg) center
+                                                no-repeat $black;
+                                        }
+                                    }
+                                }
+                            }
+
+                            // .wp-adminify--top--comment {
+                            //     margin-right: 8px;
+
+                            //     button {
+                            //         @include display(center, center);
+                            //         border: none;
+                            //         background: transparent;
+                            //         position: relative;
+                            //         cursor: pointer;
+                            //         border: 0;
+
+                            //         .topbar-icon {
+                            //             @include display(center, center);
+                            //             gap: 4px;
+                            //             @include dimension(16px, 16px);
+
+                            //             svg {
+                            //                 @include dimension(12px, 12px);
+                            //             }
+                            //         }
+
+                            //         .comment-counter {
+                            //             // @include font(13px, 400, 20px);
+                            //             color: var(--adminify-notif-color);
+                            //             position: absolute;
+                            //             top: -14px;
+                            //             right: -6px;
+                            //             width: 16px;
+                            //             height: 16px;
+                            //             font-size: 12px;
+                            //             font-weight: 600;
+                            //             background: var(--adminify-notif-bg-color);
+                            //             border-radius: 50%;
+                            //             display: flex;
+                            //             align-items: center;
+                            //             justify-content: center;
+                            //         }
+                            //     }
+                            // }
+
+                            // .wp-adminify--preview {
+                            //     a {
+                            //         @include display(center, center);
+                            //         @include dimension(16px, 16px);
+                            //         text-decoration: none;
+                            //         color: var(--adminify-menu-text-color);
+                            //         cursor: pointer;
+
+                            //         i {
+                            //             @include dimension(auto, auto);
+                            //             font-size: 18px;
+                            //         }
+                            //     }
+                            // }
+
+                            // .wp-adminify--user--account {
+                            //     @keyframes status-shadow {
+                            //         0% {
+                            //             -webkit-transform: scale(0.95);
+                            //             transform: scale(0.95);
+                            //             box-shadow: 0 0 0 0 rgba($fast, 0.8);
+                            //         }
+
+                            //         50% {
+                            //             -webkit-transform: scale(1);
+                            //             transform: scale(1);
+                            //             box-shadow: 0 0 0 calc((3 - 1) * 6px / 2) rgba($fast, 0);
+                            //         }
+                            //     }
+
+                            //     .user-avatar {
+                            //         position: relative;
+                            //         border: 0;
+                            //         background-color: transparent;
+                            //         border: none;
+                            //         padding: 0;
+                            //         cursor: pointer;
+                            //         .image {
+                            //             @include display(center, center);
+                            //             @include dimension(32px, 32px);
+                            //             border-radius: 50%;
+                            //             background-color: $border;
+                            //             img {
+                            //                 @include dimension(32px, 32px);
+                            //                 border-radius: 50%;
+                            //             }
+                            //         }
+                            //         .user-status {
+                            //             position: absolute;
+                            //             bottom: 0;
+                            //             right: -1px;
+                            //             display: block;
+                            //             @include dimension(7px, 7px);
+                            //             background-color: $fast;
+                            //             border-radius: 50%;
+                            //             border: 2px solid var(--adminify-menu-bg);
+                            //             animation: status-shadow 3s infinite;
+                            //             &::before {
+                            //                 position: absolute;
+                            //                 content: "";
+                            //                 top: 0;
+                            //                 left: 0;
+                            //                 width: 100%;
+                            //                 height: 100%;
+                            //                 background: $fast;
+                            //                 border-radius: 100%;
+                            //             }
+                            //         }
+                            //     }
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

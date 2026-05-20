@@ -1,0 +1,1059 @@
+#frame-adminify-app {
+    .adminify-frame-wrapper {
+        .frame-adminify-sidebar-wrap {
+            width: var(--adminify-menu-width);
+            background: var(--adminify-menu-bg);
+
+            // Menu Search
+            .frame-adminify-menu-search {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                padding: 4px 12px;
+                margin: 4px;
+                background: var(--adminify-menu-bg, #fff);
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+
+                .frame-adminify-menu-search-icon {
+                    flex-shrink: 0;
+                    color: #94a3b8;
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .frame-adminify-menu-search-input {
+                    width: 100%;
+                    border: 1px solid transparent;
+                    outline: none;
+                    background: transparent;
+                    font-size: 13px;
+                    color: var(--adminify-menu-text-color, #334155);
+                    line-height: 1.4;
+                    padding: 2px 4px;
+                    border-radius: 4px;
+
+                    &::placeholder {
+                        color: #94a3b8;
+                    }
+
+                    &:focus {
+                        border: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+            }
+            transition: all 0.3s;
+            padding-right: 3px;
+
+            ul {
+                margin: 0;
+                li {
+                    list-style: none;
+                    margin: 0;
+                }
+            }
+            // Menu Wrapper
+            .frame-adminify-admin-menu-wrapper {
+                position: relative;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                .frame-adminify-admin-main-menu {
+                    width: var(--adminify-menu-width);
+                    height: calc(100vh - 78px);
+                    transition: width 0.3s;
+                    ul.frame-adminify-admin-menu {
+                        padding: var(--adminify-menu-wrapper-padding-top)
+                            var(--adminify-menu-wrapper-padding-right)
+                            var(--adminify-menu-wrapper-padding-bottom)
+                            var(--adminify-menu-wrapper-padding-left);
+
+                        // Main Menu
+                        li.frame-adminify-menu-item {
+                            display: block;
+                            margin-top: var(--adminify-menu-vertical-padding);
+                            > a {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 10px;
+                                padding: 6px 14px;
+                                border-radius: $wpRadius;
+                                font-size: var(--adminify-menu-font-size);
+                                line-height: var(--adminify-menu-line-height);
+                                letter-spacing: var(--adminify-menu-letter-spacing);
+                                color: var(--adminify-menu-text-color);
+                                font-weight: 500;
+                                text-decoration: none;
+                                cursor: pointer;
+                                transition: width 0.5s;
+
+                                // icon style
+                                .frame-adminify-menu-image {
+                                    &[style] {
+                                        position: relative;
+                                        width: 18px;
+                                        height: 18px;
+                                        mask-position: center;
+                                        mask-repeat: no-repeat;
+                                        mask-size: 20px auto;
+                                        background-color: var(--adminify-menu-text-color);
+                                    }
+                                }
+
+                                // Comment count 0
+                                .frame-adminify-menu-item-wrap {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    // Image icon
+                                    .frame-adminify-menu-image {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        > img {
+                                            width: 18px;
+                                            height: 18px;
+                                            filter: contrast(0.2);
+                                            // filter: contrast(1);
+                                        }
+                                    }
+                                    // svg amd dashicons
+                                    .frame-adminify-menu-icon {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        > svg {
+                                            width: 16px;
+                                            height: 16px;
+                                            > path {
+                                                fill: var(--adminify-menu-text-color);
+                                            }
+                                        }
+                                        &::before {
+                                            font-size: 18px;
+                                        }
+                                    }
+                                    //  symbol
+                                    .frame-adminify-menu-icon-symbol {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 18px;
+                                        height: 18px;
+                                    }
+
+                                    .frame-adminify-menu-item-name {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                        width: max-content;
+                                        // Target all notification badge spans (update-plugins, awaiting-mod, etc.)
+                                        > span {
+                                            background: var(--adminify-notif-bg-color, #5b5bf7);
+                                            color: var(--adminify-notif-color, #fff);
+                                            font-size: 11px;
+                                            font-weight: 600;
+                                            line-height: 0;
+                                            min-width: 18px;
+                                            height: 18px;
+                                            padding: 0 5px;
+                                            border-radius: 9px;
+                                            display: inline-flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            position: inherit !important;
+                                            box-sizing: border-box;
+                                            &.count-0 {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                                // Arrow Right
+                                .dashicons-arrow-right-alt2 {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-size: 13px;
+                                }
+
+                                //dashicons
+                                .dashicons {
+                                    transition: none;
+                                }
+
+                                // Hover
+                                &:hover {
+                                    background: var(--adminify-menu-hover-bg);
+                                    color: var(--adminify-menu-text-hover-color);
+                                    // Notification hover color
+                                    .frame-adminify-menu-item-wrap {
+                                        // Icon
+                                        .frame-adminify-menu-icon {
+                                            > svg {
+                                                > path {
+                                                    fill: var(--adminify-menu-text-hover-color);
+                                                }
+                                            }
+                                        }
+                                        .frame-adminify-menu-item-name {
+                                            :last-child {
+                                                background: var(--adminify-menu-text-hover-color);
+                                                color: var(--adminify-menu-hover-bg);
+                                            }
+                                        }
+                                        .frame-adminify-menu-image {
+                                            &[style] {
+                                                background-color: var(
+                                                    --adminify-menu-active-color
+                                                ) !important;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &:focus {
+                                    box-shadow: none;
+                                }
+                            }
+
+                            // adminify user avatar
+                            .frame-adminify-admin-menu-top {
+                                padding: 16px 0 24px 0;
+                                .frame-adminify-user-avatar {
+                                    display: flex;
+                                    align-items: center;
+                                    flex-direction: column;
+                                }
+                                &.adminify-text {
+                                    // User Details
+                                    .frame-adminify-user-details {
+                                        a {
+                                            display: block;
+                                            text-align: center;
+                                            word-wrap: break-word;
+                                            padding: 0 1rem;
+                                        }
+                                        .frame-adminify-user-name {
+                                            margin-top: 8px;
+                                            margin-bottom: 0;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            gap: 0.8rem;
+                                            a {
+                                                font-size: 17px;
+                                                line-height: 20px;
+                                                color: var(--adminify-menu-text-color);
+                                            }
+                                            .frame-adminify-user-logout {
+                                                display: flex;
+                                                align-items: center;
+                                                cursor: pointer;
+                                                a {
+                                                    svg {
+                                                        display: flex;
+                                                        width: 14px;
+                                                        height: 14px;
+                                                        path {
+                                                            fill: var(--adminify-menu-text-color);
+                                                            opacity: 0.7;
+                                                            transition: all 0.1s;
+                                                        }
+                                                    }
+                                                    &:hover {
+                                                        svg {
+                                                            path {
+                                                                opacity: 1;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .frame-adminify-user-email {
+                                            font-size: 13px;
+                                            font-weight: 400;
+                                            line-height: 25px;
+                                            color: var(--adminify-menu-text-color);
+                                            display: block;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                                &.adminify-rounded {
+                                    .frame-adminify-user-avatar {
+                                        img {
+                                            border-radius: 50%;
+                                        }
+                                    }
+                                }
+                                &.adminify-icon {
+                                    .frame-adminify-icon {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin-top: 12px;
+                                        a {
+                                            padding: 0 5px;
+                                            cursor: pointer;
+                                            svg {
+                                                width: 14px;
+                                                height: 14px;
+                                                path {
+                                                    stroke: var(--adminify-primary);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // Sub Menu
+                            .frame-adminify-submenu-wrapper {
+                                .frame-adminify-submenu {
+                                    padding: var(--adminify-submenu-wrapper-padding-top)
+                                        var(--adminify-submenu-wrapper-padding-right)
+                                        var(--adminify-submenu-wrapper-padding-bottom)
+                                        var(--adminify-submenu-wrapper-padding-left);
+                                    background: var(--adminify-submenu-wrapper-bg);
+                                    .frame-adminify-submenu-item {
+                                        margin-top: var(--adminify-submenu-vertical-padding);
+                                        &:first-child {
+                                            margin-top: 8px;
+                                        }
+                                        > a {
+                                            display: block;
+                                            width: max-content;
+                                            padding: 4px 10px;
+                                            font-size: var(--adminify-menu-font-size);
+                                            line-height: var(--adminify-menu-line-height);
+                                            letter-spacing: var(--adminify-menu-letter-spacing);
+                                            color: var(--adminify-submenu-text-color);
+                                            font-weight: 500;
+                                            text-decoration: none;
+                                            cursor: pointer;
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 8px;
+                                            &:hover {
+                                                color: var(--adminify-submenu-text-hover-color);
+                                                background: var(--adminify-submenu-hover-bg);
+                                            }
+                                            .update-plugins {
+                                                background: var(--adminify-notif-bg-color, #5b5bf7);
+                                                color: var(--adminify-notif-color, #fff);
+                                                font-size: 11px;
+                                                font-weight: 600;
+                                                line-height: 0;
+                                                min-width: 18px;
+                                                height: 18px;
+                                                padding: 0 5px;
+                                                border-radius: 9px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                box-sizing: border-box;
+                                            }
+                                            .adminify-addons-text {
+                                                color: #ffa500;
+                                            }
+                                            :last-child {
+                                                position: inherit!important;
+                                            }
+                                        }
+
+                                        &.frame-adminify--submenu-active {
+                                            > a {
+                                                color: var(--adminify-submenu-active-color);
+                                                background: var(--adminify-submenu-active-bg);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // Active Main Menu
+                            &.frame-adminify--menu-active {
+                                > a {
+                                    color: var(--adminify-menu-active-color);
+                                    background: var(--adminify-menu-active-bg);
+                                    // Icon
+                                    .frame-adminify-menu-item-wrap {
+                                        .frame-adminify-menu-icon {
+                                            > svg {
+                                                > path {
+                                                    fill: var(--adminify-menu-active-color);
+                                                }
+                                            }
+                                        }
+                                        .frame-adminify-menu-image {
+                                            &[style] {
+                                                background-color: var(
+                                                    --adminify-menu-active-color
+                                                ) !important;
+                                            }
+                                        }
+                                        .frame-adminify-menu-item-name {
+                                            span:last-child {
+                                                background-color: $white;
+                                                color: var(--adminify-menu-hover-bg);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.frame-adminify-has-submenu {
+                                > a {
+                                    .dashicons-arrow-right-alt2 {
+                                        &::before {
+                                            transition: transform 0.4s;
+                                        }
+                                    }
+                                }
+                                &.frame-adminify--menu-show {
+                                    > a {
+                                        .dashicons-arrow-right-alt2 {
+                                            &::before {
+                                                transform: rotate(-90deg);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:first-child {
+                                margin-top: 0;
+                            }
+                            &:has(hr.frame-adminify-menu-separator):last-child {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                // scrollbar
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #a8a9ac;
+                }
+            }
+
+            // Seperator
+            hr.frame-adminify-menu-separator {
+                margin: 0;
+                margin-top: var(--adminify-menu-vertical-padding);
+                border: 0;
+                height: 1px;
+                background-color: var(--adminify-menu-border);
+            }
+
+            // tow-strap menu
+            &[data-menu-mode="two_step"] {
+                .frame-adminify-admin-menu {
+                    transition: transform 0.3s;
+                    .frame-adminify-menu-item {
+                        .frame-adminify-submenu-wrapper {
+                            position: absolute;
+                            content: "";
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: calc(100vh - 78px);
+                            transform: translateX(100%);
+                            margin: 0;
+                            padding: 16px;
+                            padding-top: 8px;
+                            visibility: hidden;
+                            transition: all 0.3s;
+                            background: var(--adminify-menu-bg);
+                            z-index: 9999;
+                            overflow-y: scroll;
+
+                            .frame-adminify-submenu {
+                                height: 100%;
+                                padding-left: 8px !important;
+                                padding-top: 0 !important;
+                                .frame-adminify-two-step {
+                                    margin-bottom: 12px;
+                                    .frame-adminify-two-step-title {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 6px;
+                                        width: auto;
+                                        cursor: pointer;
+                                        .frame-adminify-arrow {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            color: var(--adminify-menu-text-color);
+                                            padding: 4px;
+                                            &::before {
+                                                font-size: 18px;
+                                                font-weight: 600;
+                                            }
+                                        }
+                                        h2 {
+                                            line-height: 1.4;
+                                            margin: 0px;
+                                            text-wrap: pretty;
+                                            color: var(--adminify-menu-text-color);
+                                            font-size: calc(20px);
+                                            font-weight: 600;
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 8px;
+                                            word-wrap: break-word;
+                                            .update-plugins {
+                                                background: var(--adminify-notif-bg-color, #5b5bf7);
+                                                color: var(--adminify-notif-color, #fff);
+                                                font-size: 11px;
+                                                font-weight: 600;
+                                                line-height: 0;
+                                                min-width: 18px;
+                                                height: 18px;
+                                                padding: 0 5px;
+                                                border-radius: 9px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                box-sizing: border-box;
+                                            }
+                                        }
+                                    }
+                                }
+                                .frame-adminify-submenu-item {
+                                    margin-left: 20px;
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                            &::-webkit-scrollbar {
+                                width: 0px;
+                                height: 0px;
+                            }
+                        }
+                        &.frame-adminify--menu-show {
+                            .frame-adminify-submenu-wrapper {
+                                visibility: visible !important;
+                            }
+                        }
+                        &.frame-adminify--menu-show {
+                            > a {
+                                .dashicons-arrow-right-alt2 {
+                                    &::before {
+                                        transform: rotate(0deg) !important;
+                                    }
+                                }
+                            }
+                        }
+                        &.frame-adminify-has-submenu {
+                            > a {
+                                .dashicons-arrow-right-alt2 {
+                                    &::before {
+                                        transition: transform 0s !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:has(.frame-adminify--menu-show):not(.adminify-sidebar-folded) {
+                    .frame-adminify-admin-menu-wrapper {
+                        height: 100%;
+                        overflow-y: hidden;
+                        .frame-adminify-admin-main-menu {
+                            height: auto !important;
+                            .frame-adminify-admin-menu {
+                                transform: translateX(-100%);
+                            }
+                        }
+                    }
+                }
+                &.adminify-sidebar-folded {
+                    &:has(.frame-adminify--menu-show) {
+                        .frame-adminify-admin-menu-wrapper {
+                            &:hover {
+                                overflow-y: hidden;
+                                .frame-adminify-admin-main-menu {
+                                    height: 100% !important;
+                                    .frame-adminify-admin-menu {
+                                        .frame-adminify-menu-item {
+                                            &.frame-adminify--menu-show {
+                                                .frame-adminify-submenu-wrapper {
+                                                    height: 100%;
+                                                    transform: translateX(0%);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // accordion & toggle menu and icon style rounded
+            &[data-menu-mode="accordion"],
+            &[data-menu-mode="toggle"] {
+                .frame-adminify-admin-menu {
+                    overflow: hidden;
+                    .frame-adminify-has-submenu {
+                        .frame-adminify-submenu-wrapper {
+                            height: 0;
+                            visibility: hidden;
+                            transition: height 0.3s;
+                        }
+                        &.frame-adminify--menu-show {
+                            .frame-adminify-submenu-wrapper {
+                                overflow: hidden;
+                                visibility: visible !important;
+                                transition: height 0.3s;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // On hover folded active styles
+            &.adminify-sidebar-folded {
+                position: relative;
+                width: 60px;
+                z-index: 999;
+                .frame-adminify-admin-menu-wrapper {
+                    .frame-adminify-admin-main-menu {
+                        width: 60px;
+                        ul.frame-adminify-admin-menu {
+                            li.frame-adminify-menu-item {
+                                > a {
+                                    .frame-adminify-menu-item-name {
+                                        opacity: 0;
+                                        transition: opacity 0.2s cubic-bezier(1, 0.46, 0.23, -0.08);
+                                    }
+                                    .dashicons-arrow-right-alt2 {
+                                        opacity: 0;
+                                    }
+                                }
+                                .frame-adminify-submenu-wrapper {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.frame-adminify-menu-mode-rounded {
+                    .frame-adminify-admin-menu-wrapper {
+                        .frame-adminify-admin-menu {
+                            .frame-adminify-menu-item {
+                                &.frame-adminify--menu-active,
+                                &.frame-adminify--menu-show {
+                                    > a {
+                                        &::after,
+                                        &::before {
+                                            visibility: hidden !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .frame-adminify-admin-menu-wrapper {
+                    &:hover {
+                        .frame-adminify-admin-main-menu {
+                            width: var(--adminify-menu-width);
+                            ul.frame-adminify-admin-menu {
+                                li.frame-adminify-menu-item {
+                                    > a {
+                                        .frame-adminify-menu-item-name {
+                                            opacity: 1;
+                                        }
+                                        .dashicons-arrow-right-alt2 {
+                                            opacity: 1;
+                                        }
+                                    }
+                                    .frame-adminify-submenu-wrapper {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:has(.frame-adminify-admin-menu-wrapper:hover) {
+                    width: var(--adminify-menu-width);
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                    &.frame-adminify-menu-mode-rounded:not(&[data-menu-mode="two_step"]) {
+                        .frame-adminify-admin-menu-wrapper {
+                            .frame-adminify-admin-menu {
+                                .frame-adminify-menu-item {
+                                    &.frame-adminify--menu-active,
+                                    &.frame-adminify--menu-show {
+                                        > a {
+                                            &::after,
+                                            &::before {
+                                                visibility: visible !important;
+                                                transition: visibility 0.1s;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                // icon style rounded
+                &.adminify-icon-style-rounded {
+                    .frame-adminify-admin-menu-wrapper {
+                        .frame-adminify-admin-main-menu {
+                            .frame-adminify-admin-menu {
+                                .frame-adminify-menu-item {
+                                    a {
+                                        border-radius: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // rounded menu
+            &.frame-adminify-menu-mode-rounded:not(&[data-menu-mode="two_step"]) {
+                .frame-adminify-admin-menu-wrapper {
+                    .frame-adminify-admin-menu {
+                        .frame-adminify-menu-item {
+                            > a {
+                                position: relative;
+                                .frame-adminify-menu-item-wrap {
+                                    position: relative;
+                                    z-index: 99999;
+                                }
+                            }
+                            &.frame-adminify--menu-active,
+                            &.frame-adminify--menu-show {
+                                > a {
+                                    border-radius: 3rem 0 0 3rem;
+                                    .dashicons-arrow-right-alt2 {
+                                        display: none;
+                                    }
+                                    &::after {
+                                        position: absolute;
+                                        content: "";
+                                        top: -35px;
+                                        right: 0;
+                                        visibility: visible;
+                                        width: 35px;
+                                        height: 35px;
+                                        border: 0;
+                                        margin-top: 0;
+                                        z-index: 1;
+                                        border-bottom-right-radius: 18px;
+                                        border-top-right-radius: 6px;
+                                        box-shadow: 0 20px 0 0 var(--adminify-menu-active-bg);
+                                        background-color: transparent;
+                                        z-index: 9999;
+                                        transition: all 0.2s;
+                                    }
+
+                                    &::before {
+                                        position: absolute;
+                                        top: auto;
+                                        bottom: -35px;
+                                        right: 0;
+                                        content: "";
+                                        visibility: visible;
+                                        width: 35px;
+                                        height: 35px;
+                                        margin-top: 0;
+                                        transform: rotate(0deg);
+                                        border-top-right-radius: 18px;
+                                        border-bottom-right-radius: 6px;
+                                        box-shadow: 0 -20px 0 0 var(--adminify-menu-active-bg);
+                                        background-color: transparent;
+                                        z-index: 9999;
+                                        transition: all 0.2s;
+                                    }
+                                }
+                            }
+                            &.frame-adminify--menu-show {
+                                > a {
+                                    color: var(--adminify-menu-active-color);
+                                    background: var(--adminify-menu-active-bg);
+                                    .frame-adminify-menu-item-wrap {
+                                        .frame-adminify-menu-icon {
+                                            > svg {
+                                                > path {
+                                                    fill: var(--adminify-menu-active-color);
+                                                }
+                                            }
+                                        }
+                                        .frame-adminify-menu-image {
+                                            &[style] {
+                                                background-color: var(
+                                                    --adminify-menu-active-color
+                                                ) !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Third Level Menu Styles (Elementor flyout items etc.)
+// =====================================================
+
+// Common styles for third level items
+.frame-adminify-submenu-item {
+    &.frame-adminify-has-third-level {
+        position: relative;
+
+        > a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100% !important;
+
+            .frame-adminify-third-level-arrow {
+                font-size: 14px;
+                transition: transform 0.2s ease;
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &.frame-adminify--third-level-show {
+            > a .frame-adminify-third-level-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+// Third Level Wrapper (for Accordion/Toggle height animation)
+.frame-adminify-third-level-wrapper {
+    overflow: hidden;
+    transition: height 0.3s ease;
+
+    .frame-adminify-third-level-menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+}
+
+// Third Level Menu Items
+.frame-adminify-third-level-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: var(--adminify-submenu-wrapper-bg, rgba(0, 0, 0, 0.03));
+    border-radius: 4px;
+    margin-top: 4px;
+
+    .frame-adminify-third-level-item {
+        margin: 0;
+
+        a {
+            display: block;
+            padding: 8px 12px 8px 20px;
+            color: var(--adminify-submenu-text-color, #666);
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 2px solid transparent;
+
+            &:hover {
+                background: var(--adminify-submenu-hover-bg, rgba(0, 0, 0, 0.05));
+                color: var(--adminify-submenu-text-hover-color, #333);
+                border-left-color: var(--adminify-primary, #5c6ac4);
+            }
+        }
+
+        &.frame-adminify--third-level-active {
+            a {
+                background: var(--adminify-submenu-active-bg, rgba(0, 0, 0, 0.08));
+                color: var(--adminify-submenu-active-color, #333);
+                border-left-color: var(--adminify-primary, #5c6ac4);
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+// Two Step Mode: Third Level Panel with Slide Animation
+.frame-adminify-sidebar-wrap[data-menu-mode="two_step"] {
+    .frame-adminify-submenu-wrapper {
+        position: relative;
+
+        // Third level panel container - slides in from right (like submenu does)
+        .frame-adminify-third-level-panel-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            background: var(--adminify-submenu-wrapper-bg);
+            z-index: 10;
+
+            &.frame-adminify-third-level-visible {
+                transform: translateX(0);
+            }
+
+            .frame-adminify-third-level-panel {
+                height: 100%;
+                padding-left: 8px !important;
+                padding-top: 0 !important;
+
+                .frame-adminify-two-step {
+                    margin-bottom: 12px;
+                    .frame-adminify-two-step-title {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        width: auto;
+                        cursor: pointer;
+                        .frame-adminify-arrow {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: var(--adminify-menu-text-color);
+                            padding: 4px;
+                            &::before {
+                                font-size: 18px;
+                                font-weight: 600;
+                            }
+                        }
+                        h2 {
+                            line-height: 1.4;
+                            margin: 0px;
+                            text-wrap: pretty;
+                            color: var(--adminify-menu-text-color);
+                            font-size: calc(20px);
+                            font-weight: 600;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            word-wrap: break-word;
+                        }
+                    }
+                }
+
+                .frame-adminify-third-level-item {
+                    margin-left: 20px;
+
+                    a {
+                        padding-left: 10px;
+                        border-left: none;
+                    }
+                }
+            }
+        }
+
+        // Regular submenu slides left when third level is active
+        .frame-adminify-submenu {
+            transition: transform 0.3s ease;
+
+            &.frame-adminify-submenu-slide-left {
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    // Arrow for items with third level
+    .frame-adminify-has-third-level > a {
+        .frame-adminify-third-level-arrow {
+            opacity: 0.7;
+        }
+
+        &:hover .frame-adminify-third-level-arrow {
+            opacity: 1;
+        }
+    }
+}
+
+// Accordion/Toggle Mode: Third Level inline expansion
+.frame-adminify-sidebar-wrap[data-menu-mode="accordion"],
+.frame-adminify-sidebar-wrap[data-menu-mode="toggle"] {
+    .frame-adminify-third-level-wrapper {
+        .frame-adminify-third-level-menu {
+            background: transparent;
+            margin-top: 0;
+            border-radius: 0;
+            padding-left: 8px;
+
+            .frame-adminify-third-level-item {
+                a {
+                    padding: 6px 12px 6px 16px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    // Rotate arrow when expanded
+    .frame-adminify-has-third-level.frame-adminify--third-level-show {
+        > a .frame-adminify-third-level-arrow {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+// responsive tablet
+@media screen and (max-width: 992px) {
+    #frame-adminify-app {
+        .adminify-frame-wrapper {
+            .frame-adminify-sidebar-wrap {
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                width: 260px !important;
+                transform: translateX(-100%);
+                transition: transform 0.4s;
+                z-index: 9999;
+                .frame-adminify-admin-menu-wrapper {
+                    height: 100vh;
+                    .frame-adminify-admin-main-menu {
+                        width: 260px !important;
+                    }
+                }
+                &.adminify-sidebar-collapse {
+                    transform: translateX(0) !important;
+                }
+            }
+            &.adminify-vertical-menu {
+                padding: 0 !important;
+            }
+            &:has(.adminify-sidebar-collapse) {
+                &::before {
+                    position: fixed;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.3490196078);
+                    z-index: 999;
+                }
+            }
+        }
+    }
+}

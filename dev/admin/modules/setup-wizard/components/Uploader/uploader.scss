@@ -1,0 +1,64 @@
+.wp-adminify-file-uploader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 244px;
+    margin-top: 24px;
+    border-radius: 2px;
+    border: 2px dashed $border;
+    position: relative;
+    > img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .wp-adminify-file-close {
+        background: $danger;
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    > button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+        color: #191821;
+        background: none;
+        border: none;
+        border-radius: $wpRadius;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transition: all 0.3s;
+        :last-child {
+            margin-top: 8px;
+        }
+        &.adminify-img-draging {
+            // background: $primary;
+            filter: alpha(opacity=60);
+            color: $primary;
+            svg {
+                > path {
+                    fill: $primary;
+                }
+            }
+        }
+        > input {
+            visibility: hidden;
+            position: absolute;
+        }
+    }
+    &:has(.adminify-img-draging) {
+        border-color: $primary;
+    }
+}

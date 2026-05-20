@@ -1,0 +1,54 @@
+@import "./variables", "./mixins";
+
+// #wpfooter {
+//     position: static;
+// }
+
+.wp-adminify {
+    .adminify-copyright {
+        @include flex_col;
+        gap: 8px;
+        p {
+            color: $text;
+            a {
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .adminify--footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .adminify-footer-right {
+            float: right;
+            @include flex_col;
+            gap: 8px;
+            .adminify-system-info-col {
+                display: flex;
+                justify-content: end;
+                gap: 24px;
+                .adminify-system-info {
+                    span {
+                        color: $text;
+                        .adminify-info-status {
+                            display: inline-block;
+                            padding: 1px 4px;
+                            border-radius: 2px;
+                            color: $white;
+                        }
+                        &:last-child {
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+
+        > p,
+        > .clear {
+            display: none;
+        }
+    }
+}

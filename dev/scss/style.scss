@@ -1,0 +1,440 @@
+@import "./common/style", "./adminify-ui/search-result", "./adminify-ui/adminify-dashboard",
+    "./adminify-ui/adminify-post", "./adminify-ui/adminify-media",
+    "./adminify-ui/wp-setting", "./adminify-ui/add-new-plugins", "./adminify-ui/appearance";
+
+// Dark Mode SCSS
+@import "./dark-mode";
+// Dark Mode Switcher SCSS
+
+body {
+    background-color: $bodybg;
+}
+
+.adminify-ui {
+    // height auto becouse footer text show with 100vh
+    #wpwrap {
+        #wpcontent {
+            height: auto !important;
+        }
+    }
+    // Outline button
+    .button:not(.adminify-warning-primary, .wpsc-boost-migration-button) {
+        color: $white;
+        background: transparent;
+        border-radius: $wpRadius;
+        cursor: pointer;
+        transition: all 0.15s;
+        @include btnOutlineVarient($primary, $primary);
+        border-color: $primary;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    // Primary button
+    input[type="submit"],
+    .button-primary,
+    a.page-title-action {
+        &:not(.adminify-btn, .wpsc-boost-migration-button) {
+            color: $white;
+            border-radius: $wpRadius;
+            cursor: pointer;
+            transition: all 0.15s;
+            @include btnVarient($primary, $white);
+        }
+    }
+
+    p {
+        color: $wpText;
+    }
+
+    a {
+        &:focus {
+            img {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+    }
+
+    .button-secondary:not(input) {
+        color: $primary !important;
+        border-color: $primary !important;
+    }
+
+    .postbox a,
+    #wpfooter a,
+    .welcome-panel-column-content a,
+    .notice a,
+    .updated a,
+    .edit-term-notes a,
+    .wp-list-table tbody th a,
+    .wp-list-table tbody td a,
+    .widefat tbody th a,
+    .widefat tbody td a,
+    #post-body-content a,
+    .upload-flash-bypass a,
+    [action="options.php"] a,
+    .privacy-settings-body a,
+    .wpsc-card a,
+    .updraftplus-top-menu a,
+    .nav-tab-wrapper a,
+    #updraft-backupnow-modal a,
+    .updraft-disk-space-actions a,
+    .popular-tags a,
+    .metabox-prefs a {
+        &:not(.button-primary, .notice-dismiss, .mi-dw-btn-large, .aioseo-button, .trash a, .sq-nav-item, .adminify-active, .wpb_switch-to-composer, .wpb_switch-to-front-composer, .wpb_switch-to-gutenberg) {
+            outline: none;
+            color: $primary !important;
+            text-decoration: none;
+
+            &:focus {
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+        outline: none;
+        border-color: $border;
+
+        &::placeholder {
+            color: $wpPlaceholder;
+        }
+
+        &:focus {
+            border-color: $primary !important;
+            box-shadow: 0 0 0 1px $primary !important;
+        }
+    }
+
+    label:not(.wpsc-boost-migration-button label, .wprf-input-label, .swift-btn, .rkt-disabled) {
+        @include font(13px !important, 500 !important, 20px !important);
+        color: $secondary !important;
+        user-select: none;
+    }
+
+    select {
+        color: $secondary;
+        border-color: $border;
+        border-radius: $wpRadius;
+        outline: none;
+        background-color: $white;
+
+        &:hover {
+            color: $secondary;
+        }
+
+        &:focus {
+            border-color: $border;
+            color: $secondary;
+            box-shadow: none;
+        }
+    }
+
+    // custom button style
+    input {
+        &:not(.adminify-btn) {
+            &[type="submit"] {
+                @include font(12px, 700, 16px);
+                @include wpColor($white, $primary);
+                border-color: $primary;
+                border-radius: $wpRadius;
+                transition: all 0.15s;
+
+                &:hover {
+                    @include wpColor($primary, $white);
+                    border-color: $primary;
+                }
+            }
+        }
+
+        &[type="checkbox"] {
+            border-color: $border;
+            border-radius: 4px;
+            background-color: $white;
+
+            &:focus {
+                box-shadow: none !important;
+                border-color: $border !important;
+            }
+
+            &:disabled {
+                background: $border;
+                opacity: 0.7;
+            }
+            
+            &:checked {
+                border-color: $border !important;
+                background-color: $primary !important;
+
+                &::before {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+
+        &[type="radio"] {
+            &::before {
+                background-color: $primary;
+            }
+        }
+
+        &[type="search"] {
+            border-color: $border;
+        }
+    }
+
+    //row actions btn
+    .row-actions {
+        .unapprove {
+            a {
+                @include wpHover($warning !important, $warning !important);
+            }
+        }
+
+        .edit,
+        .view,
+        .reply,
+        span {
+            a,
+            button {
+                @include wpHover($primary, $primary);
+            }
+        }
+
+        .spam,
+        .trash {
+            a {
+                @include wpHover($danger !important, $danger !important);
+            }
+        }
+    }
+
+    .editor-document-tools__left,
+    .edit-post-header__settings {
+        button {
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    .editor-document-tools__inserter-toggle,
+    .editor-post-publish-button__button {
+        @include wpColor($white !important, $primary !important);
+
+        &:hover {
+            background-color: $primary !important;
+        }
+    }
+
+    // wp body content custom css
+    #wpbody-content {
+        // margin-top: 64px;
+
+        .wrap {
+            > h1 {
+                @include font(24px, 600, 32px);
+                color: $wpHeading;
+            }
+        }
+
+        // Tools > import
+        .widefat.importers {
+            border: none;
+            background: none;
+            width: 100%;
+
+            tbody {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+
+                .importer-item {
+                    background: $white;
+                    border: 1px solid $border;
+                    border-radius: $wpRadius;
+                    padding: 1.125rem;
+                    position: relative;
+
+                    > td {
+                        border-bottom: none;
+                        padding: 0;
+                    }
+
+                    th {
+                        > input {
+                            &:hover {
+                                background-color: transparent;
+                            }
+                        }
+                    }
+
+                    .importer-title {
+                        color: $titleColor;
+                        font-size: 14px;
+                        font-weight: 700;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .importer-action {
+                        position: absolute;
+                        bottom: 0;
+                    }
+
+                    .desc {
+                        display: block;
+                        max-width: inherit;
+                        margin-bottom: 1.75rem;
+                    }
+                }
+            }
+        }
+
+        #screen-meta-links {
+            button {
+                border-color: $border;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        #screen-meta {
+            border-color: $border;
+            border-radius: 0 0 $wpRadius $wpRadius;
+
+            #contextual-help-wrap {
+                #contextual-help-back {
+                    border-color: $border;
+                    background-color: $white;
+                }
+
+                .contextual-help-tabs {
+                    li.active {
+                        border-color: $border !important;
+                        border-left-color: $primary !important;
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    // Card
+    .card {
+        border-color: $border;
+        border-radius: $wpRadius;
+    }
+
+    // Light Dark Dropdown
+    #wp-adminify-color-mode-wrapper {
+        .light-dark-dropdown {
+            background: $menuBg;
+            border-color: $border;
+            box-shadow: $grayshadow;
+
+            &::before {
+                background: $menuBg;
+                border-color: $border;
+            }
+
+            > div,
+            > div > span {
+                color: $menuText;
+                line-height: 30px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    //others plugin
+    .wpforms-admin-wrap {
+        .page-title-action {
+            &:hover {
+                .page-title-action-icon {
+                    fill: var(--adminify-primary) !important;
+                    opacity: 1 !important;
+                }
+            }
+        }
+    }
+    #e-admin-top-bar-root {
+        right: auto;
+        width: 100% !important;
+    }
+    &.plugins-php {
+        .wp-list-table {
+            tr {
+                opacity: 1 !important;
+            }
+        }
+
+        .shepherd-element.shepherd-open,
+        .shepherd-content {
+            display: none;
+        }
+    }
+    #seopress-header {
+        display: none;
+    }
+}
+
+// If it ThirdPartyCompatibility page use then not working
+// Elementor pages with fixed sidebar navigation fix
+body.adminify-ui.e-has-sidebar-navigation {
+    // Elementor sidebar is position:fixed - position it after Adminify sidebar
+    #editor-one-sidebar-navigation {
+        left: 0 !important;
+        // left: var(--adminify-menu-width, 260px) !important;
+        top: 48px !important;
+        height: calc(100vh - 64px) !important;
+        z-index: 9999;
+    }
+
+    // When Adminify sidebar is folded
+    &.folded #editor-one-sidebar-navigation {
+        left: 62px !important;
+    }
+
+    // Content area needs left padding for Elementor sidebar
+    #wpcontent {
+        padding-left: calc(240px + 24px) !important;
+        padding-right: 20px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    // When Elementor sidebar is collapsed
+    &.e-sidebar-is-collapsed #wpcontent {
+        padding-left: calc(72px + 24px) !important;
+    }
+
+    // Top margin for Elementor top bar
+    #wpbody-content {
+        margin-top: 50px;
+
+        > .notice,
+        > .updated,
+        > .update-nag {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+
+    // Elementor top bar
+    #e-admin-top-bar-root {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-top: 0 !important;
+        left: 0 !important;
+    }
+}
+
+

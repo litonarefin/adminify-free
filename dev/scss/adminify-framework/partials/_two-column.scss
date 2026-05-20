@@ -1,0 +1,160 @@
+@import "../../common/variables";
+
+@mixin percentage_40 {
+    .adminify-title {
+        width: 40% !important;
+    }
+    .adminify-fieldset {
+        width: calc(60% - 20px) !important;
+    }
+}
+
+.wp-adminify-two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    position: relative;
+    &.hidden {
+        display: none;
+    }
+    .adminify-full-width-field {
+        width: 100% !important;
+        flex-basis: 100% !important;
+    }
+    > .adminify-field {
+        width: 49%;
+        display: flex;
+        flex-basis: 49%;
+        justify-content: space-between;
+        margin-right: 1%;
+        margin-top: -1px;
+        border: 1px solid #eee;
+        box-sizing: border-box;
+        .adminify-fieldset {
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+    }
+    &[data-section-id="white-label"] {
+        > .adminify-field {
+            display: grid;
+        }
+    }
+    &.aminify-title-width-40 {
+        @include percentage_40;
+    }
+    &.aminify-title-width-65 {
+        .adminify-title {
+            width: 65%;
+        }
+        .adminify-fieldset {
+            width: calc(35% - 20px);
+        }
+    }
+    .adminify-field-subheading {
+        box-sizing: content-box;
+        width: 100%;
+        flex-basis: 100%;
+    }
+    > .adminify-section-title {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
+}
+
+.wp-adminify .adminify-hightlight-field {
+    border: 2px solid $primary !important;
+    font-weight: 600 !important;
+}
+.aminify-title-width-40 {
+    @include percentage_40;
+}
+
+// White label
+.wp-adminify-white-label-notice-content {
+    background-color: #fff;
+    box-shadow: 0px 0px 50px rgb(0 0 0 / 13%);
+    position: absolute;
+    top: 150px;
+    left: 400px;
+    width: 530px;
+    padding: 32px;
+    padding-bottom: 50px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 2;
+}
+.wp-adminify-white-label-notice-logo img {
+    height: 100px;
+    width: 250px;
+    padding: 10px;
+    padding-top: 10px;
+}
+.wp-adminify-white-label-notice-content h2 span {
+    color: #6814cd;
+    text-transform: uppercase;
+}
+.wp-adminify-white-label-notice-content em {
+    font-size: 13px;
+    color: red;
+}
+.wp-adminify-white-label-notice .wp-adminify-get-pro {
+    background-image: -moz-linear-gradient(0deg, rgb(223, 29, 198) 0%, rgb(106, 20, 209) 100%);
+    background-image: -webkit-linear-gradient(0deg, rgb(223, 29, 198) 0%, rgb(106, 20, 209) 100%);
+    background-image: -ms-linear-gradient(0deg, rgb(223, 29, 198) 0%, rgb(106, 20, 209) 100%);
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 35px;
+    padding: 0 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    width: 180px;
+    padding: 5px 15px !important;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.wp-adminify-white-label-notice {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+    background: rgba(200, 200, 200, 0.5);
+    -js-display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 1;
+}
+.wp-adminify-white-label-notice .wp-adminify-get-pro:hover {
+    color: #fff;
+    background-image: -moz-linear-gradient(0deg, rgb(106, 20, 209) 0%, rgb(223, 29, 198) 100%);
+    background-image: -webkit-linear-gradient(0deg, rgb(106, 20, 209) 0%, rgb(223, 29, 198) 100%);
+    background-image: -ms-linear-gradient(0deg, rgb(106, 20, 209) 0%, rgb(223, 29, 198) 100%);
+}
+.adminify-field-callback a.wp-adminify-rollback-button {
+    font-family: inherit !important;
+}
+.wp-adminify-rollback-button.dashicons,
+.wp-adminify-rollback-button.dashicons-before:before {
+    width: inherit !important;
+}

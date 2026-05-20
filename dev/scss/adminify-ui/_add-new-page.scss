@@ -1,0 +1,98 @@
+.wp-adminify {
+    .editor-editor-interface {
+        .editor-header {
+            .edit-post-fullscreen-mode-close {
+                &:hover {
+                    &::before {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        // setting sidebar
+        .interface-complementary-area {
+            .components-panel__header {
+                border-color: $border;
+                button {
+                    &:hover {
+                        color: var(--adminify-primary);
+                    }
+                }
+                [aria-orientation="horizontal"] {
+                    &::after {
+                        border-color: var(--adminify-primary);
+                    }
+                }
+            }
+            .editor-post-featured-image {
+                button {
+                    box-shadow: inset 0 0 0 1px $border !important;
+                    &:hover {
+                        color: var(--adminify-primary);
+                    }
+                }
+            }
+            .components-button:not(.is-small.has-icon) {
+                color: var(--adminify-primary);
+            }
+        }
+
+        .components-form-toggle {
+            input[type="checkbox"] {
+                &:focus + .components-form-toggle__track {
+                    box-shadow: none !important;
+                }
+            }
+            &.is-checked {
+                .components-form-toggle__track {
+                    border-color: var(--adminify-primary) !important;
+                    background-color: var(--adminify-primary) !important;
+                }
+            }
+        }
+        .components-panel__body {
+            .components-button.is-primary {
+                color: $white !important;
+                background: var(--adminify-primary) !important;
+            }
+        }
+
+        // pre publish checklist
+        .pre-publish-checklist {
+            .icon {
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+        .postbox-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+            height: 56px;
+            h2 {
+                padding: 0 !important;
+            }
+            .handle-actions {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                button {
+                    width: max-content;
+                    height: max-content;
+                    .span {
+                        &::before {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                height: 56px !important;
+            }
+        }
+    }
+}

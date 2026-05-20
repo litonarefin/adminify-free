@@ -1,0 +1,167 @@
+// @import "../common/variables.scss", "../common/mixins.scss";
+
+.adminify-ui {
+    .subsubsub {
+        margin: 0;
+        padding: 16px 0;
+        padding-bottom: 0;
+
+        li {
+            color: $darkGray;
+
+            a {
+                @include font(12px, 700, 16px);
+                color: $primary;
+
+                span {
+                    font-weight: 400;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+
+    .tablenav {
+        margin: 0;
+        padding: 16px 0;
+    }
+
+    .search-box {
+        position: relative;
+        top: 12px;
+    }
+
+    .wp-list-table,
+    .widefat {
+        border-color: $border;
+        border-radius: $wpRadius;
+
+        .notice {
+            padding: 8px 16px !important;
+        }
+
+        tr {
+            background-color: transparent;
+        }
+
+        thead,
+        tfoot {
+            td,
+            th {
+                padding: 17px 10px !important;
+                border-color: $border;
+
+                &:not(th) {
+                    padding: 20px 10px 17px;
+                }
+            }
+
+            a,
+            th {
+                @include font(13px, 600, 20px);
+                color: $secondary;
+                padding: 0;
+
+                &:not(th) {
+                    @include flex_center;
+                    gap: 8px;
+                }
+
+                .sorting-indicators {
+                    .asc,
+                    .desc {
+                        &::before {
+                            color: $wpTableArrow;
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                th,
+                td {
+                    &:first-child {
+                        border-left-color: $primary;
+                    }
+                }
+            }
+
+            th,
+            td {
+                padding: 15px 10px;
+                border-bottom: 1px solid $border;
+
+                strong {
+                    margin: 0;
+                }
+
+                a {
+                    color: $primary;
+                    font-weight: 600 !important;
+
+                    &.row-title {
+                        font-weight: 700 !important;
+                    }
+                }
+
+                span {
+                    color: $wpText;
+                }
+
+                &:not(td) {
+                    padding: 15px 10px;
+                }
+
+                &:last-child {
+                    @include font(12px, 500, 16px);
+                    color: $secondary;
+                }
+            }
+        }
+    }
+
+    .edit-post-layout {
+        .interface-interface-skeleton__sidebar {
+            .edit-post-sidebar__panel-tabs {
+                button {
+                    @include font(13px, 600, 50px);
+                    @include wpHover($wpHeading, $primary);
+
+                    &::after {
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+
+        .components-panel__body {
+            .components-panel__body-title {
+                .components-button {
+                    @include font(13px !important, 700 !important, 20px !important);
+                    color: $wpHeading !important;
+                }
+            }
+
+            .editor-post-panel__row-control {
+                button {
+                    color: $primary;
+                }
+            }
+
+            .editor-post-taxonomies__hierarchical-terms-add {
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // category page
+    .form-wrap {
+        padding: 16px;
+        border: 1px solid $border;
+        border-radius: $wpRadius;
+        background-color: $white;
+    }
+}

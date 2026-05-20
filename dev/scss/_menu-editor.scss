@@ -1,0 +1,374 @@
+@import "./common/variables", "./common/mixins", "./common/style";
+
+.wp-adminify {
+    .wp-adminify--menu--editor--container {
+        max-width: 85%;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        a {
+            text-decoration: none;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .adminify-menu-editor-help-urls {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $titleColor;
+        }
+
+        .adminify-dropdown {
+            position: relative;
+
+            .adminify-dropdown-menu {
+                display: none;
+                position: absolute;
+                top: 110%;
+                right: 0;
+                .adminify-dropdown-content {
+                    width: 96px;
+                    background: $white;
+                    padding: 12px;
+                    border: 1px solid $border;
+                    border-radius: 2px;
+                    .adminify-dropdown-item {
+                        text-decoration: none;
+                        color: $primary;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .adminify-dropdown-trigger:hover + .adminify-dropdown-menu {
+                display: block;
+            }
+        }
+        .adminify-text-wrap,
+        .wp-adminify--menu--editor--settings {
+            margin-top: 36px;
+        }
+        .wp-adminify--menu--editor--settings {
+            .adminify_menu_item {
+                background: $white;
+                border: 0;
+                border-radius: 3px;
+                box-shadow: 0 0 5px 1px rgba(20, 20, 42, 0.1);
+                .menu-editor-title {
+                    color: $titleColor;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 25px;
+                    text-decoration: none;
+                    padding: 1rem;
+                }
+                .accordion {
+                    box-shadow: 0px 0px 54px 0px rgba(20, 20, 42, 0.07);
+                }
+                //tabs
+                .accordion-body {
+                    .tabs {
+                        border-bottom: 1px solid $border;
+                        padding: 0.5rem 1rem 0;
+
+                        ul {
+                            border: 0;
+                        }
+
+                        li {
+                            margin: 0;
+
+                            .nav-link {
+                                background-color: transparent;
+                                border: 0;
+                                color: $text;
+                                display: inline-block;
+                                padding: 0;
+                                padding: 0 1.25rem 10px;
+                                position: relative;
+
+                                &:before {
+                                    content: "";
+                                    background-color: transparent;
+                                    border-top-left-radius: 3px;
+                                    border-top-right-radius: 3px;
+                                    height: 3px;
+                                    width: 100%;
+                                    left: 0;
+                                    bottom: 0;
+                                    position: absolute;
+                                }
+
+                                &.active {
+                                    color: $primary;
+
+                                    &:before {
+                                        background-color: $primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .tab-content {
+                        .tab-pane {
+                            border: 0;
+                            padding: 0.5rem 1.25rem 1.25rem;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 16px;
+
+                            > span {
+                                margin: 0 0 15px 0;
+                                display: block;
+                            }
+                            .menu-editor-form {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 16px;
+                                .columns {
+                                    display: flex;
+                                    gap: 16px;
+                                    .column {
+                                        display: flex;
+                                        flex-direction: column;
+
+                                        flex-basis: 0;
+                                        flex-grow: 1;
+                                        flex-shrink: 1;
+                                        label {
+                                            color: $text;
+                                            margin-bottom: 4px;
+                                        }
+                                        input {
+                                            color: $input;
+                                            border: 1px solid $border;
+                                            padding: 6px 8px;
+                                            line-height: 1.3;
+                                            &:focus {
+                                                box-shadow: none;
+                                                border-color: $primary;
+                                            }
+                                        }
+
+                                        // Select2 custom styling
+                                        .select2-selection {
+                                            border-color: #dedee7;
+                                            .select2-search__field {
+                                                &:focus {
+                                                    box-shadow: none !important;
+                                                }
+                                            }
+                                            .select2-search--inline {
+                                                vertical-align: middle;
+                                            }
+                                        }
+                                        .select2-dropdown{
+                                            border-color: #dedee7;
+                                        }
+
+                                        .select:after {
+                                            display: none;
+                                        }
+
+                                        .select {
+                                            height: auto;
+                                        }
+
+                                        .tokenize .tokenize:focus {
+                                            // box-shadow: none;
+                                            // outline: 0;
+                                            border: 1px solid $border;
+                                        }
+
+                                        .tokens-container {
+                                            // background-color: $whitegray;
+                                            border: 1px solid $border;
+                                            box-sizing: border-box;
+                                            border-radius: 4px;
+                                            // border-radius: $radius6p;
+                                            height: auto;
+                                            margin: 0;
+                                            padding: 4px 35px 4px 10px;
+                                            position: relative;
+                                            min-width: 12rem;
+
+                                            li {
+                                                margin: 0;
+                                                padding: 0;
+
+                                                &.placeholder {
+                                                    border: 0;
+                                                    // color: $blackmuted;
+                                                    // font-size: $fontsize - 1px;
+                                                    top: 50%;
+                                                    left: 15px;
+                                                    margin-top: -11px;
+                                                    position: absolute;
+                                                    z-index: -1;
+                                                }
+
+                                                &.token-search {
+                                                    display: inline-block;
+                                                    // border: none;
+                                                    min-width: 10px;
+                                                    z-index: 1;
+
+                                                    &:before {
+                                                        display: none;
+                                                    }
+
+                                                    input {
+                                                        border: none !important;
+                                                        background-color: transparent !important;
+                                                        box-shadow: none;
+                                                        outline: none;
+                                                        line-height: 1.2 !important;
+                                                        padding: 0 !important;
+                                                        height: 100%;
+                                                        width: 100%;
+                                                        min-width: 100%;
+                                                        z-index: -1;
+                                                    }
+                                                }
+
+                                                &.token {
+                                                    // border: 0;
+                                                    margin: 3px;
+                                                    z-index: 3;
+
+                                                    position: relative;
+                                                    margin: 3px 5px 3px 0;
+                                                    padding: 4px 20px 4px 6px;
+                                                    max-width: 100%;
+                                                    border-radius: 3px;
+                                                    color: $secondary;
+                                                    border: 1px solid #c4c4d4;
+                                                    background: #eaeaf0;
+                                                    font-weight: 500;
+                                                    line-height: 13px;
+                                                    cursor: default;
+
+                                                    .dismiss {
+                                                        padding: 0 0 0 3px;
+                                                        font-size: 18px;
+                                                        line-height: 0.6;
+                                                        color: $text;
+                                                        &:hover {
+                                                            color: $secondary;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            &::after {
+                                                content: "\e604";
+                                                color: $text;
+                                                font-family: "simple-line-icons";
+                                                font-size: 10px;
+                                                position: absolute;
+                                                top: 0;
+                                                right: 0;
+                                                height: 100%;
+                                                width: 28px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                border-radius: 0px 6px 6px 0px;
+                                            }
+                                        }
+
+                                        .tokenize.focus > .tokens-container {
+                                            border-color: $primary;
+                                            box-shadow: none;
+
+                                            &:after {
+                                                content: "\e607";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .remove-add-new-menu {
+                                display: flex;
+                                justify-content: end;
+                                span {
+                                    color: $danger;
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .adminify-add-new-menu-editor-item {
+                border-radius: 6px;
+                text-align: center;
+                padding: 16px;
+                background: $white;
+                box-shadow: 0px 0px 54px 0px rgba(20, 20, 42, 0.07);
+                border: 2px dashed $darkGray;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .tokenize-dropdown > .dropdown-menu {
+        margin-top: 1px;
+        // @include postboxreset;
+        background: $white;
+        border: 1px solid $border;
+        padding: 10px 0;
+    }
+
+    .tokenize-dropdown > .dropdown-menu li {
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tokenize-dropdown > .dropdown-menu li a {
+        color: $text;
+        display: inline-block;
+        line-height: 24px;
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    .tokenize-dropdown > .dropdown-menu li a:hover {
+        color: $primary;
+    }
+
+    // Tokenize group headers
+    .tokenize-dropdown > .dropdown-menu li.tokenize-group-item {
+        pointer-events: none;
+
+        &:hover {
+            background: transparent;
+        }
+
+        a.tokenize-group-header {
+            display: block;
+            padding: 5px 15px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #666 !important;
+            background: #f5f5f5;
+            border-bottom: 1px solid $border;
+            margin-bottom: 5px;
+            pointer-events: none;
+            cursor: default;
+
+            &:hover {
+                color: #666 !important;
+                background: #f5f5f5;
+            }
+        }
+
+        & + li a {
+            padding-left: 25px;
+        }
+    }
+}

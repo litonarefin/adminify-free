@@ -1,0 +1,1472 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./dev/admin/modules/folder/folder.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+body.wp-adminify {
+  --adminify-primary: #3a3ae9;
+  --adminify-preset-background: #f0f0f1;
+  --adminify-text-color: #fff;
+  --adminify-input-bg: #f1f1f3;
+}
+
+/*
+* Useable Mixin
+*/
+.wp-adminify a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.wp-adminify.has-folder-options #wpbody {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+.wp-adminify #wp-adminify--folder-app {
+  height: -webkit-fill-available;
+  position: relative;
+  padding-bottom: 65px;
+  margin-top: 8px;
+}
+.wp-adminify .wp-adminify--folder-widget {
+  position: sticky;
+  top: 48px;
+  flex-shrink: 0;
+  width: 280px;
+  min-height: calc(100vh - 32px);
+  max-height: calc(100vh - 32px);
+  margin: 0;
+  box-sizing: border-box;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app {
+  border: 1px solid #dedee7;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul {
+  margin: 0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul li {
+  margin: 0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #dedee7;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--header span {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #182230;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--header a {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 2px;
+  border: 1px solid var(--adminify-primary);
+  background-color: var(--adminify-primary);
+  padding: 5px 10px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #dedee7;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions input[type=checkbox] {
+  border-color: #a8a6bf;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .btn--folder-rename {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 2px;
+  border: 1px solid #17b26a;
+  background-color: #17b26a;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .btn--folder-delete {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 2px;
+  border: 1px solid #f04438;
+  background-color: #f04438;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .folder-sort--list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .folder-sort--list .btn--folder-expand, .wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .folder-sort--list .btn--folder-sort {
+  display: inline-flex;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .folder-sort--list .btn--folder-expand svg, .wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .folder-sort--list .btn--folder-sort svg {
+  width: 16px;
+  height: 16px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .folder-sort--list .btn--folder-expand {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #000;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 2px;
+  border: 1px solid #e5e5e5;
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--actions-triggers .folder-sort--list .btn--folder-sort {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 2px;
+  border: 1px solid #48455f;
+  background-color: #48455f;
+  cursor: pointer;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--search {
+  padding: 0 16px 16px 16px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--search input {
+  width: 100%;
+  padding: 6px 32px 6px 16px;
+  border-color: #dedee7;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #8c89a9;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--search input:focus {
+  border-color: #dedee7 !important;
+  box-shadow: none !important;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--stats {
+  padding: 16px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--stats li {
+  padding: 8px;
+  border-radius: 2px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--stats li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #48455f;
+  outline: none;
+  box-shadow: none;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--stats li.active {
+  background-color: #f4f4fa;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--stats li.active a {
+  color: var(--adminify-primary);
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists {
+  padding: 16px;
+  padding-right: 4px;
+  margin-right: 4px;
+  border-top: 1px solid #dedee7;
+  max-height: calc(100vh - 424px);
+  overflow-y: auto;
+  overflow-x: auto;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists::-webkit-scrollbar {
+  width: 4px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists {
+  /* Handle on hover */
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root {
+  position: relative;
+  padding-left: 8px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+  padding: 4px 0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 20px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--folder-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--folder-toggle .wp-adminify--icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--folder-toggle .wp-adminify--badge {
+  position: absolute;
+  bottom: 2px;
+  right: 3px;
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--folder-toggle .wp-adminify--badge::before {
+  font-size: 10px;
+  font-weight: bold;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--control {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  transition: all 0.15s ease;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--control:checked {
+  background-color: var(--adminify-primary);
+  border-color: var(--adminify-primary);
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--control:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row .wp-adminify--icon-control .wp-adminify--control:hover {
+  border-color: var(--adminify-primary);
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row > a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-radius: 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row > a .wp-adminify--name {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #4e4b66;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row > a .wp-adminify--count {
+  color: #4e4b66;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row > a:hover {
+  background: #ececec;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row > a.adminify-drop-hover {
+  background-color: var(--adminify-primary) !important;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row > a.adminify-drop-hover span,
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root .wp-adminify--folder-row > a.adminify-drop-hover .wp-adminify--name {
+  color: #fff !important;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  margin: 2px 0;
+  border-radius: 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #fff;
+  z-index: 1;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root > a .wp-adminify--folder-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root > a .wp-adminify--folder-left .wp-adminify--icon-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root > a .wp-adminify--folder-left .wp-adminify--name {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #4e4b66;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root > a:hover {
+  background: #ececec;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root > a.adminify-drop-hover {
+  background-color: var(--adminify-primary) !important;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root > a.adminify-drop-hover span,
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root > a.adminify-drop-hover .wp-adminify--name {
+  color: #fff;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root::after {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  content: "";
+  width: 16px;
+  height: 0;
+  border-top: 1px dashed #c0c0c0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: calc(100% + 4px);
+  width: 0;
+  border-left: 1px dashed #c0c0c0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root:first-child::before {
+  top: 18px;
+  height: calc(100% - 14px);
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root:last-child::before {
+  height: 18px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root:only-child::before {
+  height: 22px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root:first-child:last-child::before {
+  top: 0;
+  height: 18px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li ul.adminify--sub-menu {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu {
+  position: fixed;
+  display: block;
+  min-width: 160px;
+  padding: 6px 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  z-index: 999999;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li {
+  margin: 0;
+  padding: 0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  color: #1e1e1e;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  transition: background-color 0.15s ease;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a .adminify-menu-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  color: #757575;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a .adminify-menu-icon::before {
+  font-size: 16px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a .adminify-menu-text {
+  flex: 1;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a:hover {
+  background-color: #f0f0f0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a:hover .adminify-menu-icon {
+  color: var(--adminify-primary);
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a.adminify-menu-delete {
+  color: #d63638;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a.adminify-menu-delete .adminify-menu-icon {
+  color: #d63638;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li a.adminify-menu-delete:hover {
+  background-color: #fcf0f1;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.sub-menu--open > .adminify--sub-menu.adminify--context-menu li.adminify-menu-separator {
+  height: 1px;
+  margin: 6px 0;
+  background-color: #e0e0e0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists {
+  position: relative;
+  margin-left: 8px;
+  margin-top: 0;
+  padding-left: 0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 18px;
+  border-left: 1px dashed #c0c0c0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists li.folder--single-root {
+  padding-left: 8px;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists li.folder--single-root::before {
+  border-left: 1px dashed #c0c0c0;
+}
+.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists li.folder--single-root::after {
+  border-top: 1px dashed #c0c0c0;
+}
+.wp-adminify .wp-adminify--popup-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container {
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 20px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder {
+  padding: 28px 32px 32px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .wp-adminify--popup-close,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .wp-adminify--popup-close,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .wp-adminify--popup-close,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .wp-adminify--popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .wp-adminify--popup-close:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .wp-adminify--popup-close:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .wp-adminify--popup-close:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .wp-adminify--popup-close:hover {
+  background-color: #fee2e2;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .wp-adminify--popup-close span,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .wp-adminify--popup-close span,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .wp-adminify--popup-close span,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .wp-adminify--popup-close span {
+  display: flex;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .wp-adminify--popup-close span::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .wp-adminify--popup-close span::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .wp-adminify--popup-close span::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .wp-adminify--popup-close span::before {
+  font-size: 20px;
+  color: #f04438;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder h3,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder h3,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder h3,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #182230;
+  margin: 0 0 24px 0;
+  padding-right: 40px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name > div:first-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color > div:first-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name > div:first-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color > div:first-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name > div:first-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color > div:first-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name > div:first-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color > div:first-child {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name > div:last-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color > div:last-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name > div:last-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color > div:last-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name > div:last-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color > div:last-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name > div:last-child,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color > div:last-child {
+  width: 100%;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name input,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color input,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name input,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color input,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name input,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color input,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name input,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #182230;
+  background-color: #f9fafb;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name input::-moz-placeholder, .wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color input::-moz-placeholder, .wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name input::-moz-placeholder, .wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color input::-moz-placeholder, .wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name input::-moz-placeholder, .wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color input::-moz-placeholder, .wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name input::-moz-placeholder, .wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color input::-moz-placeholder {
+  color: #9ca3af;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name input::placeholder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color input::placeholder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name input::placeholder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color input::placeholder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name input::placeholder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color input::placeholder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name input::placeholder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color input::placeholder {
+  color: #9ca3af;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name input:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color input:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name input:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color input:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name input:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color input:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name input:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color input:hover {
+  border-color: #d1d5db;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name input:focus,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color input:focus,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name input:focus,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color input:focus,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name input:focus,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color input:focus,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name input:focus,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color input:focus {
+  border-color: var(--adminify-primary) !important;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(91, 57, 242, 0.1) !important;
+  outline: none;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name .wp-adminify--colors,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color .wp-adminify--colors,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name .wp-adminify--colors,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color .wp-adminify--colors,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name .wp-adminify--colors,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color .wp-adminify--colors,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name .wp-adminify--colors,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color .wp-adminify--colors {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name .wp-adminify--colors li,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color .wp-adminify--colors li,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name .wp-adminify--colors li,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color .wp-adminify--colors li,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name .wp-adminify--colors li,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color .wp-adminify--colors li,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name .wp-adminify--colors li,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color .wp-adminify--colors li {
+  display: inline-block;
+  margin: 0;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name .wp-adminify--colors li a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color .wp-adminify--colors li a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name .wp-adminify--colors li a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color .wp-adminify--colors li a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name .wp-adminify--colors li a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color .wp-adminify--colors li a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name .wp-adminify--colors li a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color .wp-adminify--colors li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  outline: none;
+  border-radius: 50%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 2px solid transparent;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name .wp-adminify--colors li a:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color .wp-adminify--colors li a:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name .wp-adminify--colors li a:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color .wp-adminify--colors li a:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name .wp-adminify--colors li a:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color .wp-adminify--colors li a:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name .wp-adminify--colors li a:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color .wp-adminify--colors li a:hover {
+  transform: scale(1.1);
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name .wp-adminify--colors li.active a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color .wp-adminify--colors li.active a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name .wp-adminify--colors li.active a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color .wp-adminify--colors li.active a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name .wp-adminify--colors li.active a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color .wp-adminify--colors li.active a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name .wp-adminify--colors li.active a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color .wp-adminify--colors li.active a {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px currentColor;
+  transform: scale(1.1);
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__name .wp-adminify--colors li.active a::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder__color .wp-adminify--colors li.active a::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__name .wp-adminify--colors li.active a::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder__color .wp-adminify--colors li.active a::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__name .wp-adminify--colors li.active a::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder__color .wp-adminify--colors li.active a::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__name .wp-adminify--colors li.active a::before,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder__color .wp-adminify--colors li.active a::before {
+  content: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%233582c4%27%2F%3E%3C%2Fsvg%3E);
+  filter: brightness(9);
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .button,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .button,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .button,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  color: #374151;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .button:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .button:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .button:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .button:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .button.button-primary,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .button.button-primary,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .button.button-primary,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .button.button-primary {
+  background-color: var(--adminify-primary);
+  border-color: var(--adminify-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(91, 57, 242, 0.3);
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .button.button-primary:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .button.button-primary:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .button.button-primary:hover,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .button.button-primary:hover {
+  filter: brightness(0.9);
+  box-shadow: 0 4px 12px rgba(91, 57, 242, 0.4);
+  transform: translateY(-1px);
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .button.button-primary:active,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .button.button-primary:active,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .button.button-primary:active,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .button.button-primary:active {
+  transform: translateY(0);
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .adminify-save-folder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .adminify-save-folder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .adminify-save-folder,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .adminify-save-folder {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .popup--new-folder-error,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .popup--new-folder-error,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .popup--new-folder-error,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .popup--new-folder-error {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .wp-adminify-folder--pro-notice,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .wp-adminify-folder--pro-notice,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .wp-adminify-folder--pro-notice,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .wp-adminify-folder--pro-notice {
+  padding: 20px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid #f59e0b;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--create-new-folder .wp-adminify-folder--pro-notice a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--rename-folder .wp-adminify-folder--pro-notice a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder .wp-adminify-folder--pro-notice a,
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder .wp-adminify-folder--pro-notice a {
+  color: #d97706;
+  font-weight: 600;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder {
+  text-align: center;
+  padding: 40px 32px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background-color: #fef2f2;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23dc2626'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder h3 {
+  padding-right: 0;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder p {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0 0 28px 0;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder > div:last-child {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder > div:last-child .button {
+  min-width: 120px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder > div:last-child .button-primary {
+  background-color: #f04438;
+  border-color: #f04438;
+  box-shadow: 0 2px 8px rgba(240, 68, 56, 0.3);
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--delete-folder > div:last-child .button-primary:hover {
+  filter: brightness(0.9);
+  box-shadow: 0 4px 12px rgba(240, 68, 56, 0.4);
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder {
+  text-align: center;
+  padding: 40px 32px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background-color: #eff6ff;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%232563eb'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder h3 {
+  padding-right: 0;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder p {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0 0 28px 0;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder > div:last-child {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.wp-adminify .wp-adminify--popup-area .wp-adminify--popup-container .wp-adminify--popup-container_inner .popup--move-to-folder > div:last-child .button {
+  min-width: 130px;
+}
+.wp-adminify.wp-adminify--popup-show {
+  position: relative;
+}
+.wp-adminify.wp-adminify--popup-show .wp-adminify--popup-area {
+  visibility: visible;
+  opacity: 1;
+  z-index: 9999;
+}
+.wp-adminify.wp-adminify--popup-show .wp-adminify--popup-area .wp-adminify--popup-container {
+  transform: translateY(-50%) scale(1);
+}
+.wp-adminify.has-folder-options #wpbody-content {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.wp-adminify table {
+  position: relative;
+  z-index: 2;
+}
+.wp-adminify table td.column-adminify_move::before {
+  content: "" !important;
+}
+.wp-adminify table .column-adminify_move {
+  width: 40px;
+}
+.wp-adminify table .column-adminify_move .adminify-move-file--title {
+  display: none;
+}
+.wp-adminify table .column-adminify_move .dashicons-move::before {
+  font-size: 16px;
+}
+.wp-adminify table .column-adminify_move.adminify-draggable .ui-draggable-dragging {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 6px 12px;
+  border-radius: 2px;
+  background-color: #ddd;
+  z-index: 5;
+}
+.wp-adminify table .column-adminify_move.adminify-draggable .ui-draggable-dragging .adminify-move-file--title {
+  display: block !important;
+}
+.wp-adminify.rtl.has-folder-options #wpbody {
+  flex-direction: row-reverse;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget {
+  border-right: none;
+  border-left: 1px solid #dedee7;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app .folder--search input {
+  padding: 6px 16px 6px 32px;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists {
+  padding-right: 16px;
+  padding-left: 4px;
+  margin-right: 0;
+  margin-left: 4px;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root {
+  padding-left: 0;
+  padding-right: 8px;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root::after {
+  left: auto;
+  right: 0;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists li.folder--single-root::before {
+  left: auto;
+  right: 0;
+  border-left: none;
+  border-right: 1px dashed #c0c0c0;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists {
+  margin-left: 0;
+  margin-right: 8px;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists::before {
+  left: auto;
+  right: 0;
+  border-left: none;
+  border-right: 1px dashed #c0c0c0;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists li.folder--single-root {
+  padding-left: 0;
+  padding-right: 8px;
+}
+.wp-adminify.rtl .wp-adminify--folder-widget .wp-adminify--folder-app .folder--lists .folder--sub-lists li.folder--single-root::before {
+  border-left: none;
+  border-right: 1px dashed #c0c0c0;
+}
+.wp-adminify.rtl .wp-adminify--popup-area .wp-adminify--popup-close {
+  right: auto !important;
+  left: 16px;
+}
+.wp-adminify.rtl .wp-adminify--popup-area h3 {
+  padding-right: 0 !important;
+  padding-left: 40px;
+}
+.wp-adminify.rtl .wp-adminify--popup-area .popup--delete-folder h3,
+.wp-adminify.rtl .wp-adminify--popup-area .popup--move-to-folder h3 {
+  padding-left: 0;
+}
+.wp-adminify.rtl .wp-adminify--popup-area .popup--new-folder__name > div:first-child,
+.wp-adminify.rtl .wp-adminify--popup-area .popup--new-folder__color > div:first-child {
+  text-align: right;
+}
+.wp-adminify.rtl .wp-adminify--popup-area .popup--new-folder__name input,
+.wp-adminify.rtl .wp-adminify--popup-area .popup--new-folder__color input {
+  text-align: right;
+}
+.wp-adminify.rtl .wp-adminify--popup-area .wp-adminify--colors {
+  justify-content: flex-start;
+}
+.wp-adminify.rtl .wp-adminify--popup-area .adminify-save-folder {
+  justify-content: flex-start;
+}
+
+.adminify-drag-helper {
+  position: fixed !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: #32373c;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  z-index: 9999999 !important;
+  pointer-events: none;
+}
+.adminify-drag-helper__icon {
+  font-size: 16px;
+}
+.adminify-drag-helper__icon::before {
+  color: #fff;
+}
+.adminify-drag-helper__text {
+  color: #fff;
+}
+
+.ui-draggable-dragging {
+  z-index: 999999 !important;
+  pointer-events: none;
+}
+
+.attachments-browser li.attachment.ui-draggable-dragging {
+  z-index: 999999 !important;
+  opacity: 0.8;
+}
+
+body.adminify--items-dragging .attachments-browser .attachments {
+  position: relative;
+  z-index: 1;
+}
+body.adminify--items-dragging .wp-adminify--folder-widget {
+  z-index: 10 !important;
+}
+body.adminify--items-dragging .folder--lists li > a,
+body.adminify--items-dragging .folder--stats li > a {
+  transition: all 0.15s ease;
+}
+body.adminify--items-dragging .folder--lists li > a.adminify-drop-hover,
+body.adminify--items-dragging .folder--stats li > a.adminify-drop-hover {
+  background-color: #0073aa !important;
+  color: #fff !important;
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(0, 115, 170, 0.3);
+}
+body.adminify--items-dragging .folder--lists li > a.adminify-drop-hover span,
+body.adminify--items-dragging .folder--lists li > a.adminify-drop-hover .wp-adminify--name,
+body.adminify--items-dragging .folder--lists li > a.adminify-drop-hover .wp-adminify--count,
+body.adminify--items-dragging .folder--stats li > a.adminify-drop-hover span,
+body.adminify--items-dragging .folder--stats li > a.adminify-drop-hover .wp-adminify--name,
+body.adminify--items-dragging .folder--stats li > a.adminify-drop-hover .wp-adminify--count {
+  color: #fff !important;
+}
+body.adminify--items-dragging .folder--lists li > a.adminify-drop-hover .dashicons::before,
+body.adminify--items-dragging .folder--stats li > a.adminify-drop-hover .dashicons::before {
+  color: #fff !important;
+}
+
+.adminify--context-menu-portal {
+  min-width: 170px;
+  padding: 6px 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+.adminify--context-menu-portal li {
+  margin: 0;
+  padding: 0;
+}
+.adminify--context-menu-portal li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  color: #1e1e1e;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  transition: background-color 0.15s ease;
+}
+.adminify--context-menu-portal li a .adminify-menu-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  color: #757575;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.adminify--context-menu-portal li a .adminify-menu-icon::before {
+  font-size: 16px;
+}
+.adminify--context-menu-portal li a .adminify-menu-text {
+  flex: 1;
+}
+.adminify--context-menu-portal li a:hover {
+  background-color: #f0f0f0;
+}
+.adminify--context-menu-portal li a:hover .adminify-menu-icon {
+  color: #5c39f2;
+}
+.adminify--context-menu-portal li a.adminify-menu-delete {
+  color: #d63638;
+}
+.adminify--context-menu-portal li a.adminify-menu-delete .adminify-menu-icon {
+  color: #d63638;
+}
+.adminify--context-menu-portal li a.adminify-menu-delete:hover {
+  background-color: #fcf0f1;
+}
+.adminify--context-menu-portal li.adminify-menu-separator {
+  height: 1px;
+  margin: 6px 0;
+  background-color: #e0e0e0;
+}
+
+#wp-media-modal.wp-adminify-has-folders .media-frame-menu-heading {
+  display: none !important;
+}
+#wp-media-modal.wp-adminify-has-folders .media-frame-title, #wp-media-modal.wp-adminify-has-folders .media-frame-router, #wp-media-modal.wp-adminify-has-folders .media-frame-content, #wp-media-modal.wp-adminify-has-folders .media-frame-toolbar {
+  margin-left: 296px;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#wp-media-modal.wp-adminify-has-folders .media-frame-menu {
+  bottom: auto;
+  bottom: initial;
+  display: block !important;
+  height: 100%;
+  width: 296px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#wp-media-modal.wp-adminify-has-folders .media-frame-menu .media-menu {
+  padding-top: 15px !important;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-folder-container .wp-adminify--folder-widget {
+  margin: auto;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice {
+  position: relative;
+  margin: 20px 14px;
+  padding: 28px 20px 24px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice .wp-adminify--modal-pro-notice-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #f04438;
+  padding: 0;
+  transition: background-color 0.15s ease;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice .wp-adminify--modal-pro-notice-close:hover {
+  background-color: #fee2e2;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice .wp-adminify--modal-pro-notice-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--adminify-primary);
+  color: var(--adminify-primary);
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice h4 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e1e1e;
+  line-height: 1.4;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice p {
+  margin: 0 0 20px 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice .wp-adminify--modal-pro-notice-actions {
+  display: flex;
+  justify-content: center;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice .wp-adminify--modal-pro-btn {
+  display: inline-block;
+  padding: 9px 24px;
+  background-color: var(--adminify-primary);
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(58, 58, 233, 0.25);
+  transition: all 0.15s ease;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice .wp-adminify--modal-pro-btn:hover {
+  filter: brightness(0.9);
+  box-shadow: 0 4px 10px rgba(58, 58, 233, 0.35);
+  transform: translateY(-1px);
+  color: #fff;
+}
+#wp-media-modal.wp-adminify-has-folders .wp-adminify--modal-pro-notice .wp-adminify--modal-pro-btn:active {
+  transform: translateY(0);
+}
+#wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-title, #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-router, #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-content, #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-toolbar {
+  margin-left: 56px;
+}
+#wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-menu {
+  width: 56px;
+}
+#wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame:not(.hide-menu) .media-frame-menu {
+  width: 200px !important;
+}
+#wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame:not(.hide-menu) .media-frame-title, #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame:not(.hide-menu) .media-frame-router, #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame:not(.hide-menu) .media-frame-content, #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame:not(.hide-menu) .media-frame-toolbar {
+  margin-left: 0 !important;
+}
+
+.wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders .media-frame:not(.hide-menu) .media-frame-title, .wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders .media-frame:not(.hide-menu) .media-frame-router, .wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders .media-frame:not(.hide-menu) .media-frame-content, .wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders .media-frame:not(.hide-menu) .media-frame-toolbar {
+  margin-left: 100px;
+}
+.wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-title, .wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-router, .wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-content, .wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-toolbar {
+  margin-left: 56px !important;
+}
+
+.rtl #wp-media-modal.wp-adminify-has-folders .media-frame-title, .rtl #wp-media-modal.wp-adminify-has-folders .media-frame-router, .rtl #wp-media-modal.wp-adminify-has-folders .media-frame-content, .rtl #wp-media-modal.wp-adminify-has-folders .media-frame-toolbar {
+  margin-left: 0;
+  margin-right: 296px;
+  transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.rtl #wp-media-modal.wp-adminify-has-folders .media-frame-menu {
+  left: auto;
+  right: 0;
+}
+.rtl #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-title, .rtl #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-router, .rtl #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-content, .rtl #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-toolbar {
+  margin-left: 0;
+  margin-right: 56px;
+}
+
+.rtl .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame-title, .rtl .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame-router, .rtl .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame-content, .rtl .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame-toolbar {
+  margin-left: 0 !important;
+  margin-right: 100px !important;
+  transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.rtl .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-title, .rtl .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-router, .rtl .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-content, .rtl .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame-toolbar {
+  margin-left: 0 !important;
+  margin-right: -148px !important;
+}
+
+.wp-adminify.elementor-editor-active .folder--actions input[type=checkbox], .wp-adminify.elementor-editor-active .folder--lists input[type=checkbox] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border: 1px solid #dedee7;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+.wp-adminify.elementor-editor-active .folder--actions input[type=checkbox]::before, .wp-adminify.elementor-editor-active .folder--lists input[type=checkbox]::before {
+  content: none !important;
+}
+.wp-adminify.elementor-editor-active .folder--actions input[type=checkbox]:checked, .wp-adminify.elementor-editor-active .folder--lists input[type=checkbox]:checked {
+  background-color: var(--adminify-primary, var(--adminify-primary));
+  border-color: var(--adminify-primary, var(--adminify-primary));
+}
+.wp-adminify.elementor-editor-active .folder--actions input[type=checkbox]:checked::after, .wp-adminify.elementor-editor-active .folder--lists input[type=checkbox]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 3px !important;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.wp-adminify.elementor-editor-active ul.folder--lists {
+  max-height: calc(100vh - 482px) !important;
+}
+.wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame-title, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame-router, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame-content, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame-toolbar {
+  margin-left: 100px !important;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame.hide-menu .media-frame-title, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame.hide-menu .media-frame-router, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame.hide-menu .media-frame-content, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders .media-frame.hide-menu .media-frame-toolbar {
+  margin-left: 296px !important;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame.hide-menu .media-frame-title, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame.hide-menu .media-frame-router, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame.hide-menu .media-frame-content, .wp-adminify.elementor-editor-active #wp-media-modal.wp-adminify-has-folders.adminify-folder-collapsed .media-frame.hide-menu .media-frame-toolbar {
+  margin-left: 56px !important;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-adminify--folder-widget {
+  position: relative;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), min-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wp-adminify--folder-widget .wp-adminify--folder-app {
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.wp-adminify--folder-widget .wp-adminify--sidebar-toggle {
+  position: absolute;
+  top: 50px;
+  right: -14px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #dcdcde;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wp-adminify--folder-widget .wp-adminify--sidebar-toggle .dashicons {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  color: #50575e;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.wp-adminify--folder-widget .wp-adminify--sidebar-toggle .dashicons::before {
+  line-height: 16px;
+}
+.wp-adminify--folder-widget .wp-adminify--sidebar-toggle:hover {
+  background-color: #f6f7f7;
+  border-color: #c3c4c7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.wp-adminify--folder-widget .wp-adminify--sidebar-toggle:hover .dashicons {
+  color: #2271b1;
+}
+.wp-adminify--folder-widget.is-collapsed {
+  width: 40px !important;
+  min-width: 40px !important;
+}
+.wp-adminify--folder-widget.is-collapsed .wp-adminify--folder-app {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.wp-adminify--folder-widget.is-collapsed .wp-adminify--sidebar-toggle {
+  right: 6px;
+  background-color: #fff;
+  border-color: #c3c4c7;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+.wp-adminify--folder-widget.is-collapsed .wp-adminify--sidebar-toggle .dashicons {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: var(--adminify-primary);
+}
+.wp-adminify--folder-widget.is-collapsed .wp-adminify--sidebar-toggle::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid gray;
+}
+
+.rtl .wp-adminify--folder-widget .wp-adminify--sidebar-toggle {
+  right: auto;
+  left: -14px;
+}
+.rtl .wp-adminify--folder-widget.is-collapsed .wp-adminify--sidebar-toggle {
+  right: auto;
+  left: 6px;
+}
+.rtl .wp-adminify--folder-widget.is-collapsed .wp-adminify--sidebar-toggle::after {
+  right: auto;
+  left: -6px;
+  border-left: none;
+  border-right: 6px solid gray;
+}

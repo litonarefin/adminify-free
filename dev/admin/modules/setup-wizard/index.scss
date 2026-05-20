@@ -1,0 +1,312 @@
+@import "./components/MultiStep/multi-step.scss";
+@import "./components/Uploader/uploader.scss";
+@import "./components/Tabs/tabs.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+// @import "../../../scss/common/style";
+
+:root {
+    --adminify-primary: #3a3ae9;
+}
+
+body {
+    // background: none;
+    background-color: #eaeaf0;
+    border: none;
+    color: unset;
+    margin: unset;
+    padding: unset;
+    max-width: none;
+    box-shadow: none;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    input,
+    textarea {
+        outline: none;
+        border: 1px solid $border;
+        border-radius: $wpRadius;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 8px;
+
+        &::placeholder {
+            color: $wpPlaceholder;
+        }
+
+        &:focus {
+            border-color: $primary !important;
+            box-shadow: 0 0 0 1px $primary !important;
+        }
+    }
+    textarea {
+        height: 244px;
+    }
+
+    .screen-reader-text {
+        display: none;
+    }
+}
+
+.wp-adminify-setup-wizard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    margin: 100px auto;
+    font-family: "Inter", sans-serif;
+
+    .adminify-ui-content {
+        padding: 32px;
+        margin-top: 42px;
+        border-radius: 2px;
+        border: 1px solid $border;
+        background-color: $white;
+        border-radius: $wpRadius;
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 32px;
+            color: #191821;
+        }
+
+        p {
+            margin-top: 24px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #5a5676;
+        }
+
+        textarea {
+            height: 132px;
+            padding: 1rem;
+            line-height: 1.7;
+        }
+
+        &.adminify-choose-ui {
+            .choose-ui {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 34px;
+                margin-top: 24px;
+
+                &-image {
+                    cursor: pointer;
+                    border: 2px solid transparent;
+                    border-radius: $wpRadius;
+                    img {
+                        border-radius: 2px;
+                        border-radius: $wpRadius;
+                        width: 100%;
+                    }
+
+                    &.active-ui {
+                        position: relative;
+                        border-radius: $wpRadius + 4;
+                        border: 4px solid $primary;
+                        > span {
+                            background-color: $primary;
+                            width: 20px;
+                            height: 20px;
+                            position: absolute;
+                            top: -10px;
+                            right: -10px;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 10px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                h2 {
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    color: #191821;
+                    text-align: center;
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        &.adminify-add-logo-ui {
+            .add-logo {
+                display: flex;
+                gap: 24px;
+                margin-top: 24px;
+
+                img {
+                    border-radius: 2px;
+                }
+
+                .wp-adminify-add-logo-tab {
+                    width: 100%;
+                }
+            }
+        }
+
+        &.adminify-ui-media {
+            text-align: center;
+            p {
+                margin-top: 8px;
+            }
+
+            .adminify-share-tweet {
+                max-width: 550px;
+                display: flex;
+                align-items: center;
+                margin: auto;
+                margin-top: 1rem;
+                position: relative;
+                > textarea {
+                    margin: 0;
+                    height: 72px;
+                    padding: 1rem;
+                    padding-right: 60px;
+                    line-height: 1.7;
+                }
+                .dashicons-twitter {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    color: white;
+                    background: var(--adminify-primary);
+                    height: 100%;
+                    padding: 0 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top-right-radius: $wpRadius;
+                    border-bottom-right-radius: $wpRadius;
+                    cursor: pointer;
+                }
+            }
+
+            .adminify-ui-media {
+                margin-top: 24px;
+                position: relative;
+                > img {
+                    width: 75%;
+                }
+                .adminify-media-play {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        width: 192px;
+                        height: 192px;
+                        background: rgba(0, 0, 0, 0.6);
+                        z-index: -1;
+                        border-radius: 50%;
+                        backdrop-filter: blur(45px);
+                    }
+                    button {
+                        width: 80px;
+                        height: 80px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: none;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        svg {
+                            margin-left: 4px;
+                        }
+                    }
+                }
+
+                .adminify-video-popup-container {
+                    position: fixed;
+                    z-index: 9999;
+                    width: 60%;
+                    left: 50%;
+                    top: 20%;
+                    margin-left: -30%;
+                    background-color: #fff;
+                }
+
+                .adminify-video-popup-close {
+                    cursor: pointer;
+                    position: fixed;
+                    right: 10px;
+                    top: 10px;
+                    z-index: 9999;
+                    font-size: 32px;
+                    color: $white;
+                }
+
+                .adminify-video-popup-iframe-container {
+                    position: absolute;
+                    z-index: 997;
+                    width: 100%;
+                    padding-bottom: 56.25%;
+                    border: 2px solid #000;
+                    border-radius: 2px;
+                    background-color: #000;
+                }
+
+                .adminify-video-popup-iframe {
+                    z-index: 999;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background-color: #000;
+                }
+
+                .adminify-video-popup-overlay {
+                    position: fixed;
+                    z-index: 9999;
+                    top: 0;
+                    left: 0;
+                    background-color: #000;
+                    opacity: 0.6;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .adminify-video-popup-close:hover {
+                    color: $danger;
+                }
+            }
+            .wp-adminify-multi-step-action {
+                justify-content: center;
+            }
+        }
+    }
+    .wp-adminify-return-dashboard {
+        margin-top: 24px;
+        font-size: 14px;
+        color: $text;
+        text-align: center;
+        display: block;
+        text-decoration: underline;
+    }
+}

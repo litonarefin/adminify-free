@@ -1,0 +1,205 @@
+@import "../../../../../scss/common/variables.scss";
+
+.wp-adminify-multi-step-wrapper {
+    width: 100%;
+
+    .wp-adminify-multi-step-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .wp-adminify-multi-step {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 24px;
+
+        .wp-adminify-step {
+            position: relative;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 24px;
+            color: #5a5676;
+            text-align: center;
+
+            &::after {
+                position: absolute;
+                content: "";
+                top: 36px;
+                left: 50%;
+                width: 12px;
+                height: 12px;
+                border: 2px solid $border;
+                border-radius: 50px;
+                background-color: #eaeaf0;
+                z-index: 9999;
+                transform: translate(-50%, -50%);
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                top: 36px;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                z-index: 999;
+                border-radius: 2px;
+                background-color: $primary;
+                transition: all 0.3s;
+            }
+
+            &.active {
+                color: $primary;
+
+                &::before {
+                    width: 100%;
+                }
+
+                &::after {
+                    border: 2px solid $primary;
+                }
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 36px;
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background-color: #dedee7;
+        }
+    }
+
+    .adminify-install-addons-plugins{
+        position: relative;
+        .choose-addons{
+            ul.plugins-list{
+                margin-top: 32px;
+                gap: 16px;
+                display: flex;
+                flex-direction: column;
+                li.plugin.plugin-item{
+                    display: flex;
+                    gap: 16px;
+                    align-items: center;
+                   
+                    label{
+                        display: flex;
+                        gap: 16px;
+                        cursor: pointer;
+                        input{
+                           width: 16px;
+                           margin-top: 0;
+                           padding: 0;
+                        }
+                        .logo{
+                            align-self: center;
+                            img{
+                                width: 32px;
+                            }
+                        }
+                        .details{
+                            .name{
+
+                            }
+                            .description{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    &.activated{
+                        .details .name{
+                            color: green;
+                        }
+                    }
+                    &.installed{
+                        .details .name{
+                            color: #3a3ae9c9;
+                        }
+                    }
+                }
+            }
+            .loading-wrapper {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 99999;
+                background: rgba(255, 255, 255, 0.17);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5.4px);
+                -webkit-backdrop-filter: blur(5.4px);
+                border: 1px solid rgba(255, 255, 255, 0.32);
+            }
+            .wp-adminify-loading{
+                pointer-events: none;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 3px solid #ccddee;
+                border-top-color: red;
+                animation: ani1 1s ease infinite;
+                
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.3s;
+
+                @keyframes ani1 {
+                    0% {
+                    transform: rotate(0turn);
+                    }
+                    100% {
+                    transform: rotate(1turn);
+                    }
+                }
+            }
+        }
+    }
+    .wp-adminify-multi-step-action {
+        display: flex;
+        column-gap: 16px;
+        justify-content: end;
+        align-items: center;
+        margin-top: 24px;
+
+        button,
+        a {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            color: #191821;
+            padding: 10px 20px;
+            border-radius: $wpRadius;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        a {
+            &.right-arrow {
+                display: flex;
+                column-gap: 4px;
+                align-items: center;
+                padding: 0;
+            }
+        }
+
+        .wp-adminify-bg-secondary {
+            border-color: $border;
+            background-color: $border;
+        }
+
+        .wp-adminify-bg-primary {
+            color: $white;
+            border-color: $primary;
+            background-color: $primary;
+        }
+    }
+}

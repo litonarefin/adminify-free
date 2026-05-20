@@ -1,0 +1,1595 @@
+@import "../../../scss/common/variables";
+@import "../../../scss/common/mixins";
+
+.wp-adminify {
+  //mixin
+  @mixin actionBtn($textColor, $bg) {
+    @include font(11px, 700, 16px);
+    color: $textColor;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: $wpRadius;
+    border: 1px solid $bg;
+    background-color: $bg;
+  }
+
+  // file tree margin
+  @mixin folderGap($marginL) {
+    li {
+      a {
+        margin-left: $marginL;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  // Flexbox layout for #wpbody when folder widget is active
+  &.has-folder-options #wpbody {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  #wp-adminify--folder-app {
+    height: -webkit-fill-available;
+    position: relative;
+    padding-bottom: 65px;
+    margin-top: 8px;
+  }
+
+  .wp-adminify--folder-widget {
+    position: sticky;
+    top: 48px;
+    flex-shrink: 0;
+    width: 280px;
+    min-height: calc(100vh - 32px);
+    max-height: calc(100vh - 32px);
+    margin: 0;
+    // overflow: hidden;
+    box-sizing: border-box;
+    .wp-adminify--folder-app {
+      border: 1px solid $border;
+      border-radius: 4px;
+      background-color: $white;
+      ul {
+        margin: 0;
+
+        li {
+          margin: 0;
+        }
+      }
+
+      .folder--header {
+        @include display(center, space-between);
+        padding: 16px;
+        border-bottom: 1px solid $border;
+
+        span {
+          @include font(16px, 600, 28px);
+          color: $wpHeading;
+        }
+
+        a {
+          
+          @include actionBtn($white, $primary);
+          padding: 5px 10px;
+        }
+      }
+
+      .folder--actions {
+        @include flex_center;
+        gap: 10px;
+        padding: 12px;
+        border-bottom: 1px solid $border;
+
+        input[type="checkbox"] {
+          border-color: $wpTableArrow;
+        }
+
+        &-triggers{
+          @include flex_center;
+          gap: 6px;
+
+          .btn--folder-rename {
+            @include actionBtn($white, $success);
+          }
+  
+          .btn--folder-delete {
+            @include actionBtn($white, $danger);
+          }
+  
+          .folder-sort--list {
+            @include flex_center;
+            gap: 4px;  
+  
+            .btn--folder-expand, .btn--folder-sort {
+              display: inline-flex;
+              svg {
+                width: 16px;
+                height: 16px;
+              }
+            }
+
+            .btn--folder-expand {
+              @include actionBtn($black, $lightgray);
+              cursor: pointer;
+            }
+            .btn--folder-sort {
+              @include actionBtn($white, $secondary);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .folder--search {
+        padding: 0 16px 16px 16px;
+
+        input {
+          width: 100%;
+          padding: 6px 32px 6px 16px;
+          border-color: $border;
+          border-radius: $wpRadius;
+          @include font(13px, 400, 20px);
+          color: $subTitleColor;
+
+          &:focus {
+            border-color: $border !important;
+            box-shadow: none !important;
+          }
+        }
+      }
+
+      .folder--stats {
+        padding: 16px;
+
+        li {
+          padding: 8px;
+          border-radius: $wpRadius;
+
+          a {
+            @include display(center, space-between);
+            @include font(13px, 500, 20px);
+            color: $secondary;
+            outline: none;
+            box-shadow: none;
+          }
+
+          &.active {
+            background-color: #f4f4fa;
+
+            a {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      ul.folder--lists {
+        padding: 16px;
+        padding-right: 4px;
+        margin-right: 4px;
+        border-top: 1px solid $border;
+        max-height: calc(100vh - 424px);
+        overflow-y: auto;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: transparent;
+        }
+      }
+
+      // folder lists
+      .folder--lists {
+        li {
+          &.folder--single-root {
+            position: relative;
+            padding-left: 8px;
+
+            .wp-adminify--folder-row {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              position: relative;
+              z-index: 1;
+              padding: 4px 0;
+
+              .wp-adminify--icon-control {
+                position: relative;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 22px;
+                height: 20px;
+
+                .wp-adminify--folder-toggle {
+                  position: relative;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 0;
+                  border: none;
+                  background: transparent;
+                  cursor: pointer;
+
+                  .wp-adminify--icon {
+                    font-size: 20px;
+                    width: 20px;
+                    height: 20px;
+                  }
+
+                  .wp-adminify--badge {
+                    position: absolute;
+                    bottom: 2px;
+                    right: 3px;
+                    width: 10px;
+                    height: 10px;
+                    font-size: 10px;
+                    line-height: 12px;
+                    color: $white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0.7;
+
+                    &::before {
+                      font-size: 10px;
+                      font-weight: bold;
+                    }
+                  }
+                }
+
+                .wp-adminify--icon {
+                  font-size: 20px;
+                  width: 20px;
+                  height: 20px;
+                }
+
+                .wp-adminify--control {
+                  appearance: none;
+                  -webkit-appearance: none;
+                  width: 16px;
+                  height: 16px;
+                  border-radius: 3px;
+                  background-color: $white;
+                  cursor: pointer;
+                  margin: 0;
+                  position: relative;
+                  transition: all 0.15s ease;
+
+                  &:checked {
+                    background-color: $primary;
+                    border-color: $primary;
+
+                    &::after {
+                      content: '';
+                      position: absolute;
+                      left: 4px;
+                      top: 1px;
+                      width: 4px;
+                      height: 8px;
+                      border: solid $white;
+                      border-width: 0 2px 2px 0;
+                      transform: rotate(45deg);
+                    }
+                  }
+
+                  &:hover {
+                    border-color: $primary;
+                  }
+                }
+              }
+
+              > a {
+                flex: 1;
+                @include display(center, space-between);
+                padding: 6px 8px;
+                border-radius: 4px;
+                text-decoration: none;
+                background-color: $white;
+                outline: none;
+                box-shadow: none;
+
+                .wp-adminify--name {
+                  @include font(14px, 400, 20px);
+                  color: $blackcolor;
+                }
+                .wp-adminify--count {
+                  color: $blackcolor;
+                }
+
+                &:hover {
+                  background: #ececec;
+                }
+
+                &.adminify-drop-hover {
+                  background-color: $primary !important;
+
+                  span,
+                  .wp-adminify--name {
+                    color: $white!important;
+                  }
+                }
+              }
+            }
+
+            > a {
+              position: relative;
+              @include display(center, space-between);
+              padding: 6px;
+              margin: 2px 0;
+              border-radius: 4px;
+              text-decoration: none;
+              background-color: $white;
+              z-index: 1;
+
+              .wp-adminify--folder-left {
+                @include flex_center;
+                gap: 8px;
+
+                .wp-adminify--icon-control {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 18px;
+                  height: 18px;
+                }
+
+                .wp-adminify--name {
+                  @include font(14px, 400, 20px);
+                  color: $blackcolor;
+                }
+              }
+              &:hover{
+                background: #ececec;
+              }
+              &.adminify-drop-hover {
+                background-color: $primary !important;
+
+                span,
+                .wp-adminify--name {
+                  color: $white;
+                }
+              }
+            }
+
+            // Horizontal line (connects to folder)
+            &::after {
+              position: absolute;
+              top: 18px;
+              left: 0;
+              content: "";
+              width: 16px;
+              height: 0;
+              border-top: 1px dashed #c0c0c0;
+            }
+
+            // Vertical line (connects siblings)
+            &::before {
+              position: absolute;
+              content: "";
+              top: 0;
+              left: 0;
+              height: calc(100% + 4px);
+              width: 0;
+              border-left: 1px dashed #c0c0c0;
+            }
+
+            // First child - vertical line starts from middle
+            &:first-child {
+              &::before {
+                top: 18px;
+                height: calc(100% - 14px);
+              }
+            }
+
+            // Last child - vertical line stops at middle (only to connection point)
+            &:last-child {
+              &::before {
+                height: 18px;
+              }
+            }
+
+            // Only child - just show horizontal connector
+            &:only-child {
+              &::before {
+                height: 22px;
+              }
+            }
+
+            // First and last child (only child case)
+            &:first-child:last-child {
+              &::before {
+                top: 0;
+                height: 18px;
+              }
+            }
+          }
+
+          ul.adminify--sub-menu {
+            display: none;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          }
+
+          &.sub-menu--open {
+            > .adminify--sub-menu.adminify--context-menu {
+              position: fixed;
+              display: block;
+              min-width: 160px;
+              padding: 6px 0;
+              margin: 0;
+              list-style: none;
+              border: none;
+              border-radius: 6px;
+              background-color: $white;
+              box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+              z-index: 999999;
+
+              li {
+                margin: 0;
+                padding: 0;
+
+                a {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 8px 14px;
+                  color: #1e1e1e;
+                  text-decoration: none;
+                  @include font(13px, 400, 20px);
+                  transition: background-color 0.15s ease;
+
+                  .adminify-menu-icon {
+                    font-size: 16px;
+                    width: 16px;
+                    height: 16px;
+                    color: #757575;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &::before {
+                      font-size: 16px;
+                    }
+                  }
+
+                  .adminify-menu-text {
+                    flex: 1;
+                  }
+
+                  &:hover {
+                    background-color: #f0f0f0;
+
+                    .adminify-menu-icon {
+                      color: $primary;
+                    }
+                  }
+
+                  &.adminify-menu-delete {
+                    color: #d63638;
+
+                    .adminify-menu-icon {
+                      color: #d63638;
+                    }
+
+                    &:hover {
+                      background-color: #fcf0f1;
+                    }
+                  }
+                }
+
+                &.adminify-menu-separator {
+                  height: 1px;
+                  margin: 6px 0;
+                  background-color: #e0e0e0;
+                }
+              }
+            }
+          }
+
+          // active folder - background color is set dynamically via React inline style
+        }
+
+        // Sub-folder lists styling
+        .folder--sub-lists {
+          position: relative;
+          margin-left: 8px;
+          margin-top: 0;
+          padding-left: 0;
+
+          // Vertical line connecting from parent to first child
+          &::before {
+            content: "";
+            position: absolute;
+            // top: -18px;
+            left: 0;
+            width: 0;
+            height: 18px;
+            border-left: 1px dashed #c0c0c0;
+          }
+
+          li.folder--single-root {
+            padding-left: 8px;
+
+            // Inherit tree line styles
+            &::before {
+              border-left: 1px dashed #c0c0c0;
+            }
+
+            &::after {
+              border-top: 1px dashed #c0c0c0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // modal style
+  .wp-adminify--popup-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+
+    .wp-adminify--popup-container {
+      width: 100%;
+      max-width: 480px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%) scale(0.95);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0 20px;
+
+      .wp-adminify--popup-container_inner {
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        border: none;
+        border-radius: 12px;
+        background-color: $white;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+
+        .popup--create-new-folder,
+        .popup--rename-folder,
+        .popup--delete-folder,
+        .popup--move-to-folder {
+          padding: 28px 32px 32px;
+
+          // Close button
+          .wp-adminify--popup-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: transparent;
+            transition: background-color 0.15s ease;
+            text-decoration: none;
+
+            &:hover {
+              background-color: #fee2e2;
+            }
+
+            span {
+              display: flex;
+              &::before {
+                font-size: 20px;
+                color: $danger;
+              }
+            }
+          }
+
+          // Modal title
+          h3 {
+            @include font(20px, 600, 28px);
+            color: $wpHeading;
+            margin: 0 0 24px 0;
+            padding-right: 40px;
+          }
+
+          // Form field row
+          .popup--new-folder__name,
+          .popup--new-folder__color {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+
+            > div:first-child {
+              @include font(13px, 600, 18px);
+              color: #374151;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+
+            > div:last-child {
+              width: 100%;
+            }
+
+            input {
+              width: 100%;
+              padding: 12px 16px;
+              border: 1px solid #e5e7eb;
+              border-radius: 8px;
+              @include font(14px, 400, 20px);
+              color: $wpHeading;
+              background-color: #f9fafb;
+              transition: all 0.15s ease;
+              box-sizing: border-box;
+
+              &::placeholder {
+                color: #9ca3af;
+              }
+
+              &:hover {
+                border-color: #d1d5db;
+              }
+
+              &:focus {
+                border-color: $primary !important;
+                background-color: $white;
+                box-shadow: 0 0 0 3px rgba(91, 57, 242, 0.1) !important;
+                outline: none;
+              }
+            }
+
+            // Color picker
+            .wp-adminify--colors {
+              display: flex;
+              gap: 10px;
+              margin: 0;
+              padding: 0;
+              list-style: none;
+
+              li {
+                display: inline-block;
+                margin: 0;
+
+                a {
+                  position: relative;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 32px;
+                  height: 32px;
+                  outline: none;
+                  border-radius: 50%;
+                  text-decoration: none;
+                  transition: transform 0.15s ease, box-shadow 0.15s ease;
+                  border: 2px solid transparent;
+
+                  &:hover {
+                    transform: scale(1.1);
+                  }
+                }
+
+                &.active {
+                  a {
+                    box-shadow: 0 0 0 2px $white, 0 0 0 4px currentColor;
+                    transform: scale(1.1);
+
+                    &::before {
+                      content: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%233582c4%27%2F%3E%3C%2Fsvg%3E);
+                      -webkit-filter: brightness(9);
+                      filter: brightness(9);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          // Buttons
+          .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            @include font(14px, 500, 20px);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            border: 1px solid #e5e7eb;
+            background-color: $white;
+            color: #374151;
+
+            &:hover {
+              background-color: #f3f4f6;
+              border-color: #d1d5db;
+            }
+
+            &.button-primary {
+              background-color: $primary;
+              border-color: $primary;
+              color: $white;
+              box-shadow: 0 2px 8px rgba(91, 57, 242, 0.3);
+
+              &:hover {
+                filter: brightness(0.9);
+                box-shadow: 0 4px 12px rgba(91, 57, 242, 0.4);
+                transform: translateY(-1px);
+              }
+
+              &:active {
+                transform: translateY(0);
+              }
+            }
+          }
+
+          // Save button container
+          .adminify-save-folder {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 8px;
+          }
+
+          // Error message
+          .popup--new-folder-error {
+            margin-top: 16px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            @include font(13px, 500, 18px);
+          }
+
+          // Pro notice
+          .wp-adminify-folder--pro-notice {
+            padding: 20px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 1px solid #f59e0b;
+
+            a {
+              color: #d97706;
+              font-weight: 600;
+            }
+          }
+        }
+
+        // Delete modal specific styles
+        .popup--delete-folder {
+          text-align: center;
+          padding: 40px 32px;
+
+          &::before {
+            content: "";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background-color: #fef2f2;
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23dc2626'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 32px;
+          }
+
+          h3 {
+            padding-right: 0;
+            text-align: center;
+            margin-bottom: 12px;
+          }
+
+          p {
+            color: #6b7280;
+            @include font(14px, 400, 22px);
+            margin: 0 0 28px 0;
+          }
+
+          > div:last-child {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+
+            .button {
+              min-width: 120px;
+            }
+
+            .button-primary {
+              background-color: $danger;
+              border-color: $danger;
+              box-shadow: 0 2px 8px rgba(240, 68, 56, 0.3);
+
+              &:hover {
+                filter: brightness(0.9);
+                box-shadow: 0 4px 12px rgba(240, 68, 56, 0.4);
+              }
+            }
+          }
+        }
+
+        // Move to folder modal specific styles
+        .popup--move-to-folder {
+          text-align: center;
+          padding: 40px 32px;
+
+          &::before {
+            content: "";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background-color: #eff6ff;
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%232563eb'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 32px;
+          }
+
+          h3 {
+            padding-right: 0;
+            text-align: center;
+            margin-bottom: 12px;
+          }
+
+          p {
+            color: #6b7280;
+            @include font(14px, 400, 22px);
+            margin: 0 0 28px 0;
+          }
+
+          > div:last-child {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+
+            .button {
+              min-width: 130px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.wp-adminify--popup-show {
+    position: relative;
+
+    .wp-adminify--popup-area {
+      visibility: visible;
+      opacity: 1;
+      z-index: 9999;
+
+      .wp-adminify--popup-container {
+        transform: translateY(-50%) scale(1);
+      }
+    }
+  }
+
+  &.has-folder-options #wpbody-content {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  // adminify ui disable
+  // table
+  table {
+    position: relative;
+    z-index: 2;
+
+    td.column-adminify_move {
+      &::before {
+        content: "" !important;
+      }
+    }
+
+    .column-adminify_move {
+      width: 40px;
+
+      .adminify-move-file--title {
+        display: none;
+      }
+      .dashicons-move {
+        &::before {
+          font-size: 16px;
+        }
+      }
+      &.adminify-draggable {
+        .ui-draggable-dragging {
+          @include flex_center;
+          gap: 8px;
+          width: max-content;
+          padding: 6px 12px;
+          border-radius: $wpRadius;
+          background-color: #ddd;
+          z-index: 5;
+
+          .adminify-move-file--title {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
+
+  // rtl style
+  &.rtl {
+    &.has-folder-options #wpbody {
+      flex-direction: row-reverse;
+    }
+    .wp-adminify--folder-widget {
+      border-right: none;
+      border-left: 1px solid $border;
+
+      .wp-adminify--folder-app {
+        // Folder search input padding flip
+        .folder--search {
+          input {
+            padding: 6px 16px 6px 32px;
+          }
+        }
+
+        // Folder lists scrollbar side flip
+        ul.folder--lists {
+          padding-right: 16px;
+          padding-left: 4px;
+          margin-right: 0;
+          margin-left: 4px;
+        }
+
+        // Folder tree lines RTL
+        .folder--lists {
+          li {
+            &.folder--single-root {
+              padding-left: 0;
+              padding-right: 8px;
+
+              // Horizontal line flip
+              &::after {
+                left: auto;
+                right: 0;
+              }
+
+              // Vertical line flip
+              &::before {
+                left: auto;
+                right: 0;
+                border-left: none;
+                border-right: 1px dashed #c0c0c0;
+              }
+            }
+          }
+
+          // Sub-folder lists RTL
+          .folder--sub-lists {
+            margin-left: 0;
+            margin-right: 8px;
+
+            &::before {
+              left: auto;
+              right: 0;
+              border-left: none;
+              border-right: 1px dashed #c0c0c0;
+            }
+
+            li.folder--single-root {
+              padding-left: 0;
+              padding-right: 8px;
+
+              &::before {
+                border-left: none;
+                border-right: 1px dashed #c0c0c0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Popup RTL
+    .wp-adminify--popup-area {
+      .wp-adminify--popup-close {
+        right: auto!important;
+        left: 16px;
+      }
+
+      h3 {
+        padding-right: 0!important;
+        padding-left: 40px;
+      }
+
+      .popup--delete-folder h3,
+      .popup--move-to-folder h3 {
+        padding-left: 0;
+      }
+
+      // Form fields RTL
+      .popup--new-folder__name,
+      .popup--new-folder__color {
+        > div:first-child {
+          text-align: right;
+        }
+
+        input {
+          text-align: right;
+        }
+      }
+
+      // Color picker RTL - flow from right
+      .wp-adminify--colors {
+        justify-content: flex-start;
+      }
+
+      // Save button RTL - align to left (start in RTL)
+      .adminify-save-folder {
+        justify-content: flex-start;
+      }
+
+    }
+  }
+}
+
+// ===========================================
+// Drag Helper Styles (FileBird-like tooltip)
+// ===========================================
+.adminify-drag-helper {
+  position: fixed !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: #32373c;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  z-index: 9999999 !important;
+  pointer-events: none;
+
+  &__icon {
+    font-size: 16px;
+    &::before {
+      color: #fff;
+    }
+  }
+
+  &__text {
+    color: #fff;
+  }
+}
+
+// Draggable items z-index fix
+.ui-draggable-dragging {
+  z-index: 999999 !important;
+  pointer-events: none;
+}
+
+// Attachment draggable in media library grid view
+.attachments-browser {
+  li.attachment.ui-draggable-dragging {
+    z-index: 999999 !important;
+    opacity: 0.8;
+  }
+}
+
+// Body class when items are being dragged
+body.adminify--items-dragging {
+  .attachments-browser .attachments {
+    position: relative;
+    z-index: 1;
+  }
+
+  .wp-adminify--folder-widget {
+    z-index: 10 !important;
+  }
+
+  // Folder hover highlight during drag
+  .folder--lists li > a,
+  .folder--stats li > a {
+    transition: all 0.15s ease;
+  }
+
+  .folder--lists li > a.adminify-drop-hover,
+  .folder--stats li > a.adminify-drop-hover {
+    background-color: #0073aa !important;
+    color: #fff !important;
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 115, 170, 0.3);
+
+    span,
+    .wp-adminify--name,
+    .wp-adminify--count {
+      color: #fff !important;
+    }
+
+    .dashicons::before {
+      color: #fff !important;
+    }
+  }
+}
+
+// Context Menu Portal (rendered in body)
+.adminify--context-menu-portal {
+  min-width: 170px;
+  padding: 6px 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+  li {
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      color: #1e1e1e;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 20px;
+      transition: background-color 0.15s ease;
+
+      .adminify-menu-icon {
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+        color: #757575;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+          font-size: 16px;
+        }
+      }
+
+      .adminify-menu-text {
+        flex: 1;
+      }
+
+      &:hover {
+        background-color: #f0f0f0;
+
+        .adminify-menu-icon {
+          color: #5c39f2;
+        }
+      }
+
+      &.adminify-menu-delete {
+        color: #d63638;
+
+        .adminify-menu-icon {
+          color: #d63638;
+        }
+
+        &:hover {
+          background-color: #fcf0f1;
+        }
+      }
+    }
+
+    &.adminify-menu-separator {
+      height: 1px;
+      margin: 6px 0;
+      background-color: #e0e0e0;
+    }
+  }
+}
+
+// ===========================================
+// Media Modal Folder Sidebar Styles
+// ===========================================
+#wp-media-modal.wp-adminify-has-folders {
+  .media-frame-menu-heading {
+    display: none !important;
+  }
+  .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+    margin-left: 296px;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .media-frame-menu {
+    bottom: unset;
+    display: block !important;
+    height: 100%;
+    width: 296px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .media-menu {
+      padding-top: 15px!important;
+    }
+  }
+  .wp-adminify--modal-folder-container {
+    .wp-adminify--folder-widget {
+      margin: auto;
+    }
+  }
+
+  // Pro upsell notice in media modal
+  .wp-adminify--modal-pro-notice {
+    position: relative;
+    margin: 20px 14px;
+    padding: 28px 20px 24px;
+    background-color: $white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    text-align: center;
+
+    .wp-adminify--modal-pro-notice-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: none;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: $danger;
+      padding: 0;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background-color: #fee2e2;
+      }
+    }
+
+    .wp-adminify--modal-pro-notice-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      border: 1.5px solid $primary;
+      color: $primary;
+    }
+
+    h4 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e1e1e;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0 0 20px 0;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #6b7280;
+    }
+
+    .wp-adminify--modal-pro-notice-actions {
+      display: flex;
+      justify-content: center;
+    }
+
+    .wp-adminify--modal-pro-btn {
+      display: inline-block;
+      padding: 9px 24px;
+      background-color: $primary;
+      color: $white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+      box-shadow: 0 2px 6px rgba(58, 58, 233, 0.25);
+      transition: all 0.15s ease;
+
+      &:hover {
+        filter: brightness(0.9);
+        box-shadow: 0 4px 10px rgba(58, 58, 233, 0.35);
+        transform: translateY(-1px);
+        color: $white;
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Collapsed state for modal
+  &.adminify-folder-collapsed {
+    .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+      margin-left: 56px;
+    }
+    .media-frame-menu {
+      width: 56px;
+    }
+    .media-frame:not(.hide-menu) {
+      .media-frame-menu {
+        width: 200px!important;
+      }
+      .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+        margin-left: 0!important;
+      }
+    }
+  }
+}
+
+// Classic editor: narrower sidebar since menu items are visible
+.wp-adminify-classic-editor #wp-media-modal.wp-adminify-has-folders {
+  .media-frame:not(.hide-menu) {
+    .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+      margin-left: 100px;
+    }
+  }
+
+  &.adminify-folder-collapsed {
+    .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+      margin-left: 56px !important;
+    }
+  }
+}
+
+// RTL support for Media Modal
+.rtl #wp-media-modal.wp-adminify-has-folders {
+  .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+    margin-left: 0;
+    margin-right: 296px;
+    transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .media-frame-menu {
+    left: auto;
+    right: 0;
+  }
+
+  // Collapsed state RTL
+  &.adminify-folder-collapsed {
+    .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+      margin-left: 0;
+      margin-right: 56px;
+    }
+  }
+}
+
+//  Elementor Style
+// RTL support for Elementor Media Modal
+.rtl .wp-adminify.elementor-editor-active {
+  #wp-media-modal.wp-adminify-has-folders {
+    .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+      margin-left: 0 !important;
+      margin-right: 100px !important;
+      transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &.adminify-folder-collapsed {
+      .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+        margin-left: 0 !important;
+        margin-right: -148px !important;
+      }
+    }
+  }
+}
+
+//  Elementor Style
+.wp-adminify.elementor-editor-active {
+  .folder--actions, .folder--lists {
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border: 1px solid $border;
+      border-radius: 3px;
+      background-color: $white;
+      cursor: pointer;
+      margin: 0;
+      position: relative;
+
+      &::before {
+        content: none !important;
+      }
+
+      &:checked {
+        background-color: var(--adminify-primary, $primary);
+        border-color: var(--adminify-primary, $primary);
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 4px;
+          top: 3px!important;
+          width: 4px;
+          height: 8px;
+          border: solid $white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+  ul.folder--lists {
+    max-height: calc(100vh - 482px)!important;
+  }
+
+  #wp-media-modal.wp-adminify-has-folders {
+    .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+      margin-left: 100px !important;
+      transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .media-frame.hide-menu {
+      .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+        margin-left: 296px !important;
+        transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+    &.adminify-folder-collapsed {
+      .media-frame.hide-menu {
+        .media-frame-title, .media-frame-router, .media-frame-content, .media-frame-toolbar {
+          margin-left: 56px !important;
+          transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+    }
+  }
+}
+
+
+// ===========================================
+// Sidebar Toggle (Hide/Show) Styles
+// ===========================================
+.wp-adminify--folder-widget {
+  position: relative;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              min-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .wp-adminify--folder-app {
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  // Toggle button
+  .wp-adminify--sidebar-toggle {
+    position: absolute;
+    top: 50px;
+    right: -14px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid #dcdcde;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .dashicons {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+      color: #50575e;
+      line-height: 1;
+      transition: transform 0.3s ease;
+
+      &::before {
+        line-height: 16px;
+      }
+    }
+
+    &:hover {
+      background-color: #f6f7f7;
+      border-color: #c3c4c7;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+      .dashicons {
+        color: #2271b1;
+      }
+    }
+  }
+
+  // Collapsed state
+  &.is-collapsed {
+    width: 40px !important;
+    min-width: 40px !important;
+
+    .wp-adminify--folder-app {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .wp-adminify--sidebar-toggle {
+      right: 6px;
+      background-color: $white;
+      border-color: #c3c4c7;
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+
+      .dashicons {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        color: $primary;
+      }
+
+      // Right side triangle arrow
+      &::after {
+        content: "";
+        position: absolute;
+        right: -6px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 6px solid gray;
+      }
+    }
+  }
+}
+
+// RTL support for sidebar toggle
+.rtl .wp-adminify--folder-widget {
+  .wp-adminify--sidebar-toggle {
+    right: auto;
+    left: -14px;
+  }
+
+  &.is-collapsed {
+    .wp-adminify--sidebar-toggle {
+      right: auto;
+      left: 6px;
+
+      &::after {
+        right: auto;
+        left: -6px;
+        border-left: none;
+        border-right: 6px solid gray;
+      }
+    }
+  }
+}
+

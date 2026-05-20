@@ -1,0 +1,85 @@
+import { useState } from "@wordpress/element";
+
+function Uploader({ logo, setLogo, setImage, handleMediaUpload }) {
+    const [isDrag, setIsDrag] = useState(false);
+
+    const handleDrop = (e) => {
+        e.preventDefault();
+        const file = e.dataTransfer.files[0];
+        if (!file.name) return;
+        handleFile(file);
+    };
+
+    const handleFile = (file) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            setImage({ imageData: reader.result, imageName: file.name });
+            setLogo(reader.result);
+            setIsDrag(false);
+        };
+        reader.readAsDataURL(file);
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+        setIsDrag(true);
+    };
+
+    const handleDragLeave = (e) => {
+        e.preventDefault();
+        setIsDrag(false);
+    };
+
+    return (
+        <div className="wp-adminify-file-uploader">
+            {logo ? (
+                <>
+                    <img src={logo} alt="Logo" />
+                    <span className="wp-adminify-file-close" onClick={() => setLogo("")}>
+                        <svg
+                            width="8"
+                            height="8"
+                            viewBox="0 0 8 8"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 1L1 7M1 1L7 7"
+                                stroke="white"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </span>
+                </>
+            ) : (
+                <button
+                    onClick={handleMediaUpload}
+                    onDrop={handleDrop}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    className={isDrag ? "adminify-img-draging" : ""}>
+                    <input
+                        // type="file"
+                        accept="image/*"
+                        onChange={(e) => handleFile(e.target.files[0])}
+                    />
+                    <svg
+                        width="24"
+                        height="16"
+                        viewBox="0 0 24 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.9999 16.0001H5.99992C2.87429 16.002 0.270809 13.604 0.0162787 10.4887C-0.238251 7.37347 1.94144 4.58465 5.02592 4.07911C6.44563 1.562 9.11003 0.00362534 11.9999 5.65992e-05C13.8019 -0.00675485 15.5524 0.601415 16.9619 1.72411C18.346 2.82197 19.33 4.34509 19.7619 6.05811C22.3458 6.45514 24.1877 8.77563 23.9879 11.3822C23.7882 13.9888 21.6141 16.0015 18.9999 16.0001ZM11.9999 2.0001C9.83163 2.00267 7.83259 3.17221 6.76792 5.06111L6.29992 5.90011L5.35091 6.05511C3.3012 6.39852 1.85592 8.25441 2.02513 10.3258C2.19433 12.3972 3.92164 13.9939 5.99992 14.0001H18.9999C20.5685 14.0017 21.8735 12.7947 21.9941 11.2308C22.1147 9.66685 21.0102 8.27401 19.4599 8.03511L18.1439 7.83511L17.8219 6.54311C17.1572 3.86992 14.7545 1.99507 11.9999 2.0001ZM13.4499 12.0001H10.5499V9.00011H7.99992L11.9999 5.00011L15.9999 9.00011H13.4499V12.0001Z"
+                            fill="#191821"
+                        />
+                    </svg>
+                    <span>Upload</span>
+                </button>
+            )}
+        </div>
+    );
+}
+
+export default Uploader;

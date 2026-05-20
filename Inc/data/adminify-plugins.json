@@ -1,0 +1,149 @@
+[
+    {
+        "icon": "https://ps.w.org/admin-bar/assets/icon.svg",
+        "name": "Admin Bar Editor",
+        "slug": "admin-bar",
+        "type": [
+            "all",
+            "featured",
+            "popular",
+            "favorites"
+        ],
+        "download_link"    : "https://downloads.wordpress.org/plugin/admin-bar.zip",
+        "view_details"     : "https://jeweltheme.com/admin-bar-editor",
+        "pricing_url"      : "https://jeweltheme.com/admin-bar-editor/pricing",
+        "short_description": "Customize your WordPress Admin Toolbar by adding, hiding, or modifying menu items. Set visibility by user roles and rearrange with drag-and-drop."
+    },
+    {
+        "icon"             : "https://ps.w.org/loginfy/assets/icon.svg",
+        "name"             : "Loginfy",
+        "short_description": "Customize every element of your WordPress login page. Enjoy responsive design, advanced options, and real-time previews for unique login experiences.",
+        "slug"             : "loginfy",
+        "type"             : [
+            "all",
+            "featured",
+            "popular",
+            "favorites"
+        ],
+        "view_details" : "https://wpadminify.com/loginfy",
+        "pricing_url"  : "https://wpadminify.com/loginfy/pricing",
+        "download_link": "https://downloads.wordpress.org/plugin/loginfy.zip"
+    },
+    {
+        "icon"             : "https://ps.w.org/rolemaster-suite/assets/icon.svg",
+        "name"             : "RoleMaster Suite",
+        "short_description": "User Role Editor plugin for WordPress that allows website administrators with the ability to fine-tune user roles and capabilities with precision.",
+        "slug"             : "rolemaster-suite",
+        "type"             : [
+            "all",
+            "featured",
+            "popular",
+            "favorites"
+        ],
+        "view_details" : "https://wpadminify.com/rolemaster-suite",
+        "pricing_url"  : "",
+        "download_link": "https://downloads.wordpress.org/plugin/rolemaster-suite.zip"
+    },
+    {
+        "icon": "https://raw.githubusercontent.com/jeweltheme/adminify-addons-assets/main/adminify-activity-logs/icon.svg",
+        "name": "Activity Logs",
+        "slug": "adminify-activity-logs",
+        "type": [
+            "all",
+            "featured",
+            "favorites"
+        ],
+        "view_details" : "https://wpadminify.com/activity-logs",
+        "pricing_url"  : "",
+        "download_link"    : "https://api.wpadminify.com/adminify-update-checker/?plugin_slug=adminify-activity-logs&action=download_plugin",
+        "short_description": "Enhance WP Adminify with detailed activity tracking. Monitor user actions, view logs, track changes, widgets, menus, comments, attachments, and more."
+    },
+    {
+        "icon": "https://raw.githubusercontent.com/jeweltheme/adminify-addons-assets/main/adminify-header-footer-scripts/icon.svg",
+        "name": "Header & Footer Scripts",
+        "slug": "adminify-header-footer-scripts",
+        "type": [
+            "all",
+            "featured",
+            "favorites"
+        ],
+        "view_details" : "https://wpadminify.com/header-footer-scripts",
+        "pricing_url"  : "https://wpadminify.com/header-footer-scripts/pricing",
+        "download_link"    : "https://api.wpadminify.com/adminify-update-checker/?plugin_slug=adminify-header-footer-scripts&action=download_plugin",
+        "short_description": "Easily add custom scripts to your WordPress site's header or footer using an intuitive user interface. Perfect for analytics, custom CSS, and more.",
+        "version"          : "1.0.5"
+    },
+    {
+        "icon"             : "https://raw.githubusercontent.com/jeweltheme/adminify-addons-assets/main/adminify-admin-columns/icon.svg",
+        "name"             : "Admin Columns Editor",
+        "short_description": "Customize admin columns effortlessly. Add, remove, or reorder columns for any post type. Integrates easily with WooCommerce, ACF, Pods, and Metabox.",
+        "slug"             : "adminify-admin-columns",
+        "type"             : [
+            "all",
+            "featured",
+            "favorites"
+        ],
+        "view_details" : "https://wpadminify.com/admin-columns-editor",
+        "pricing_url"  : "https://wpadminify.com/admin-columns-editor/pricing/",
+        "download_link": "https://api.wpadminify.com/adminify-update-checker/?plugin_slug=adminify-admin-columns&action=download_plugin",
+        "version"      : "1.1.0"
+    },
+    {
+        "icon": "https://raw.githubusercontent.com/jeweltheme/adminify-addons-assets/main/adminify-google-pagespeed/icon.svg",
+        "name": "Google Pagespeed",
+        "slug": "adminify-google-pagespeed",
+        "type": [
+            "all",
+            "featured",
+            "favorites"
+        ],
+        "view_details"     : "https://wpadminify.com/google-pagespeed-insights",
+        "pricing_url"      : "https://wpadminify.com/google-pagespeed-insights/pricing/",
+        "download_link"    : "https://api.wpadminify.com/adminify-update-checker/?plugin_slug=adminify-google-pagespeed&action=download_plugin",
+        "short_description": "Track webpage speed from your dashboard with Google Pagespeed Insights. Get mobile and desktop reports, view history, and manage access by user roles.",
+        "version"          : "1.0.3"
+    },
+    {
+        "icon": "https://raw.githubusercontent.com/jeweltheme/adminify-addons-assets/main/adminify-sidebar-generator/icon.svg",
+        "name": "Sidebar Generator",
+        "slug": "adminify-sidebar-generator",
+        "type": [
+            "all",
+            "featured",
+            "favorites"
+        ],
+        "view_details"     : "https://wpadminify.com/sidebar-generator",
+        "pricing_url"      : "https://wpadminify.com/sidebar-generator/#pricing",
+        "download_link"    : "https://api.wpadminify.com/adminify-update-checker/?plugin_slug=adminify-sidebar-generator&action=download_plugin",
+        "short_description": "Create unlimited custom sidebars with WP Adminify. Requires the Classic Widgets plugin. Easily name, rearrange, manage and delete all your sidebars.",
+        "version"          : "1.0.5"
+    },
+    {
+        "icon": "https://raw.githubusercontent.com/jeweltheme/adminify-addons-assets/main/adminify-quick-circle-menu/icon.svg",
+        "name": "Quick Menu",
+        "slug": "adminify-quick-circle-menu",
+        "type": [
+            "all",
+            "featured",
+            "favorites"
+        ],
+        "view_details"     : "https://wpadminify.com/quick-menu",
+        "pricing_url"      : "https://wpadminify.com/quick-menu/pricing",
+        "download_link"    : "https://api.wpadminify.com/adminify-update-checker/?plugin_slug=adminify-quick-circle-menu&action=download_plugin",
+        "short_description": "Adminify Quick Menu - bottom right position for nagivating Menus quickly",
+        "version"          : "1.0.3"
+    },
+    {
+        "icon": "https://ps.w.org/master-addons/assets/icon.svg",
+        "name": "Master Addons",
+        "slug": "master-addons",
+        "type": [
+            "all",
+            "recommended"
+        ],
+        "view_details"     : "https://master-addons.com",
+        "pricing_url"      : "https://master-addons.com/pricing/",
+        "download_link"    : "https://downloads.wordpress.org/plugin/master-addons.zip",
+        "short_description": "Master Addons comes advanced extensions like Display Condition, Floating Effect, Custom CSS, Tooltip, and Positioning to give you complete control over your website look and feel"
+    }
+]

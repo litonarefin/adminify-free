@@ -1,0 +1,67 @@
+// @import "../common/style.scss", "../common/mixins.scss";
+
+.adminify-ui {
+    .top-header-search-results {
+        position: absolute !important;
+        top: 49px;
+        left: 50%;
+        @include dimension(60vw !important, 74vh !important);
+        padding: 26px !important;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        transform: translateX(-50%) !important;
+        border-radius: 2px;
+        border: 1px solid $border;
+        background-color: $white;
+
+        .top-header-results-wrapper {
+            > p {
+                @include font(13px, 400, 22px);
+                color: $secondary;
+            }
+
+            table {
+                thead {
+                    th {
+                        @include font(14px !important, 600 !important, 20px !important);
+                        color: $heading;
+                        text-align: left;
+                        padding: 10px 0 !important;
+
+                        &:first-child {
+                            width: 78% !important;
+                        }
+                    }
+                }
+
+                tbody {
+                    td {
+                        padding: 20px 0 18px 0 !important;
+                        border-top: 1px solid $border;
+                        @include font(14px !important, 400 !important, 20px !important);
+
+                        .table-title {
+                            a {
+                                font-weight: 600 !important;
+                            }
+                        }
+
+                        .type {
+                            display: inline-block;
+                            font-weight: 600 !important;
+                            color: $white;
+                            padding: 5px 10px !important;
+                            border-radius: 6px !important;
+                            background-color: $primary;
+                        }
+
+                        .user,
+                        .date {
+                            color: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

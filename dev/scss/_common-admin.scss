@@ -1,0 +1,842 @@
+// @import "./common/variables", "./common/mixins", "./common/style";
+
+// /* Recommended */
+
+// .mt0 {
+//     margin-top: 0;
+// }
+
+// #TB_window {
+//     // top: 43% !important;
+//     margin-left: 0 !important;
+//     top: 50% !important;
+//     left: 50% !important;
+//     bottom: 50% !important;
+//     right: 50% !important;
+//     transform: translate(-50%, -50%);
+// }
+
+// #TB_window,
+// #TB_window iframe {
+//     width: 772px !important;
+//     height: 690px !important;
+// }
+
+// #plugin-information-scrollable {
+//     height: calc(100% - 65px) !important;
+// }
+// .wp-adminify-recommended-wrapper .plugin-install {
+//     padding: 25px;
+// }
+// .wp-adminify-recommended-wrapper .wp-adminify-search-plugins {
+//     margin: 10px !important;
+// }
+// .wp-adminify-recommended-wrapper .plugin-icon {
+//     width: 100px;
+//     height: 100px;
+// }
+// .wp-adminify-recommended-wrapper .plugin-card {
+//     border-radius: 5px;
+//     box-shadow: 0px 0px 54px 0px rgba(20, 20, 42, 0.07);
+// }
+// .wp-adminify-recommended-wrapper .plugin-card .name,
+// .wp-adminify-recommended-wrapper .plugin-card .desc {
+//     margin-left: 120px;
+//     margin-right: inherit !important;
+// }
+// .adminify-rtl .wp-adminify-recommended-wrapper .plugin-card .name,
+// .adminify-rtl .wp-adminify-recommended-wrapper .plugin-card .desc {
+//     margin-right: 120px !important;
+//     margin-left: inherit !important;
+// }
+
+// .wp-adminify-addons-wrapper .button:not(.update-now).updating-message:before,
+// .wp-adminify-addons-wrapper .button:not(.update-now).updated-message:before,
+// .wp-adminify-addons-wrapper .button:not(.update-now).installed:before,
+// .wp-adminify-addons-wrapper .button:not(.update-now).installing:before {
+//     margin: 6px 10px 0px -3px !important;
+// }
+
+.wp-adminify-addons-wrapper {
+    background: $white;
+    padding: 24px;
+    border: 1px solid $border;
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+    .wp-adminify-addons-header {
+        .wp-adminify-addons-title {
+            > h2 {
+                color: $heading;
+                font: {
+                    size: 24px;
+                    weight: 600;
+                }
+                line-height: 32px;
+                margin: 0;
+            }
+            h3 {
+                font-size: 1rem;
+                font-weight: 400;
+                color: $text;
+            }
+        }
+        // .wp-adminify-addons-menu {
+        //     .wp-filter {
+        //         display: flex;
+        //         justify-content: space-between;
+        //         align-items: center;
+        //         border: 0;
+        //         margin: 32px 0 16px 0;
+        //         padding: 0;
+        //         box-shadow: none;
+
+        //         .filter-links {
+        //             li {
+        //                 a {
+        //                     font-size: 13px !important;
+        //                     font-weight: 600 !important;
+        //                     line-height: 20px !important;
+        //                     color: $wpMenuColor !important;
+
+        //                     &.current {
+        //                         color: $link;
+        //                         border-bottom: 3px solid $link;
+        //                     }
+        //                     &:focus {
+        //                         box-shadow: none;
+        //                     }
+        //                 }
+
+        //                 &.plugin-install-recommended {
+        //                     a {
+        //                         position: relative;
+        //                         z-index: 99;
+
+        //                         &::after {
+        //                             position: absolute;
+        //                             content: "";
+        //                             width: 100%;
+        //                             height: 28px;
+        //                             top: 7px;
+        //                             left: -8px;
+        //                             padding: 4px 8px;
+        //                             border-radius: 4px;
+        //                             background-color: #eaecfa;
+        //                             z-index: -99;
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+
+        //         .wp-filter-search {
+        //             background: transparent !important;
+        //             border: 1px solid $border !important;
+        //             &:focus {
+        //                 border-color: $primary !important;
+        //                 box-shadow: none;
+        //             }
+        //         }
+        //     }
+        // }
+    }
+
+    // .wp-list-table {
+    //     // padding: 30px;
+
+    //     #the-list {
+    //         display: grid;
+    //         grid-template-columns: 1fr 1fr 1fr;
+    //         gap: 16px;
+    //         .plugin-card {
+    //             border: 1px solid $border;
+    //             float: none !important;
+    //             margin: 0 !important;
+    //             width: 100%;
+    //             display: flex;
+    //             flex-direction: column;
+    //             justify-content: space-between;
+    //             .plugin-card-top {
+    //                 padding: 16px 16px 28px 16px;
+    //                 // min-height: auto;
+
+    //                 .name {
+    //                     margin-left: 80px;
+
+    //                     h3 {
+    //                         margin: 0 12px 4px 0;
+
+    //                         a {
+    //                             font-size: 16px;
+    //                             font-weight: 600;
+    //                             line-height: 20px;
+    //                             color: $titleColor;
+    //                         }
+    //                     }
+
+    //                     .plugin-icon {
+    //                         position: absolute;
+    //                         top: 16px;
+    //                         left: 20px;
+    //                         width: 60px;
+    //                         height: 60px;
+    //                         margin: 0 20px 20px 0;
+    //                     }
+    //                 }
+
+    //                 .desc {
+    //                     margin-left: 80px;
+
+    //                     p {
+    //                         font-size: 13px;
+    //                         font-weight: 400;
+    //                         line-height: 20px;
+    //                         color: $text;
+    //                         margin: 0;
+    //                     }
+    //                 }
+    //             }
+
+    //             .plugin-card-bottom {
+    //                 display: flex;
+    //                 justify-content: space-between;
+    //                 align-items: center;
+    //                 padding: 12px 16px;
+    //                 background-color: $bodybg;
+    //                 border-top: 1px solid $border;
+
+    //                 .column-downloaded {
+    //                     .plugin-status {
+    //                         font-size: 12px;
+    //                         font-weight: 500;
+    //                         line-height: 16px;
+    //                         color: $titleColor;
+
+    //                         .plugin-status-active {
+    //                             color: $success;
+    //                             font-weight: 400;
+    //                         }
+
+    //                         .plugin-status-not-install {
+    //                             color: $subTitleColor;
+    //                             font-weight: 400;
+    //                         }
+    //                     }
+    //                 }
+
+    //                 .column-compatibility {
+    //                     .plugin-action-buttons {
+    //                         margin: 0;
+    //                         li {
+    //                             margin-bottom: 0;
+    //                         }
+    //                         .button {
+    //                             padding: 4px 8px !important;
+    //                             border-radius: 2px;
+    //                             font-size: 12px;
+    //                             font-weight: 500;
+    //                             line-height: 16px !important;
+    //                             background-color: transparent !important;
+
+    //                             &.install-now {
+    //                                 border: 1px solid #4552da;
+    //                                 color: #4552da !important;
+    //                             }
+
+    //                             &.activate-now {
+    //                                 border-color: #17b26a !important;
+    //                                 background-color: #17b26a !important;
+    //                                 color: #fff;
+    //                             }
+
+    //                             &.update-now {
+    //                                 border-color: #f4b740 !important;
+    //                                 color: #f4b740;
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    @include addNewPlugins;
+
+    .column-downloaded {
+        .plugin-status {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+            color: $titleColor;
+
+            .plugin-status-active {
+                color: $success;
+                font-weight: 400;
+            }
+
+            .plugin-status-not-install {
+                color: $subTitleColor;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .column-compatibility {
+        .plugin-action-buttons {
+            margin: 0;
+            li {
+                margin-bottom: 0;
+            }
+            button {
+                padding: 4px 8px !important;
+                border-radius: 2px;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 16px !important;
+                background-color: transparent !important;
+
+                &.install-now {
+                    border: 1px solid #4552da;
+                    color: #4552da !important;
+                }
+
+                &.activate-now {
+                    border-color: #17b26a !important;
+                    background-color: #17b26a !important;
+                    color: #fff;
+                }
+
+                &.update-now {
+                    border-color: #f4b740 !important;
+                    color: #f4b740;
+                }
+            }
+        }
+    }
+}
+
+.wp-adminify-addons-wrapper .plugin-status-active {
+    color: $success;
+}
+
+.wp-adminify-addons-wrapper .plugin-status-inactive {
+    color: $danger;
+}
+
+.wp-adminify-addons-wrapper .plugin-status-not-install {
+    color: #1d2327;
+}
+
+.wp-adminify-addons-wrapper .plugin-status {
+    line-height: 34px;
+}
+
+.wp-adminify-addons-wrapper .hide {
+    display: none;
+}
+
+// /* Review */
+
+// #wpbody-content .notice-wp-adminify {
+//     padding: 15px;
+//     position: relative;
+// }
+
+// #wpbody-content .notice-plugin-review {
+//     padding: 15px;
+//     position: relative;
+// }
+
+// #wpbody-content .notice-plugin-review .button:not(.wp-adminify-notice-dismiss) {
+//     margin-right: 5px;
+// }
+
+// #wpbody-content .notice-plugin-review .wp-adminify-notice-dismiss {
+//     box-shadow: none;
+// }
+
+// /* Popup */
+
+// #wpbody-content .wp-adminify-notice-plugin-popup {
+//     max-width: 850px;
+//     min-height: 300px;
+//     left: 50%;
+//     top: 50%;
+//     width: 100%;
+//     height: auto;
+//     border-radius: 5px !important;
+//     transform: translate(-50%, -50%);
+//     border: 0;
+//     position: fixed;
+//     z-index: 99999;
+//     -webkit-box-shadow: 0px 0px 54px 0px rgb(20 20 42 / 30%) !important;
+//     box-shadow: 0px 0px 54px 0px rgb(20 20 42 / 30%) !important;
+// }
+
+// #wpbody-content .wp-adminify-notice-plugin-popup .wp-adminify-notice-dismiss {
+//     box-shadow: none;
+//     float: right;
+//     cursor: pointer;
+// }
+
+// .upgrade-pro-popup {
+//     gap: 15px;
+//     background: #fff;
+//     padding: 40px !important;
+// }
+
+// .upgrade-pro-popup .upst-body {
+//     display: flex;
+// }
+
+// .upgrade-pro-popup .col:nth-child(1) {
+//     padding-right: 20px;
+//     padding-top: 120px;
+// }
+
+// .upgrade-pro-popup .col:nth-child(1) img {
+//     max-width: 100%;
+//     /* -webkit-box-shadow: 0px 0px 54px 0px rgb(20 20 42 / 10%) !important;
+//     box-shadow: 0px 0px 54px 0px rgb(20 20 42 / 10%) !important; */
+// }
+
+// .upgrade-pro-popup .col {
+//     flex-basis: 50%;
+// }
+
+// .upgrade-pro-popup .col:nth-child(2) {
+//     padding-left: 20px;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body {
+//     color: rgba(78, 75, 102, 0.72);
+// }
+
+// .upgrade-pro-popup .upst-body .content-body h4 {
+//     display: flex;
+//     color: #fb0066;
+//     margin-bottom: 10px;
+//     letter-spacing: 1px;
+//     gap: 10px;
+//     font-size: 22px;
+//     line-height: 32px;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body h3 {
+//     color: #14142b;
+//     letter-spacing: 1px;
+//     font-size: 28px;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body h3 span {
+//     color: #0347ff;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body p {
+//     font-weight: normal !important;
+//     line-height: 22px !important;
+//     font-size: 16px !important;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body ul li {
+//     margin: 10px 0;
+//     line-height: 22px;
+//     padding-left: 30px;
+// }
+
+// .upgrade-pro-popup ul li:before {
+//     position: absolute;
+//     content: "\f15e";
+//     font-family: dashicons;
+//     font-size: 19px;
+//     left: 0;
+//     top: 0;
+//     z-index: 1;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body ul li:before {
+//     color: #fff;
+//     top: 2px;
+//     left: 1px;
+//     font-size: 17px;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body ul li:after {
+//     position: absolute;
+//     content: "";
+//     background: #00ba88;
+//     border-radius: 50px;
+//     width: 18px;
+//     height: 18px;
+//     top: 3px !important;
+//     left: 1px;
+// }
+
+// .upgrade-pro-popup ul li {
+//     position: relative;
+//     list-style: none;
+//     padding-left: 25px;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body ul li span {
+//     color: #14142b !important;
+// }
+
+// .upgrade-pro-popup .upst-body .content-body .upgrade-btn {
+//     background: #0347ff;
+//     color: #fff;
+//     font-size: 18px;
+//     border: 0 !important;
+//     border-radius: 7px;
+//     padding: 5px 25px;
+// }
+
+// .upgrade-pro-popup .upst-footer ul {
+//     display: flex;
+//     padding-top: 60px;
+//     width: 70%;
+//     margin: 0 auto;
+//     justify-content: space-between;
+// }
+
+// .upgrade-pro-popup ul li {
+//     position: relative;
+//     list-style: none;
+//     padding-left: 25px;
+// }
+
+// .upgrade-pro-popup .upst-footer ul li a {
+//     color: rgba(78, 75, 102, 0.72) !important;
+// }
+
+// .upgrade-pro-popup .upst-footer ul li a:hover {
+//     color: #0347ff !important;
+// }
+
+// .upgrade-pro-popup .upst-footer ul li:before {
+//     font-size: 22px;
+//     color: #00ba88;
+// }
+
+// .wp-adminify-notice-plugin-popup .wp-adminify-notice-dismiss {
+//     border: 0 !important;
+//     outline: none !important;
+//     background: transparent !important;
+// }
+
+// .wp-adminify-notice-plugin-popup .wp-adminify-notice-dismiss:before {
+//     content: "\00d7" !important;
+//     font-size: 30px !important;
+//     height: 22px !important;
+//     width: 22px !important;
+//     color: rgba(78, 75, 102, 0.72) !important;
+// }
+
+// body.wp-adminify-popup-overlay {
+//     position: relative;
+//     height: auto;
+// }
+
+// body.wp-adminify-popup-overlay:before {
+//     position: absolute;
+//     content: "";
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0, 0, 0, 0.6);
+//     z-index: 9999;
+// }
+
+// /* Subscribe form */
+
+// #wpbody-content .wp-adminify-notice-subscribe {
+//     padding: 15px;
+//     display: flex;
+//     align-items: center;
+// }
+
+// .wp-adminify-notice-subscribe img {
+//     width: 50px;
+//     max-width: 50px;
+//     height: 50px;
+//     margin-right: 15px;
+// }
+
+// .wp-adminify-notice-subscribe h4 {
+//     margin-top: 0;
+// }
+
+// .wp-adminify-notice-subscribe-input {
+//     margin-right: 15px;
+// }
+
+// /*---- badge ---*/
+
+// .wp-adminify-badge:after {
+//     color: #fff;
+//     position: absolute;
+//     font-size: 11px;
+//     padding: 1px 7px;
+//     right: -40px;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     border-radius: 3px;
+//     display: none;
+// }
+
+// .wp-adminify-badge-pro:after {
+//     content: "Pro";
+//     background: darkorange;
+// }
+
+// .wp-adminify-badge-ultimate:after {
+//     content: "Ultimate";
+//     background: blueviolet;
+//     right: -60px;
+// }
+
+// /* Disable Field */
+
+// .image-choose-opt.disabled .disabled-text {
+//     position: absolute;
+//     width: 90px;
+//     height: 90px;
+//     left: 5px;
+//     top: 0;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background: rgba(85, 85, 85, 0.7);
+//     color: #fff;
+// }
+
+// .form-table tr.disabled {
+//     position: relative;
+// }
+
+// .form-table tr.disabled > * {
+//     opacity: 0.6;
+// }
+
+// .form-table tr.disabled > * input,
+// .form-table tr.disabled > * select,
+// .form-table tr.disabled > * textarea,
+// .form-table tr.disabled > * button {
+//     pointer-events: none;
+// }
+
+// .form-table tr.disabled:hover .wp-adminify-badge:after {
+//     display: inline;
+// }
+
+// /* Start of Overlay Upgrade Popup  */
+
+// :root {
+//     --wp-adminify-popup-color: #ff631a;
+// }
+
+// .wp-adminify-popup * {
+//     all: initial;
+//     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+//         "Open Sans", "Helvetica Neue", sans-serif;
+// }
+
+// .wp-adminify-popup {
+//     position: fixed;
+//     width: 100%;
+//     height: 100%;
+//     padding: 0;
+//     margin: 0;
+//     border: 0;
+//     top: 0;
+//     left: 0;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     z-index: 99999999 !important;
+// }
+
+// .wp-adminify-popup-overlay {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0, 0, 0, 0.5);
+// }
+
+// .wp-adminify-popup-modal {
+//     width: 600px;
+//     max-width: 600px !important;
+//     height: 600px;
+//     max-height: 600px !important;
+//     color: white;
+//     background: #222;
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     padding: 0;
+//     margin: 0;
+//     transform: scale(0.9);
+//     display: flex;
+//     align-items: flex-end;
+//     justify-content: center;
+//     border-radius: 3px;
+//     box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+// }
+
+// .wp-adminify-popup-modal-close {
+//     position: absolute;
+//     top: 5px;
+//     right: 10px;
+//     font-size: 50px;
+//     cursor: pointer;
+//     color: $white;
+//     transition: 0.3s;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 40px;
+//     height: 40px;
+//     padding: 0;
+//     margin: 0;
+//     opacity: 0.5;
+// }
+
+// .wp-adminify-popup-modal-close:hover {
+//     opacity: 1;
+// }
+
+// .wp-adminify-popup-modal-footer {
+//     width: 100%;
+//     height: 225px;
+//     max-height: 225px !important;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: flex-end;
+//     padding: 15px 0;
+// }
+
+// .wp-adminify-popup-countdown {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-evenly;
+//     gap: 10px;
+// }
+
+// .wp-adminify-popup-countdown-text {
+//     font-size: 14px;
+//     font-weight: 600;
+//     color: white;
+//     position: relative;
+//     line-height: 1.2;
+// }
+
+// .wp-adminify-popup-countdown-time {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-evenly;
+//     gap: 10px;
+// }
+
+// .wp-adminify-popup-countdown-time > div {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-evenly;
+//     gap: 5px;
+// }
+
+// .wp-adminify-popup-countdown-time > div > span {
+//     font-size: 20px;
+//     font-weight: 600;
+//     color: white;
+// }
+
+// .wp-adminify-popup-countdown-time > div > span:nth-child(1) {
+//     border: 2px solid rgba(255, 255, 255, 0.6);
+//     height: 40px;
+//     width: 45px;
+//     font-size: 22px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     border-radius: 5px;
+// }
+
+// .wp-adminify-popup-countdown-time > div > span:nth-child(2) {
+//     font-size: 12px;
+//     font-weight: 500;
+//     color: rgb(255, 255, 255 / 0.8);
+// }
+
+// .wp-adminify-popup-countdown-time > span {
+//     font-size: 50px;
+//     color: white;
+//     margin-top: -25px;
+// }
+
+// .wp-adminify-popup-button {
+//     height: 50px;
+//     background: var(--wp-adminify-popup-color);
+//     color: #222;
+//     font-size: 18px;
+//     font-weight: 600;
+//     letter-spacing: 0.5px;
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     border: 0;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     transition: 0.3s;
+//     color: white;
+//     padding: 0 30px;
+//     margin: 20px 0;
+//     transition: 0.2s;
+//     position: relative;
+//     text-decoration: none;
+// }
+
+// .wp-adminify-popup-button:after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 0%;
+//     height: 100%;
+//     background: rgba(255, 255, 255, 0.2);
+//     transition: 0.3s;
+// }
+
+// .wp-adminify-popup-button:hover {
+//     color: white;
+// }
+
+// .wp-adminify-popup-button:hover:after {
+//     width: 100%;
+// }
+
+// .wp-adminify-wwc > p {
+//     margin-top: 0;
+//     padding-top: 0;
+//     margin-bottom: 20px;
+// }
+
+// .wp-adminify-wwc-content {
+//     margin-bottom: 25px;
+//     color: #646970;
+// }
+
+// /* responsive  */
+
+// @media (max-width: 576px) {
+//     .wp-adminify-popup-countdown {
+//         transform: scale(0.99);
+//     }
+// }
+
+// /* End of Overlay Upgrade Popup  */

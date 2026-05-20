@@ -1,0 +1,102 @@
+// @import "../common/variables.scss", "../common/mixins.scss";
+
+.adminify-ui {
+    // Home
+    .welcome-panel {
+        border: 1px solid $border;
+        border-radius: $wpRadius;
+
+        .welcome-panel-close {
+            @include wpHover($white, $danger);
+
+            &:focus {
+                &::before {
+                    color: transparent;
+                }
+            }
+
+            &:hover {
+                &::before {
+                    color: $danger;
+                }
+            }
+        }
+
+        .welcome-panel-header {
+            border-radius: $wpRadius;
+
+            a {
+                color: $white !important;
+            }
+        }
+    }
+
+    //card
+    #dashboard-widgets-wrap {
+        .postbox {
+            border-color: $border;
+            border-radius: $wpRadius;
+
+            .postbox-header {
+                padding: 12px 16px;
+                border-color: $border;
+                h2 {
+                    @include font(15px, 700, 20px);
+                    color: $heading;
+                    padding: 0;
+                }
+                
+                span {
+                    &::before {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            &#themeisle {
+                .postbox-header h2 {
+                  padding-left: 39px;
+                }
+              }
+
+            .inside {
+                padding: 16px;
+                margin: 0;
+
+                .health-check-widget {
+                    grid-template-columns: 1fr;
+                    gap: 6px;
+
+                    .site-health-progress {
+                        height: 44px;
+                        width: 44px;
+                    }
+
+                    .site-health-progress-label {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $success;
+                    }
+                }
+
+                .community-events-toggle-location {
+                    color: $primary;
+                }
+
+                .subsubsub,
+                .community-events-footer,
+                .wp-adminify-dashboard_footer ul {
+                    padding: 16px 0 0 0;
+                    margin: 0;
+                }
+
+                .wp-adminify-dashboard_footer ul {
+                    padding: 16px 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    // update
+}

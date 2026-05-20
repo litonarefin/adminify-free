@@ -1,0 +1,31 @@
+{
+    "name": "jeweltheme/wp-adminify",
+    "description": "WP Adminify - All in One WordPress Admin Customization, Security Plugin",
+    "authors": [
+        {
+            "name": "jeweltheme",
+            "email": "support@jeweltheme.com"
+        }
+    ],
+    "require": {
+        "enshrined/svg-sanitize": "^0.10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WPAdminify\\": "adminify/",
+            "WPAdminify\\Inc\\": "Inc/",
+            "WPAdminify\\Libs\\": "Libs/",
+            "WPAdminify\\Inc\\Admin\\": "Inc/Admin/",
+            "WPAdminify\\Inc\\Classes\\": "Inc/classes/",
+            "WPAdminify\\Inc\\Modules\\": "Inc/Modules/"
+        },
+        "files": [
+            "Inc/utils.php",
+            "Inc/base-data.php",
+            "Inc/base-model.php",
+            "Inc/functions.php",
+            "Inc/Admin/AdminSettings.php",
+            "Libs/adminify-framework/adminify-framework.php"
+        ]
+    }
+}

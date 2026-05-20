@@ -1,0 +1,10 @@
+.adminify-ui {
+    &.adminify-dark-mode {
+        .adminify-hamburger {
+            img {
+                filter: brightness(300%);
+            }
+        }
+        height: auto;
+    }
+}

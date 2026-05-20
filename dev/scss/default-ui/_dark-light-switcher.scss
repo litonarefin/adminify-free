@@ -1,0 +1,137 @@
+#wp-adminify-color-mode-wrapper {
+    position: relative;
+
+    .mode-icon {
+        padding: 4px;
+        width: 18px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: relative;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+
+        &.adminify-color-mode-system-active {
+            width: 22px;
+        }
+
+        .darkIcon,
+        .lightIcon {
+            position: absolute;
+        }
+        > svg {
+            width: 18px;
+            height: 18px;
+            &.systemIcon {
+                width: 14px;
+                height: 14px;
+                path {
+                    // stroke: #fff;
+                    stroke-width: 1.5px;
+                }
+            }
+        }
+    }
+
+    .light-dark-dropdown {
+        background: #2c3338; // #2c3338
+        width: 110px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 5px 0 5px 10px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        right: -39px;
+        z-index: 9999;
+        box-sizing: border-box;
+        visibility: hidden;
+        opacity: 0.0001;
+        transition: 0.3s cubic-bezier(0.2, 0, 0, 1.6);
+        transform: scale(0.6) translateY(-20%);
+        -webkit-transform: scale(0.6) translateY(-20%);
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 12px;
+            width: 12px;
+            border: solid 1px #eee;
+            border-width: 1px 0 0 1px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            background-color: #2c3338;
+            top: -7px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        > div {
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 14px;
+            color: white;
+            padding: 3px 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+
+            > span {
+                font-size: 12px;
+                color: #fff;
+            }
+
+            > svg.lightIcon,
+            > svg.darkIcon {
+                width: 16px !important;
+            }
+            > svg.systemIcon {
+                width: 14px;
+                path {
+                    // stroke: #fff;
+                    stroke-width: 1.5px;
+                }
+            }
+        }
+    }
+
+    .adminify-color-mode-dark-active {
+        .darkIcon {
+            display: block;
+        }
+
+        .lightIcon,
+        .systemIcon {
+            display: none;
+        }
+    }
+
+    .adminify-color-mode-light-active {
+        .darkIcon,
+        .systemIcon {
+            display: none;
+        }
+
+        .lightIcon {
+            display: block;
+        }
+    }
+
+    .adminify-color-mode-system-active {
+        .systemIcon {
+            display: block;
+        }
+
+        .lightIcon,
+        .darkIcon {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import "../../../../../scss/common/variables.scss";
+
+.wp-adminify-tabs-wrapper {
+    ul {
+        display: flex;
+        align-items: center;
+        border-radius: $wpRadius;
+        padding: 4px;
+        background-color: $border;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 0;
+            flex-grow: 1;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            color: #5a5676;
+            cursor: pointer;
+
+            &.active {
+                color: #191821;
+                font-weight: 700;
+                border-radius: $wpRadius;
+                background-color: $white;
+            }
+        }
+    }
+}

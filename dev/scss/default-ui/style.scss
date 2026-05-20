@@ -1,0 +1,86 @@
+@import "../common/style", "dark-light-switcher";
+
+body.wp-adminify {
+    --adminify-primary: #3a3ae9;
+    --adminify-preset-background: #f0f0f1;
+}
+
+#wpcontent {
+    height: auto;
+}
+
+.wp-adminify {
+    .notice:not(.plugin-update .notice) {
+        padding: 16px;
+    }
+}
+
+.wp-adminify {
+    #adminmenu div.wp-menu-image {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+#adminmenu div.wp-menu-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Menu Search
+#adminmenu #adminify-wp-menu-search {
+    padding: 2px 4px;
+    margin-bottom: 4px;
+
+    .adminify-wp-menu-search-wrap {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 2px 8px;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+    }
+
+    .adminify-wp-menu-search-icon {
+        flex-shrink: 0;
+        color: #94a3b8;
+        width: 16px;
+        height: 16px;
+    }
+
+    .adminify-wp-menu-search-input {
+        width: 100%;
+        border: 1px solid transparent;
+        outline: none;
+        background: transparent;
+        font-size: 13px;
+        color: #334155;
+        line-height: 1.4;
+        padding: 2px 4px;
+        border-radius: 4px;
+
+        &::placeholder {
+            color: #94a3b8;
+        }
+
+        &:focus {
+            border: none !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+// multisite network-admin
+.wp-adminify {
+    &.multisite,
+    &.network-admin {
+        #adminmenu div.wp-menu-image {
+            img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}

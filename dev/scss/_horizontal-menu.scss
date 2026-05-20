@@ -1,0 +1,192 @@
+@import "./common/mixins.scss", "./common/variables.scss";
+
+// Horizontal Menu
+.adminify-ui {
+    &.horizontal-menu {
+        // top bar
+        .adminify-top_bar {
+            .navbar-brand {
+                &::after {
+                    display: none !important;
+                }
+            }
+        }
+
+        #adminmenuwrap,
+        #adminmenuback {
+            display: none;
+        }
+
+        #wpbody-content {
+            margin-top: 40px;
+        }
+
+        #wpcontent,
+        #wpfooter {
+            margin: 0;
+
+            .wp-adminify-horizontal-menu {
+                position: relative;
+                top: 64px;
+                width: 100%;
+                z-index: 999;
+                border-bottom: 1px solid $border;
+
+                ul {
+                    &.horizontal-menu {
+                        @include flex_center;
+                        gap: var(--adminify-menu-horizontal-padding);
+                        flex-wrap: wrap;
+                        height: max-content;
+                        padding: 10px 16px;
+                        margin: 0;
+                        background-color: $menuBg;
+
+                        > li {
+                            &.navbar-item {
+                                position: relative;
+                                margin: 0;
+
+                                > a {
+                                    position: relative;
+                                    @include flex_center;
+                                    gap: 8px;
+                                    @include font(14px, 400, 24px);
+                                    color: $menuText;
+                                    border-radius: $wpRadius;
+                                    padding: 8px 15px;
+                                    padding-right: 20px;
+                                    cursor: pointer;
+
+                                    &.wp-adminify-active {
+                                        color: $primary !important;
+                                        background-color: transparent;
+                                    }
+
+                                    &:hover {
+                                        color: $primary;
+                                        background-color: transparent;
+
+                                        .wp-menu-image {
+                                            &::before {
+                                                color: $primary;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //submenu
+                                .adminify-dropdown-menu {
+                                    position: absolute;
+                                    top: 105%;
+                                    left: 0;
+                                    visibility: hidden;
+                                    opacity: 0;
+                                    min-width: 160px;
+                                    margin: 0;
+                                    padding: 8px;
+                                    border: 1px solid $border;
+                                    border-radius: 8px;
+                                    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+                                    background-color: $menuBg;
+                                    z-index: 99;
+
+                                    li {
+                                        margin: 0;
+                                        margin-top: var(--adminify-submenu-vertical-padding);
+                                    }
+
+                                    a {
+                                        position: relative;
+                                        @include display(center, space-between);
+                                        @include font(13px, 500, 20px);
+                                        @include wpHover($menuText, $primary);
+                                        color: $menuText;
+                                        padding: 6px 8px;
+                                    }
+
+                                    &::after {
+                                        position: absolute;
+                                        content: "";
+                                        top: -9px;
+                                        left: 1.5rem;
+                                        @include dimension(1rem, 1rem);
+                                        border-top-left-radius: 0.25rem;
+                                        border-width: 1px 0 0 1px;
+                                        border-style: solid;
+                                        border-color: $border;
+                                        background-color: $menu-bg-color;
+                                        transform: rotate(45deg);
+                                    }
+
+                                    &::before {
+                                        position: absolute;
+                                        content: "";
+                                        @include dimension(100%, 100%);
+                                        top: -18px;
+                                        left: 0;
+                                        z-index: 0;
+                                    }
+                                }
+
+                                &:hover {
+                                    .adminify-dropdown-menu {
+                                        top: 123% !important;
+                                        opacity: 1;
+                                        visibility: visible !important;
+                                        transition: all 0.4s;
+                                    }
+                                }
+                            }
+
+                            &.has-dropdown {
+                                > a {
+                                    &::before {
+                                        position: absolute;
+                                        content: "\f347";
+                                        right: -2px;
+                                        font-family: "dashicons";
+                                    }
+
+                                    &:hover {
+                                        &::before {
+                                            transform: rotate(180deg);
+                                        }
+                                    }
+                                }
+
+                                &:has(.adminify-dropdown-menu:hover) {
+                                    > a {
+                                        color: $primary;
+
+                                        &::before {
+                                            transform: rotate(180deg);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .update-plugins,
+                        .update-count,
+                        .awaiting-mod,
+                        .site-health-counter {
+                            @include display(center, center);
+                            @include dimension(14px, 14px);
+                            @include font(10px, 700, 13px);
+                            color: $white;
+                            border-radius: 50%;
+                            background-color: $notificationBg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.toplevel_page_wp-adminify-settings {
+        #wpbody-content {
+            margin-top: 66px;
+        }
+    }
+}

@@ -1,0 +1,685 @@
+// @import "./common/variables.scss", "./common/mixins.scss";
+
+.adminify-ui {
+    //mixin
+    @mixin afterNone($display) {
+        &::after {
+            display: $display;
+        }
+    }
+
+    @mixin foldedSubMenu {
+        &.folded {
+            .wp_adminify_admin-menu {
+                > li {
+                    &.menu-top {
+                        .wp-adminify-nav-sub {
+                            display: none !important;
+                        }
+                        &.opensub {
+                            .wp-adminify-nav-sub {
+                                position: absolute !important;
+                                top: 0 !important;
+                                left: 40px !important;
+                                display: block !important;
+                                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // sidebar width
+    &.folded {
+        #adminmenuback,
+        #adminmenuwrap {
+            width: 62px;
+
+            #adminmenu {
+                li.menu-top {
+                    width: 44px;
+
+                    > a {
+                        gap: 0;
+                        justify-content: center;
+
+                        &::before {
+                            content: "" !important;
+                        }
+                    }
+                }
+
+                // folded menu icon rounded
+                .adminify-menu-icon-rounded {
+                    > li.menu-top {
+                        > a.menu-top {
+                            border-radius: 0;
+                            border-bottom-left-radius: 3rem !important;
+                            border-top-left-radius: 3rem !important;
+                        }
+                    }
+                }
+
+                .adminify-menu-rounded {
+                    > li.menu-top {
+                        > a.menu-top {
+                            padding-left: 8px !important;
+                        }
+                    }
+                }
+            }
+
+            padding: 16px 8px !important;
+
+            .wp_adminify_admin-menu {
+                .wp_adminify_admin-menu-top {
+                    display: none;
+                }
+            }
+
+            &:has(.adminify-menu-rounded) {
+                &#adminmenuwrap {
+                    .adminify-menu-rounded {
+                        > .menu-top {
+                            &.wp-adminify-active > a {
+                                border-bottom-left-radius: 3rem;
+                                border-top-left-radius: 3rem;
+
+                                &::before {
+                                    display: none;
+                                }
+
+                                &::after {
+                                    display: none !important;
+                                }
+                            }
+
+                            &::before {
+                                display: none;
+                            }
+
+                            &::after {
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.folded #adminmenu .wp-submenu.sub-open,
+        &.folded #adminmenu .opensub .wp-submenu,
+        &.folded #adminmenu .wp-has-current-submenu .wp-submenu.sub-open,
+        &.folded #adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+        &.folded #adminmenu a.menu-top:focus + .wp-submenu,
+        &.folded
+            #adminmenu
+            .wp-has-current-submenu
+            a.menu-top:focus
+            + .wp-submenu,
+        .no-js.folded #adminmenu .wp-has-submenu:hover .wp-submenu {
+            left: 54px !important;
+        }
+
+        &.folded #wpcontent,
+        &.folded #wpfooter {
+            margin-left: 54px;
+        }
+
+        #adminmenuwrap {
+            #adminmenu {
+                .wp_adminify_admin-menu {
+                    > li.opensub {
+                        .wp-adminify-nav-sub {
+                            left: 40px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Accordion Menu
+    &.adminify-accordion-v-menu {
+        .wp_adminify_admin-menu {
+            > li {
+                &.menu-top {
+                    .wp-adminify-nav-sub {
+                        display: none;
+                    }
+                }
+                &.wp-adminify-active {
+                    .wp-adminify-nav-sub {
+                        display: block;
+                    }
+                }
+            }
+        }
+        #adminmenu .wp-submenu {
+            position: static;
+            box-shadow: none;
+        }
+
+        .wp-adminify-nav-sub {
+            margin-top: 0 !important;
+        }
+
+        #adminmenu li.menu-top:hover {
+            .wp-submenu {
+                margin-left: 8px !important;
+            }
+        }
+        @include foldedSubMenu;
+    }
+
+    // Toggle
+    &.adminify-toggle-v-menu {
+        .wp_adminify_admin-menu {
+            .menu-top {
+                > ul.wp-adminify-nav-sub {
+                    position: static !important;
+                    box-shadow: none !important;
+                    border: none !important;
+                    margin-top: 0 !important;
+                }
+            }
+        }
+
+        .wp-adminify-active {
+            > ul.wp-adminify-nav-sub {
+                display: block !important;
+            }
+        }
+        @include foldedSubMenu;
+    }
+
+    #adminmenuback {
+        background-color: $menuBg;
+    }
+
+    #adminmenuwrap,
+    #adminmenu,
+    .wp-submenu {
+        background-color: transparent;
+    }
+
+    #adminmenuback,
+    #adminmenuwrap {
+        margin-top: 64px;
+        box-sizing: border-box;
+        width: var(--adminify-menu-width);
+        transition: width 0.15s;
+    }
+    #adminmenuback {
+        border-right: 1px solid $border;
+    }
+
+    #adminmenu {
+        .wp-menu-open {
+            .wp-submenu {
+                width: auto;
+            }
+        }
+    }
+
+    #wpcontent,
+    #wpfooter {
+        margin-left: var(--adminify-menu-width);
+        transition: all 0.15s;
+    }
+
+    // menu hover background remove
+    #adminmenu li.menu-top:hover,
+    #adminmenu li.opensub > a.menu-top,
+    #adminmenu li > a.menu-top:focus {
+        color: transparent;
+        background: transparent;
+    }
+
+    #adminmenuwrap {
+        position: relative !important;
+        padding: var(--adminify-menu-wrapper-padding-top)
+            var(--adminify-menu-wrapper-padding-right)
+            var(--adminify-menu-wrapper-padding-bottom)
+            var(--adminify-menu-wrapper-padding-left);
+
+        #adminmenu {
+            width: auto;
+            margin: 0;
+
+            #collapse-menu {
+                display: none;
+            }
+
+            // sidebar menu
+            .wp_adminify_admin-menu {
+                // sidebar user avata
+                .wp_adminify_admin-menu-top {
+                    .wp_adminify_user {
+                        padding-bottom: 24px;
+
+                        .wp_adminify_user-avatar {
+                            .avatar {
+                                display: block;
+                                @include dimension(80px, 80px);
+                                margin: 0 auto 0.625rem;
+
+                                &.adminify-is-rounded {
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        .wp_adminify_user-details {
+                            h4,
+                            a,
+                            span {
+                                box-shadow: none;
+                                transition: none;
+                            }
+
+                            .wp_adminify_user-name {
+                                margin: 0;
+                                text-align: center;
+
+                                a {
+                                    @include font(17px, 700, 20px);
+                                    color: $menuText;
+                                }
+                            }
+
+                            .wp_adminify_user-url {
+                                a {
+                                    @include font(13px, 400, 16px);
+                                    color: $menuText;
+                                    word-wrap: break-word;
+                                }
+                            }
+                        }
+
+                        .logout {
+                            width: max-content;
+                            @include font(11px, 700, 20px);
+                            color: $white;
+                            text-align: center;
+                            margin: 8px auto;
+                            margin-bottom: 0;
+                            padding: 0 10px;
+                            border-radius: $wpRadius;
+                            background-color: $primary;
+                        }
+
+                        .wp_adminify_user-actions {
+                            @include display(center, center);
+                            gap: 18px;
+                            @include dimension(55px, max-content);
+                            padding: 12px;
+                            margin: 0 auto;
+                            margin-top: 8px;
+                            border-bottom: 2px solid $primary;
+
+                            a {
+                                &:hover {
+                                    box-shadow: none;
+                                    transition: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // sidbar nav item
+                > li {
+                    &.menu-top {
+                        margin-top: var(--adminify-menu-vertical-padding);
+                        background-color: transparent;
+
+                        > a {
+                            &.menu-top,
+                            &.wp-has-current-submenu {
+                                position: relative;
+                                @include flex_center;
+                                gap: 8px;
+                                @include font(
+                                    var(--adminify-menu-font-size),
+                                    400,
+                                    var(--adminify-menu-line-height)
+                                );
+                                color: var(--adminify-menu-text-color);
+                                padding: 4px 8px;
+                                border-radius: $wpRadius;
+                                letter-spacing: var(
+                                    --adminify-menu-letter-spacing
+                                );
+                                transition-duration: 0s;
+
+                                .svg-image-icon {
+                                    @include dimension(28px, 18px);
+                                    background-repeat: no-repeat;
+                                    background-size: 18px;
+                                    background-position: center;
+                                    filter: brightness(0.5);
+                                }
+
+                                .wp-menu-name {
+                                    @include display(center, space-between);
+                                    width: 100%;
+                                    margin-right: 24px;
+                                }
+
+                                .wp-menu-image {
+                                    @include dimension(
+                                        max-content,
+                                        max-content
+                                    );
+
+                                    &::before {
+                                        font-size: 20px;
+                                        color: var(--adminify-menu-text-color);
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+                                }
+
+                                @include afterNone(none);
+
+                                .wp-menu-name {
+                                    > span {
+                                        background-color: var(
+                                            --adminify-notif-bg-color
+                                        );
+                                    }
+                                }
+                                .wp-adminify-icon,
+                                .wp-adminify-icon-button {
+                                    @include display(center, center);
+                                    svg {
+                                        width: 14px;
+                                        height: 14px;
+
+                                        path {
+                                            fill: var(
+                                                --adminify-menu-text-color
+                                            ) !important;
+                                        }
+                                    }
+                                }
+
+                                &:hover {
+                                    color: var(
+                                        --adminify-menu-text-hover-color
+                                    );
+                                    background-color: var(
+                                        --adminify-menu-hover-bg
+                                    );
+                                    box-shadow: none;
+
+                                    .svg-image-icon {
+                                        filter: brightness(200);
+                                    }
+
+                                    .wp-menu-image {
+                                        &::before {
+                                            color: var(
+                                                --adminify-menu-text-hover-color
+                                            );
+                                        }
+                                    }
+
+                                    span {
+                                        svg {
+                                            path {
+                                                fill: var(
+                                                    --adminify-menu-text-hover-color
+                                                ) !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.wp-has-current-submenu {
+                                background-color: transparent;
+                            }
+                        }
+
+                        // sidebar sub menu
+                        .wp-adminify-nav-sub {
+                            padding: var(--adminify-submenu-wrapper-padding-top)
+                                var(--adminify-submenu-wrapper-padding-right)
+                                var(--adminify-submenu-wrapper-padding-bottom)
+                                var(--adminify-submenu-wrapper-padding-left);
+                            background-color: var(
+                                --adminify-submenu-wrapper-bg
+                            );
+                            border-radius: $wpRadius;
+                            border: 0;
+
+                            > li {
+                                a {
+                                    @include display(center, space-between);
+                                    @include font(
+                                        var(--adminify-menu-font-size),
+                                        500,
+                                        var(--adminify-menu-line-height)
+                                    );
+                                    letter-spacing: var(
+                                        --adminify-menu-letter-spacing
+                                    );
+                                    color: var(--adminify-submenu-text-color);
+                                    padding: 6px 8px;
+
+                                    &:hover {
+                                        box-shadow: none;
+                                        color: var(
+                                            --adminify-submenu-text-hover-color
+                                        );
+                                        background: var(
+                                            --adminify-submenu-hover-bg
+                                        );
+                                    }
+
+                                    &.wp-adminify-active {
+                                        color: var(
+                                            --adminify-submenu-active-color
+                                        );
+                                        background: var(
+                                            --adminify-submenu-active-bg
+                                        );
+                                    }
+                                }
+                            }
+
+                            &.wp-submenu {
+                                width: max-content;
+                                margin-left: 14px;
+
+                                > li {
+                                    margin-top: var(
+                                        --adminify-submenu-vertical-padding
+                                    );
+                                    a {
+                                        &#adminify-main-submenu-tutorsetup,
+                                        &#adminify-main-submenu-wpadminifysetupwizard {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.wp-adminify-open {
+                            .wp-adminify-nav-sub {
+                                background: transparent;
+                            }
+                        }
+
+                        .update-plugins {
+                            background-color: var(--adminify-notif-bg-color);
+
+                            .update-count {
+                                @include font(10px, 700, 13px);
+                                color: var(--adminify-notif-color);
+                            }
+                        }
+
+                        &:first-child {
+                            margin-top: 0;
+                        }
+
+                        &.opensub {
+                            .wp-adminify-nav-sub:not(
+                                    .wp-has-current-submenu .wp-adminify-nav-sub
+                                ) {
+                                min-width: 160px;
+                                left: calc(var(--adminify-menu-width) - 22px);
+                            }
+                            > ul,
+                            .wp-submenu {
+                                min-width: 160px;
+                                background-color: var(
+                                    --adminify-submenu-wrapper-bg
+                                );
+                            }
+                        }
+
+                        // active menu style
+                        &.wp-adminify-active,
+                        &.current {
+                            > a,
+                            a.menu-top {
+                                color: var(--adminify-menu-active-color);
+                                background-color: var(
+                                    --adminify-menu-active-bg
+                                );
+
+                                .svg-image-icon {
+                                    filter: brightness(200);
+                                }
+
+                                span {
+                                    svg {
+                                        path {
+                                            fill: var(
+                                                --adminify-menu-active-color
+                                            ) !important;
+                                        }
+                                    }
+                                }
+                                .wp-adminify-icon {
+                                    &::before {
+                                        color: var(
+                                            --adminify-menu-active-color
+                                        );
+                                    }
+                                }
+                            }
+                        }
+
+                        &.wp-has-submenu {
+                            > a.menu-top {
+                                &::before {
+                                    position: absolute;
+                                    content: "\f345";
+                                    right: 8px;
+                                    font-family: "dashicons";
+                                }
+                            }
+
+                            &.wp-adminify-active {
+                                > a.menu-top {
+                                    &::before {
+                                        transform: rotate(90deg);
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            @include afterNone(none);
+
+                            > ul.wp-submenu {
+                                margin-left: 14px !important;
+                            }
+                        }
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &:has(.adminify-menu-rounded) {
+            &#adminmenuwrap {
+                padding: 16px 12px;
+                padding-right: 0;
+
+                #adminmenu {
+                    .wp_adminify_admin-menu {
+                        > .menu-top {
+                            > a {
+                                padding-left: 14px;
+                                border-bottom-left-radius: 3rem;
+                                border-top-left-radius: 3rem;
+
+                                &:hover {
+                                    z-index: 9;
+                                }
+                            }
+                        }
+                    }
+
+                    .adminify-menu-rounded {
+                        > li {
+                            &.wp-adminify-active,
+                            &.current {
+                                > a {
+                                    &::after {
+                                        position: absolute;
+                                        content: "";
+                                        top: -35px;
+                                        right: 0;
+                                        display: block;
+                                        width: 35px;
+                                        height: 35px;
+                                        border: 0;
+                                        margin-top: 0;
+                                        z-index: 1;
+                                        border-bottom-right-radius: 18px;
+                                        box-shadow: 0 20px 0 0
+                                            var(--adminify-menu-active-bg);
+                                        background-color: transparent;
+                                    }
+
+                                    &::before {
+                                        position: absolute;
+                                        top: 28px;
+                                        right: 0;
+                                        content: "";
+                                        width: 35px;
+                                        height: 35px;
+                                        margin-top: 0;
+                                        transform: rotate(0deg);
+                                        border-top-right-radius: 18px;
+                                        box-shadow: 0 -20px 0 0 var(--adminify-menu-active-bg);
+                                        background-color: transparent;
+                                    }
+
+                                    &.menu-top {
+                                        background-color: var(
+                                            --adminify-menu-active-bg
+                                        );
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,193 @@
+.wp-adminify-addons-wrapper {
+    @include wrapper;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    .wp-adminify-addons-header {
+        .wp-adminify-addons-title {
+            > h2 {
+                color: $heading;
+                font: {
+                    size: 24px;
+                    weight: 600;
+                }
+                line-height: 32px;
+                margin: 0;
+            }
+            h3 {
+                font-size: 14px;
+                font-weight: 400;
+                color: $text;
+                margin: 8px 0 0 0;
+            }
+        }
+    }
+    @include addNewPlugins;
+    .plugin-card {
+        .desc {
+            margin: 0 0 0 80px !important;
+        }
+        // Hover Popup
+        .plugin-card-top {
+            position: relative;
+            overflow: hidden;
+            &:hover {
+                .adminify-plugin-details {
+                    opacity: 1;
+                    top: 0;
+                }
+            }
+            .adminify-plugin-details {
+                opacity: 0;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                background: rgba(0, 0, 0, 0.8);
+                transition: all 0.15s;
+                > a {
+                    color: #fff;
+                    border: 1px solid var(--adminify-primary);
+                    background: var(--adminify-primary);
+                    font-size: 12px;
+                    font-weight: 700;
+                    line-height: 1.3;
+                    padding: 8px 12px;
+                    border-radius: 2px;
+                    cursor: pointer;
+                    transition: all 0.15s;
+                    &.adminify-view-details {
+                        color: var(--adminify-primary);
+                        border: 1px solid var(--adminify-primary);
+                        background: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .column-downloaded {
+        .plugin-status {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+            color: $titleColor;
+
+            .plugin-status-active {
+                color: $success;
+                font-weight: 400;
+            }
+
+            .plugin-status-not-install {
+                color: $subTitleColor;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .column-compatibility {
+        .plugin-action-buttons {
+            margin: 0;
+            li {
+                margin-bottom: 0;
+            }
+            button {
+                &.install-now {
+                    border: 1px solid #4552da;
+                    color: #4552da !important;
+                    background: transparent !important;
+                    &:hover {
+                        background: #4552da !important;
+                        color: #fff !important;
+                        border-color: #4552da !important;
+                    }
+                }
+
+                &.activate-now {
+                    border-color: #17b26a !important;
+                    background-color: #17b26a !important;
+                    color: #fff !important;
+                    &:hover {
+                        background: transparent !important;
+                        color: #17b26a !important;
+                        border-color: #17b26a !important;
+                    }
+                }
+
+                &.update-now {
+                    border-color: #f4b740 !important;
+                    background-color: #f4b740 !important;
+                    color: #fff;
+                    &::before {
+                        color: #fff;
+                    }
+                    &:hover {
+                        background: transparent !important;
+                        color: #f4b740 !important;
+                        border-color: #f4b740 !important;
+                        &::before {
+                            color: #f4b740;
+                        }
+                    }
+                }
+                &.updating-message {
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        font-family: dashicons;
+                        content: "\f463";
+                        font-size: 12px;
+                        animation: rotation 2s infinite linear;
+                    }
+                }
+            }
+        }
+    }
+    .plugin-status-active {
+        color: $success;
+    }
+    .plugin-status-inactive {
+        color: $danger;
+    }
+    .plugin-status-not-install {
+        color: #1d2327;
+    }
+    .plugin-status {
+        line-height: 34px;
+    }
+    .hide {
+        display: none;
+    }
+}
+
+/** RTL CSS Start **/
+.wp-adminify.rtl {
+    .wp-adminify-addons-wrapper {
+        .wp-list-table {
+            .plugin-card {
+                .plugin-card-top {
+                    .name.column-name {
+                        margin-right: 80px !important;
+                        margin-left: 128px !important;
+
+                        .plugin-icon {
+                            left: auto;
+                            right: 0;
+                            margin: 0 20px 0 20px !important;
+                        }
+                    }
+
+                    .desc.column-description {
+                        margin: 0 80px 0 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** RTL CSS Start **/

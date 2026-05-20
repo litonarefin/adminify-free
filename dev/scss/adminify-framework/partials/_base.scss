@@ -1,0 +1,1040 @@
+@import "../../common/variables", "../../common/mixins";
+/**
+ * 01. Base
+ */
+// .adminify {
+//     position: relative;
+
+//     label {
+//         padding: 0;
+//         margin: 0;
+//         display: inline-block;
+//     }
+// }
+
+// .adminify-ab-icon {
+//     top: 2px;
+// }
+
+// #screen-meta-links + .adminify-options {
+//     margin-top: 40px;
+// }
+
+// .adminify-options {
+//     margin-top: 20px;
+//     margin-right: 20px;
+// }
+
+// Light & Dark Logo
+.adminify-light-mode {
+    .adminify-header-left {
+        img.adminify-settings-light-logo {
+            display: inline-block;
+        }
+        img.adminify-settings-dark-logo {
+            display: none;
+        }
+    }
+}
+.adminify-dark-mode {
+    .adminify-header-left {
+        img.adminify-settings-light-logo {
+            display: none;
+        }
+        img.adminify-settings-dark-logo {
+            display: inline-block;
+        }
+    }
+}
+
+/**
+ * Settings
+ */
+.wp-adminify-settings {
+    margin-top: 16px;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: $wpRadius;
+    width: 80%;
+    margin: 60px auto;
+
+    .clear {
+        display: none;
+    }
+
+    // Primary button
+    input[type="submit"],
+    .button-primary,
+    a.page-title-action {
+        &:not(.adminify-btn) {
+            color: $white;
+            border-radius: $wpRadius;
+            cursor: pointer;
+            transition: all 0.15s;
+            @include btnVarient($primary, $white);
+        }
+    }
+
+    .adminify-reset-section {
+        background: $secondary !important;
+        border-color: $secondary !important;
+        &:hover {
+            background: transparent !important;
+            color: $secondary !important;
+        }
+    }
+
+    .adminify-warning-primary {
+        color: $white;
+        background: $danger !important;
+        border-color: $danger !important;
+        &:hover {
+            background: transparent !important;
+            color: $danger !important;
+        }
+    }
+
+    // // Outline button
+    // .button {
+    //     color: $white;
+    //     background: transparent;
+    //     border-radius: $wpRadius;
+    //     cursor: pointer;
+    //     transition: all 0.15s;
+    //     @include btnOutlineVarient($primary, $primary);
+    //     border-color: $primary;
+
+    //     &:focus {
+    //         box-shadow: none;
+    //     }
+    // }
+
+    /**
+    * Header
+    */
+    .adminify-header {
+        border-bottom: 1px solid $border;
+
+        &-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            transition: box-shadow 0.3s ease;
+
+            .adminify-header-left {
+                h1 {
+                    margin: 0;
+                }
+                img.wp-adminify-settings-logo {
+                    width: 128px;
+                }
+
+                small {
+                    margin-left: 4px;
+                    font-size: 11px;
+                    font-weight: 500;
+                }
+            }
+
+            .adminify-header-right {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+        }
+    }
+
+    /**
+    * Body
+    */
+    .adminify-wrapper {
+        /**
+        * Nav Menu
+        * Horizontal Menu
+        */
+        .adminify-nav {
+            > ul {
+                position: relative;
+                @include flex_center;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin: 0;
+                padding: 8px 1rem;
+
+                > li {
+                    margin-bottom: 0;
+
+                    a {
+                        color: $menuColor;
+                        font-size: 14px;
+                        line-height: 24px;
+                        position: relative;
+                        padding: 8px 10px;
+                        border-radius: $wpRadius;
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        &:focus {
+                            outline: none;
+                            box-shadow: none;
+                        }
+
+                        &.adminify-active {
+                            color: $white;
+                            background: $primary;
+                        }
+
+                        &.adminify-arrow {
+                            &:after {
+                                content: "\f107";
+                                display: inline-block;
+                                font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free",
+                                    "FontAwesome";
+                                font-weight: 900;
+                                font-size: 9px;
+                                line-height: 1;
+                                position: absolute;
+                                right: -5px;
+                                top: 50%;
+                                margin-top: -4px;
+                            }
+                        }
+                    }
+
+                    // &.adminify-tab-expanded {
+                    //     display: none;
+                    // }
+
+                    ul {
+                        position: absolute;
+                        display: none;
+                        transition: all 0.1s;
+                        border: 1px solid $border;
+                        border-radius: 2px;
+                        z-index: 9999;
+                        background-color: $white;
+
+                        li {
+                            width: 100%;
+                            margin-bottom: 8px;
+
+                            a {
+                                color: $menuColor;
+                                font-size: 14px;
+                                line-height: 24px;
+                                position: relative;
+                                padding: 4px 12px;
+                                text-decoration: none;
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                                border-radius: 2px;
+
+                                &:hover {
+                                    color: $white;
+                                    background-color: $primary;
+                                }
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        > ul {
+                            display: block;
+                        }
+
+                        a {
+                            &.adminify-arrow {
+                                color: $primary;
+
+                                &:after {
+                                    transition: all 0.1s;
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .adminify-tab-icon {
+                width: 20px;
+                font-size: 14px;
+                text-align: center;
+            }
+
+            .adminify-label-error {
+                margin-left: 4px;
+                vertical-align: top;
+            }
+        }
+
+        /**
+        * Content
+        */
+    }
+
+    /**
+    * Footer
+    */
+    .adminify-footer {
+        padding: 16px 24px;
+        display: flex;
+        justify-content: end;
+        gap: 8px;
+        border-top: 1px solid $border;
+    }
+
+    // Actions Buttons
+    .adminify-header,
+    .adminify-footer {
+        .adminify-buttons {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 8px;
+        }
+    }
+
+    // notices style
+    .adminify-fieldset {
+        ul {
+            li {
+                &:has(.adminify-pro-notice) {
+                    label {
+                        @include flex_center;
+
+                        span {
+                            &.adminify--text {
+                                display: flex;
+                                gap: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .adminify-pro-notice {
+        padding: 0;
+        border: 0;
+        cursor: pointer;
+        box-shadow: none;
+        background-color: transparent;
+        gap: 6px;
+        img {
+            border-radius: $wpRadius;
+        }
+        svg {
+            width: 13px;
+            height: 13px;
+        }
+    }
+    .wp-adminify--menu--editor--settings {
+        &:has(.adminify-pro-notice) {
+            .adminify-add-new-menu-editor-item {
+                @include display(center, center);
+                gap: 8px;
+            }
+        }
+    }
+
+    // custom-background style
+    .adminify-fieldset {
+        .adminify--background-attributes {
+            .adminify-field {
+                display: block;
+                flex: inherit !important;
+                margin-bottom: 8px;
+                margin-right: 8px;
+                select {
+                    min-width: max-content;
+                }
+            }
+        }
+    }
+}
+
+// .adminify-header {
+//     position: relative;
+// }
+
+/**
+ * 01. 02. Sticky
+ */
+// .adminify-sticky {
+//     .adminify-header-inner {
+//         position: fixed;
+//         z-index: 99;
+//         top: 32px;
+//         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+//     }
+// }
+
+/**
+ * 01. 03. Header Buttons
+ */
+// .adminify-buttons {
+//     float: right;
+
+//     .button {
+//         margin: 0 2px;
+//         line-height: 26px;
+
+//         &:focus {
+//             outline: none !important;
+//             box-shadow: none !important;
+//         }
+//     }
+
+//     .adminify-save {
+//         min-width: 72px;
+//     }
+// }
+
+// .adminify-header-left {
+//     float: left;
+// }
+
+// .adminify-header-right {
+//     float: right;
+// }
+
+/**
+ * 01. 04. Navigation
+ */
+// .adminify-nav {
+//     display: block;
+//     position: relative;
+//     z-index: 10;
+//     float: left;
+
+//     ul {
+//         clear: left;
+//         margin: 0;
+//         list-style-type: none;
+
+//         li {
+//             margin-bottom: 0;
+
+//             a {
+//                 font-size: 13px;
+//                 position: relative;
+//                 display: block;
+//                 padding: 14px 12px;
+//                 text-decoration: none;
+//                 transition-property: color, background;
+//                 transition-duration: 0.2s;
+//                 transition-timing-function: ease;
+
+//                 &:focus {
+//                     outline: none;
+//                     box-shadow: none;
+//                 }
+//             }
+
+//             .adminify-arrow:after {
+//                 content: "\f054";
+//                 display: inline-block;
+//                 font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome";
+//                 font-weight: 900;
+//                 font-size: 9px;
+//                 line-height: 1;
+//                 position: absolute;
+//                 right: 10px;
+//                 top: 50%;
+//                 margin-top: -4px;
+//             }
+
+//             &.adminify-tab-expanded {
+//                 .adminify-arrow:after {
+//                     transform: rotate(90deg);
+//                 }
+
+//                 ul {
+//                     display: block;
+//                 }
+//             }
+//         }
+
+//         ul {
+//             display: none;
+//             position: relative;
+
+//             li {
+//                 a {
+//                     font-size: 12px;
+//                     padding: 12px 14px 12px 24px;
+//                 }
+//             }
+//         }
+//     }
+
+//     .adminify-tab-icon {
+//         width: 20px;
+//         margin-right: 5px;
+//         font-size: 13px;
+//         text-align: center;
+//     }
+
+//     .adminify-label-error {
+//         margin-left: 4px;
+//         vertical-align: top;
+//     }
+// }
+
+// .adminify-nav-normal {
+//     width: 225px;
+
+//     + .adminify-content {
+//         margin-left: 225px;
+//     }
+// }
+
+// .adminify-nav-inline {
+//     width: 100%;
+
+//     ul {
+//         li {
+//             display: inline-block;
+//             vertical-align: top;
+//         }
+//     }
+// }
+
+// .adminify-nav-background {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     z-index: 9;
+//     width: 225px;
+// }
+
+/**
+ * 01. 05. Wrapper
+ */
+// .adminify-wrapper {
+//     position: relative;
+// }
+
+/**
+ * 01. 06. Content
+ */
+// .adminify-content {
+//     position: relative;
+//     background-color: #fff;
+// }
+
+/**
+ * 01. 07. Section
+ */
+// .adminify-sections {
+//     float: left;
+//     width: 100%;
+// }
+
+.adminify-section {
+    .adminify-field {
+        &.adminify-agency-plan {
+            .adminify-pro-badge {
+                font-size: 17px;
+                padding: 10px 20px;
+            }
+        }
+        .adminify-pro-badge {
+            background: #cdcdfd;
+            color: #3a3ae9;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 13px;
+            margin-left: 4px;
+        }
+
+        &.adminify-pro-feature,
+        &.adminify-pro-fieldset .adminify-fieldset {
+            // background: #00000014;
+            opacity: 0.75;
+            filter: grayscale(1);
+            // pointer-events: none;
+        }
+        .adminify--image {
+            position: relative;
+            .adminify-pro-tag {
+                position: absolute;
+                top: 15px;
+                right: 2px;
+                background: #f50a7f;
+                color: #fff;
+                padding: 2px 8px;
+                border-radius: 40px;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 1.1;
+            }
+        }
+        &.adminify-field-color_group.adminify-pro-fieldset
+            > .adminify-fieldset
+            .wp-picker-container,
+        &.adminify-pro-pointer .adminify-fieldset,
+        &.adminify-pro-pointer .adminify-checkbox {
+            pointer-events: none;
+        }
+
+        .adminify-fieldset {
+            ul {
+                > li {
+                    > label:has(.adminify-pro-checkbox) {
+                        opacity: 0.75;
+                        filter: grayscale(1);
+                    }
+                    .adminify-pro-checkbox {
+                        display: flex;
+                        gap: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.adminify-section-title {
+    padding: 5px 20px;
+    background-color: $bodybg;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+// /**
+//  * 01. 08. Footer
+//  */
+// .adminify-footer {
+//     padding: 20px;
+//     font-size: 11px;
+// }
+
+/**
+ * 01. 09. Copyright
+ */
+.adminify-copyright {
+    float: left;
+    margin-top: 5px;
+}
+
+/**
+ * 01. 10. Show All Settings
+ */
+.adminify-search-all,
+.adminify-show-all {
+    .adminify-nav-background,
+    .adminify-nav {
+        display: none;
+    }
+
+    .adminify-content {
+        margin-left: 0;
+    }
+
+    .adminify-section-title,
+    .adminify-section {
+        display: block !important;
+    }
+}
+
+.adminify-search-all {
+    .adminify-section-title {
+        display: none !important;
+    }
+}
+
+//
+// Expand
+//
+.adminify-expand-all {
+    float: left;
+    padding: 0 8px;
+    margin-right: 4px;
+    z-index: 1;
+    font-size: 13px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+
+    span {
+        font-size: 11px;
+        vertical-align: middle;
+    }
+}
+
+/**
+ * 01. 11. Search Input
+ */
+.adminify-search {
+    float: left;
+
+    input {
+        margin: 0 2px 0 0;
+        border: none;
+        font-size: 12px;
+        line-height: 30px;
+        min-height: 30px;
+        text-align: inherit;
+        padding: 0 10px;
+        border-radius: 2px;
+        box-shadow: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.adminify-saving {
+    .adminify-buttons,
+    .adminify-content {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+/**
+ * 01. 12. Metabox
+ */
+.adminify-metabox {
+    margin: -6px -12px -12px -12px;
+
+    .adminify-field {
+        padding: 20px;
+    }
+
+    .adminify-section-title {
+        padding: 20px;
+    }
+}
+
+.block-editor-page {
+    .adminify-metabox {
+        margin: -6px -14px -14px -14px;
+    }
+}
+
+.block-editor-editor-skeleton__content {
+    .adminify-metabox {
+        border-left: 1px solid #e2e4e7;
+        border-right: 1px solid #e2e4e7;
+    }
+}
+
+.adminify-sections-reset {
+    float: left;
+    width: 100%;
+    text-align: right;
+    border-top: 1px solid #eee;
+
+    .adminify-button-cancel,
+    input {
+        display: none;
+    }
+
+    label {
+        padding: 10px;
+    }
+
+    span {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    input:checked ~ .adminify-button-reset {
+        display: none;
+    }
+
+    input:checked ~ .adminify-button-cancel {
+        display: inline-block;
+    }
+}
+
+#side-sortables {
+    .adminify-section-title {
+        padding: 12px;
+    }
+
+    .adminify-field {
+        padding: 10px 15px;
+
+        .adminify-title {
+            float: none;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+
+        .adminify-fieldset {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    .adminify-field-text input {
+        width: 100%;
+    }
+
+    .adminify-notice {
+        padding: 10px 15px;
+    }
+}
+
+/**
+ * 01. 13. Comment Metabox
+ */
+.adminify-comment-metabox {
+    margin: -6px -12px -12px -12px;
+
+    .adminify-field {
+        padding: 20px;
+    }
+
+    .adminify-section-title {
+        padding: 20px;
+    }
+}
+
+/**
+ * 01. 14. Help Tooltip
+ */
+.adminify-tooltip {
+    position: absolute;
+    z-index: 5000001;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    padding: 6px 12px;
+    max-width: 200px;
+    color: #fff;
+    background-color: #000;
+    background-color: rgba(black, 0.85);
+    border-radius: 4px;
+}
+
+// responsive
+@media screen and (max-width: 1440px) {
+    .wp-adminify {
+        .wp-adminify-settings {
+            width: 95%;
+        }
+    }
+}
+
+// responsive tablet
+@media screen and (max-width: 992px) {
+    .wp-adminify {
+        .wp-adminify-settings {
+            width: 100% !important;
+            .adminify-section {
+                padding: 30px 12px 60px 12px;
+                .adminify-field {
+                    &.adminify-field-subheading {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        flex-wrap: wrap;
+                        gap: 12px;
+                        justify-content: center;
+                        .adminify-helps {
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// responsive mobile
+@media screen and (max-width: 425px) {
+    .wp-adminify {
+        .wp-adminify-settings {
+            .adminify-field {
+                padding: 16px 0;
+                .adminify--input {
+                    select {
+                        width: 150px;
+                    }
+                }
+            }
+            .adminify-section {
+                padding: 30px 16px 60px 16px;
+            }
+            .adminify-header-inner,
+            .adminify-footer {
+                justify-content: center;
+                gap: 12px;
+                flex-wrap: wrap;
+                .adminify-header-right {
+                    flex-wrap: wrap;
+                    gap: 12px;
+                }
+                .adminify-buttons {
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                }
+            }
+
+            // customize
+            .adminify-field-switcher {
+                grid-template-columns: 100%;
+                gap: 12px;
+            }
+            .adminify-field-fieldset {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 12px;
+                &.adminify-field {
+                    padding: 12px 0 !important;
+                }
+
+                &.adminify-nopadding {
+                    &:has(.adminify--switcher.adminify--active) {
+                        .adminify-field {
+                            grid-template-columns: 1fr;
+                            gap: 12px;
+                            .adminify-title {
+                                margin-bottom: 12px;
+                            }
+                        }
+                    }
+                }
+                .adminify-fieldset {
+                    .adminify-fieldset-content {
+                        .adminify-field {
+                            &.adminify-field-button_set {
+                                grid-template-columns: 1fr;
+                                gap: 12px;
+                                padding: 12px 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .adminify-sections {
+                .adminify-field-image_select,
+                .adminify-field-color_group {
+                    display: flex;
+                    flex-direction: column;
+                    .adminify-title {
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+            .adminify--blocks {
+                flex-direction: column;
+                .adminify--input-wrap {
+                    .adminify--input {
+                        min-width: auto;
+                        width: 100%;
+                    }
+                }
+            }
+            .adminify-field {
+                &.adminify-field-typography,
+                &.adminify-field-media,
+                &.adminify-field-dimensions,
+                .adminify-field-text {
+                    grid-template-columns: 1fr;
+                    gap: 12px;
+                    padding: 12px 0 !important;
+                    .adminify-fieldset {
+                        .adminify--block {
+                            padding-right: 0;
+                            .adminify--font-family {
+                                min-width: auto;
+                                max-width: none;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Admin Menu
+            .adminify-field-callback {
+                &.adminify-field {
+                    padding: 0 !important;
+                    .wrap {
+                        margin: 0 !important;
+                        .wp-adminify--menu--editor--container {
+                            max-width: 100% !important;
+                            margin: 0 0 !important;
+                            margin-bottom: 16px !important;
+                            .tab-content {
+                                .tab-pane {
+                                    padding-left: 0;
+                                    padding-right: 0;
+                                    .columns {
+                                        flex-direction: column;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.adminify-one-col {
+                        grid-template-columns: 100%;
+                    }
+                }
+            }
+            .adminify-tabbed-content {
+                .adminify-field {
+                    &.adminify-field-button_set,
+                    &.adminify-field-spacing,
+                    &.adminify-field-slider {
+                        grid-template-columns: 100%;
+                        gap: 12px;
+                        .adminify-siblings {
+                            &.adminify--button-group {
+                                flex-wrap: wrap;
+                            }
+                        }
+                    }
+                }
+                .adminify-field-fieldset {
+                    padding: 16px !important;
+                    .adminify-field-switcher {
+                        flex-wrap: wrap;
+                        gap: 12px;
+                        &.adminify-field {
+                            flex-wrap: wrap;
+                            gap: 12px;
+                        }
+                    }
+                }
+            }
+
+            // productivity, security, performance, code snippets, white label, backup
+            .adminify-sections {
+                .adminify-field {
+                    &.adminify-field-checkbox,
+                    &.adminify-field-radio,
+                    &.adminify-field-code_editor,
+                    &.adminify-field-wp_editor,
+                    &.adminify-field-textarea {
+                        grid-template-columns: 100%;
+                        gap: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,118 @@
+@import "../common/variables.scss", "../common/mixins.scss";
+
+.adminify-ui {
+    #wpbody-content {
+
+        // themes
+        .theme-browser {
+            .themes {
+
+                .theme {
+                    border-radius: $wpRadius;
+
+                    .theme-screenshot {
+                        border-radius: $wpRadius $wpRadius 0 0;
+                    }
+
+                    .theme-id-container {
+                        .theme-name {
+                            border-radius: 0 0 $wpRadius $wpRadius;
+                        }
+                    }
+
+                    .more-details {
+                        border-radius: $wpRadius;
+                        background-color: $primary;
+                    }
+
+                    &.add-new-theme {
+                        a {
+
+                            &::after {
+                                border-radius: $wpRadius;
+                                border-color: $border;
+                            }
+
+                            &:hover {
+                                &::after {
+                                    border-color: $primary;
+                                    background-color: $primary;
+                                }
+
+                                .theme-screenshot {
+                                    span {
+                                        &::after {
+                                            color: $primary;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // theme wrap modal
+        .theme-wrap {
+            border-radius: $wpRadius;
+
+            .theme-header {
+                border-color: $border;
+
+                button {
+                    border-color: $border;
+
+                    &::before {
+                        color: $secondary;
+                    }
+
+                    &:hover {
+                        background-color: transparent !important;
+
+                        &.close {
+                            &::before {
+                                color: red;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .theme-about {
+                .screenshot {
+                    box-shadow: 0 0 0 1px $border;
+                    border-radius: $wpRadius;
+                }
+
+                .theme-info {
+                    .theme-name {
+                        @include font(32px, 300, 42px);
+                        color: $wpHeading;
+                    }
+
+                    .theme-author,
+                    .theme-description {
+                        color: $wpHeading;
+                    }
+
+                    .theme-tags {
+                        color: $secondary;
+                        border-color: $border;
+                    }
+
+                }
+
+            }
+
+            .theme-actions {
+                border-color: $border;
+                border-radius: 0 0 $wpRadius $wpRadius;
+            }
+        }
+
+
+
+    }
+}

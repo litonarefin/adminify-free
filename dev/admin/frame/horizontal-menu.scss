@@ -1,0 +1,429 @@
+.adminify-horizontal-menu-wrapper {
+    border-top: 1px solid var(--adminify-menu-border);
+    > ul {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        flex-wrap: wrap;
+        margin: 8px 0;
+        li.frame-adminify-menu-item {
+            position: relative;
+            margin: 0;
+            padding: 8px 0;
+            cursor: pointer;
+            > a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--adminify-menu-text-color);
+                background-color: transparent;
+                padding: 0;
+                .frame-adminify-menu-item-wrap {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    .frame-adminify-menu-icon {
+                        display: flex;
+                        align-items: center;
+                        width: 14px;
+                        height: 14px;
+                        > svg {
+                            width: 14px;
+                            height: 14px;
+                            > path {
+                                fill: var(--adminify-menu-text-color);
+                            }
+                        }
+                        &::before {
+                            font-size: 16px !important;
+                        }
+                    }
+                    // Image icon
+                    .frame-adminify-menu-image {
+                        width: 16px;
+                        height: 16px;
+                        > img {
+                            width: 16px;
+                            height: 16px;
+                            filter: contrast(0.2);
+                        }
+                        &[style] {
+                            position: relative;
+                            width: 16px;
+                            height: 16px;
+                            -webkit-mask-position: center;
+                            mask-position: center;
+                            -webkit-mask-repeat: no-repeat;
+                            mask-repeat: no-repeat;
+                            -webkit-mask-size: 16px auto;
+                            mask-size: 16px auto;
+                            background-color: var(--adminify-menu-text-color);
+                        }
+                    }
+
+                    .frame-adminify-menu-item-name {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        :last-child {
+                            background: var(--adminify-notif-bg-color);
+                            color: var(--adminify-notif-color);
+                            font-size: 11px;
+                            font-weight: 600;
+                            width: 16px;
+                            height: 16px;
+                            padding: 4px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: inherit !important;
+                            &.count-0 {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                // submenu arrow
+                .frame-adminify-submenu-arrow {
+                    transform: rotate(0);
+                    transition: transform 0.4s;
+                    svg {
+                        width: 14px;
+                        height: 12px;
+                        path {
+                            fill: var(--adminify-menu-text-color);
+                        }
+                    }
+                }
+            }
+            .frame-adminify-submenu-wrapper {
+                display: none;
+                position: absolute;
+                top: 40px;
+                margin-top: -12px;
+                z-index: 999;
+                ul.frame-adminify-submenu {
+                    margin-top: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 12px 0;
+                    background: var(--adminify-menu-bg);
+                    border-radius: 2px;
+                    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+                    border: 1px solid var(--adminify-menu-border);
+                    li.frame-adminify-submenu-item {
+                        margin: 0;
+                        position: relative;
+                        a {
+                            color: var(--adminify-menu-text-color);
+                            padding: 2px 1rem;
+                            font-size: 13px;
+                            line-height: 28px;
+                            font-weight: 500;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            gap: 4px;
+                            min-width: 160px;
+                            :last-child {
+                                position: inherit !important;
+                            }
+
+                            // Third level arrow
+                            .frame-adminify-third-level-arrow {
+                                display: flex;
+                                align-items: center;
+                                margin-left: auto;
+                                svg {
+                                    width: 10px;
+                                    height: 10px;
+                                    path {
+                                        fill: var(--adminify-menu-text-color);
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            > a {
+                                color: var(--adminify-primary);
+
+                                .frame-adminify-third-level-arrow {
+                                    svg path {
+                                        fill: var(--adminify-primary);
+                                    }
+                                }
+                            }
+                        }
+                        .adminify-addons-text {
+                            color: #ffa500;
+                        }
+
+                        // Third level wrapper - flyout to the right
+                        .frame-adminify-third-level-wrapper {
+                            display: none;
+                            position: absolute;
+                            top: -12px;
+                            left: 100%;
+                            padding-left: 4px;
+                            z-index: 1000;
+
+                            .frame-adminify-third-level-menu {
+                                display: flex;
+                                flex-direction: column;
+                                padding: 12px 0;
+                                margin: 0;
+                                background: var(--adminify-menu-bg);
+                                border-radius: 2px;
+                                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+                                border: 1px solid var(--adminify-menu-border);
+                                list-style: none;
+
+                                .frame-adminify-third-level-item {
+                                    margin: 0;
+
+                                    a {
+                                        color: var(--adminify-menu-text-color);
+                                        padding: 2px 1rem;
+                                        font-size: 13px;
+                                        line-height: 28px;
+                                        font-weight: 500;
+                                        display: block;
+                                        min-width: 140px;
+                                        white-space: nowrap;
+                                        text-decoration: none;
+                                    }
+
+                                    &:hover {
+                                        a {
+                                            color: var(--adminify-primary);
+                                        }
+                                    }
+
+                                    &.frame-adminify--third-level-active {
+                                        a {
+                                            color: var(--adminify-primary);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // Show third level on hover
+                        &.frame-adminify-has-third-level:hover {
+                            .frame-adminify-third-level-wrapper {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 12px;
+                    width: 12px;
+                    border: 1px solid var(--adminify-menu-border);
+                    border-width: 1px 0 0 1px;
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    background-color: var(--adminify-menu-bg);
+                    top: 6px;
+                    left: 32px;
+                }
+            }
+
+            &:hover {
+                a {
+                    color: var(--adminify-primary);
+                    .frame-adminify-menu-item-wrap {
+                        .frame-adminify-menu-icon {
+                            > svg {
+                                > path {
+                                    fill: var(--adminify-primary);
+                                }
+                            }
+                        }
+                    }
+                    // submenu arrow
+                    .frame-adminify-submenu-arrow {
+                        transform: rotate(180deg);
+                        svg {
+                            path {
+                                fill: var(--adminify-primary) !important;
+                            }
+                        }
+                    }
+                }
+
+                .frame-adminify-submenu-wrapper {
+                    display: block;
+                }
+            }
+
+            // Active Main Menu
+            &.frame-adminify--menu-active {
+                > a {
+                    color: var(--adminify-primary);
+                    .frame-adminify-menu-item-wrap {
+                        .frame-adminify-menu-icon {
+                            > svg {
+                                > path {
+                                    fill: var(--adminify-primary);
+                                }
+                            }
+                        }
+                    }
+                    // submenu arrow
+                    .frame-adminify-submenu-arrow {
+                        svg {
+                            path {
+                                fill: var(--adminify-primary) !important;
+                            }
+                        }
+                    }
+                }
+                .frame-adminify-submenu {
+                    .frame-adminify-submenu-active {
+                        > a {
+                            color: var(--adminify-primary) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.adminify-horizontal-menu-icons-only {
+        ul {
+            .frame-adminify-menu-item {
+                &:hover {
+                    .frame-adminify-submenu-wrapper {
+                        &::before {
+                            left: 5px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.adminify-horizontal-menu-bubble {
+        ul {
+            .frame-adminify-menu-item {
+                .frame-adminify-menu-item-name {
+                    span {
+                        &:last-child {
+                            display: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// responsive tablet
+@media screen and (max-width: 992px) {
+    .frame-adminify-app {
+        .adminify-horizontal-menu {
+            .adminify-horizontal-menu-wrapper {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 260px;
+                height: 100%;
+                padding: 12px 0;
+                padding-right: 4px;
+                background-color: var(--adminify-menu-bg);
+                border: 0;
+                z-index: 999;
+                transform: translateX(-100%);
+                transition: transform 0.4s;
+                > ul {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    flex-wrap: nowrap;
+                    margin: 0;
+                    padding: 0 16px;
+                    padding-right: 12px;
+                    height: calc(100vh - 24px);
+                    overflow-y: scroll;
+                    .frame-adminify-menu-item {
+                        width: 100%;
+                        .frame-adminify-submenu-wrapper {
+                            position: relative;
+                            top: 0;
+                            height: 0;
+                            ul.frame-adminify-submenu {
+                                box-shadow: none;
+                                border: 0;
+                                padding-top: 8px;
+
+                                // Third level mobile styles
+                                .frame-adminify-submenu-item {
+                                    .frame-adminify-third-level-wrapper {
+                                        position: relative;
+                                        top: 0;
+                                        left: 0;
+                                        padding-left: 0;
+                                        height: 0;
+                                        overflow: hidden;
+
+                                        .frame-adminify-third-level-menu {
+                                            box-shadow: none;
+                                            border: 0;
+                                            padding: 8px 0 8px 16px;
+                                        }
+                                    }
+
+                                    &.frame-adminify-has-third-level:hover {
+                                        .frame-adminify-third-level-wrapper {
+                                            height: auto;
+                                        }
+                                    }
+                                }
+                            }
+                            &::before {
+                                display: none;
+                            }
+                        }
+                        &.frame-adminify-has-submenu.frame-adminify--menu-active {
+                            .frame-adminify-submenu-wrapper {
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+                &.adminify-horizontal-sidebar-collapse {
+                    transform: translateX(0) !important;
+                }
+                &.adminify-horizontal-menu-bubble {
+                    ul {
+                        .frame-adminify-menu-item {
+                            .frame-adminify-menu-item-name {
+                                span {
+                                    &:last-child {
+                                        display: flex !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:has(.adminify-horizontal-sidebar-collapse) {
+            &::before {
+                position: absolute;
+                content: "";
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3490196078);
+                z-index: 999;
+            }
+        }
+    }
+}

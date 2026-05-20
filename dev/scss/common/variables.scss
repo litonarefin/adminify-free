@@ -1,0 +1,152 @@
+// body.wp-adminify {
+//     --adminify-text-color: #fff;
+//     --adminify-input-bg: #f1f1f3;
+// }
+
+body.wp-adminify {
+    --adminify-primary: #3a3ae9;
+    --adminify-preset-background: #f0f0f1;
+    --adminify-text-color: #fff;
+    --adminify-input-bg: #f1f1f3;
+}
+
+// Color variables
+$bodybg: var(--adminify-preset-background);
+$whitecolor: var(--adminify-text-color);
+$whitegray: var(--adminify-input-bg);
+$lightgray: #e5e5e5;
+$graycolor: var(--adminify-preset-background);
+$heading-bg-color: #f7f7f7;
+$graycolor2: #e7e7e8;
+$graycolor3: #fafafa;
+$primarycolor: var(--adminify-btn-bg);
+$primarylight: rgba(3, 71, 255, 0.17);
+$primarylight2: rgba(3, 71, 255, 0.1);
+$primarylight3: #d5e0ff;
+$blackcolor: #4e4b66;
+$blackmuted: rgba(78, 75, 102, 0.72);
+$yellow: #ffc804;
+$yellowlight: #f4b740;
+$orange: #ffa500;
+$placeholder: #4e4b66;
+$blackplaceholder: rgba(78, 75, 102, 0.54);
+$blackplaceholder2: var(--adminify-text-color);
+$redlight: var(--adminify-notif-bg-color);
+$reddark: rgb(195, 0, 82);
+$greencolor: #00ba88;
+$titlecolor: #14142b;
+$bodycolor: #e5e5e5;
+$black: #000;
+$updatecolor: #fffdf1;
+$blackborder: #cfcfcf;
+$placeholdersolid: #9391a0;
+$blackpopover: rgba(0, 0, 0, 0.5);
+$panelbg: #312d48;
+$fast: #0cce6b;
+$average: #ffa400;
+$slow: var(--adminify-notif-bg-color);
+$dark-mode-bg: #111;
+$dark-primary: #020407;
+$dark-mode-black-1: #1d1d1d;
+$dark-mode-white: #cfcfcf;
+$dark-mode-border-color-1: #2b2b2b;
+$dark-primary-dark: #0748f8;
+$dark-primary-light: #205bff;
+$white: #fff;
+
+// New Template Variables
+$menu-bg-color: var(--adminify-menu-bg);
+$menu-text-color: var(--adminify-menu-text-color);
+$adminify-admin-bar-bg: var(--adminify-admin-bar-bg);
+$submenu-bg-color-dark: rgba($menu-bg-color, 0.05);
+$adminbar-icon-filter-brightness: var(--adminify-admin-bar-icon-brightness);
+
+// Font variables
+$fontsize: 13px;
+$lineheight16: 16px;
+$lineheight20: 20px;
+$lineheight22: 22px;
+$weight400: 400;
+$weight600: 600;
+$weight700: 700;
+
+// Box shadow and Border variables
+
+$grayshadow: 0px 0px 54px 0px rgba(20, 20, 42, 0.07);
+$insetshadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+$radius6p: 6px;
+$grayborder: #d8d8d8;
+$lightwhite: rgba(255, 255, 255, 0.1);
+
+// Margin & Padding Variables
+
+$btnpadding: 0 16px;
+
+// Variables ==========================================
+
+// :root {
+//     --adminify-preset-background: #fff;
+//     --adminify-menu-bg: #fff;
+//     --adminify-menu-text-color: rgba(78, 75, 102, 0.72);
+//     --adminify-notif-bg-color: #ff1c69;
+//     --adminify-primary: #3a3ae9;
+//     // --adminify-admin-bar-bg: var(--adminify-menu-bg);
+//     // --adminify-admin-bar-icon: #14142b;
+//     // --adminify-admin-bar-input-bg: #f1f1f3;
+//     // --adminify-admin-bar-input-text: #14142b;
+//     // --adminify-admin-bar-icon-brightness: 1;
+//     // --adminify-text-color: #ffffff;
+//     // --adminify-btn-bg: #0347ff;
+//     // --adminify-admin-bar-icon-filter: 0.5;
+// }
+
+// body.wp-adminify {
+//     --adminify-preset-background: #fff;
+//     --adminify-menu-bg: rgb(10, 48, 1);
+//     --adminify-menu-text-color: #fff;
+//     --adminify-notif-bg-color: #ff1c69;
+//     --adminify-primary: rgb(212, 5, 198);
+// }
+
+// Body BG
+// Primary color
+// Menu Bg
+// Menu Text
+// Notification BG
+
+// border radius
+$wpRadius: 2px;
+// Theme
+$bodybg: var(--adminify-preset-background);
+$menuBg: var(--adminify-menu-bg);
+$menuText: var(--adminify-menu-text-color);
+$notificationBg: var(--adminify-notif-bg-color);
+// colors
+$primary: var(--adminify-primary);
+$secondary: #48455f;
+$red: #ff1c69;
+$danger: #f04438;
+$warning: #f79009;
+$success: #17b26a;
+$purple: #6938ef;
+$text: #736e91;
+$input: #667085;
+$link: $primary;
+$white: #fff;
+$black: #000;
+$menuColor: #322f41;
+$wpMenuColor: $secondary;
+$titleColor: $wpMenuColor;
+$subTitleColor: #8c89a9;
+$heading: $menuColor;
+$lightGray: #e9e9f6;
+$darkGray: #c4c4d4;
+$border: #dedee7;
+$wpHeading: #182230;
+$cardTitle: $menuColor;
+$cardIcon: $menuColor;
+$wpText: #5a5676;
+$wpPlaceholder: $subTitleColor;
+$wpSwitcher: #c4c4d4;
+$wpSelect: $input;
+$wpTableArrow: #a8a6bf;

@@ -1,0 +1,47 @@
+//mixin
+@mixin actionColor($color) {
+    &::before {
+        color: $color ;
+    }
+}
+
+
+
+.adminify-cloneable-item {
+    .adminify-cloneable-value {
+        display: none;
+    }
+
+    .adminify-fieldset {
+        select {
+            border-color: $border;
+
+            &:focus {
+                color: $secondary;
+                box-shadow: none;
+            }
+        }
+
+        a {
+
+            &.adminify--remove,
+            &.adminify-icon-remove {
+                color: $white;
+            }
+        }
+    }
+
+    .adminify-cloneable-helper {
+        .adminify-cloneable-sort {
+            @include actionColor($primary);
+        }
+
+        .adminify-cloneable-clone {
+            @include actionColor($success);
+        }
+
+        .adminify-cloneable-remove {
+            @include actionColor($danger);
+        }
+    }
+}

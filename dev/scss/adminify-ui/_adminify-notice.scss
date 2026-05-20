@@ -1,0 +1,77 @@
+// @import "../common/variables.scss", "../common/mixins.scss";
+
+@mixin noticeStyle {
+    border-top-color: $border;
+    border-right-color: $border;
+    border-bottom-color: $border;
+    background-color: $white;
+    border-radius: $wpRadius;
+}
+
+.wp-adminify {
+    .notice:not(.plugin-update .notice) {
+        padding: 16px;
+        @include noticeStyle;
+
+        .notice-dismiss {
+            &::before {
+                color: $wpText;
+            }
+
+            &:hover {
+                &::before {
+                    color: $danger;
+                }
+            }
+        }
+
+        &.notice-error {
+            border-left-color: $danger;
+        }
+        h2,
+        h3,
+        strong {
+            color: $titleColor;
+        }
+
+        p,
+        span {
+            color: $wpText;
+        }
+    }
+
+    .fs-notice {
+        border-width: 1px 1px 1px 4px;
+        border-style: solid;
+        @include noticeStyle;
+        padding: 1px 12px;
+        margin-top: 5px;
+
+        .fs-close {
+            color: $wpText;
+
+            span {
+                display: none;
+            }
+
+            &:hover {
+                color: $danger;
+            }
+        }
+
+        &.success {
+            color: $success;
+            border-left-color: $success;
+        }
+
+        &.danger {
+            color: $danger;
+            border-left-color: $danger;
+        }
+
+        &.warning {
+            color: $warning;
+            border-left-color: $warning;
+        }
+    }
+}
