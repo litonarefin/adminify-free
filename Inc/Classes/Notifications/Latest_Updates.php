@@ -88,7 +88,7 @@ if (!class_exists('Latest_Updates')) {
 			if("dismissed" !== $forever_notice){
 				$pxlbsadminify_changelog_message = sprintf(
 					/* translators: %1$s: changelogs page URL. %2$s: link anchor text. %3$s: plugin update heading HTML. %4$s, %5$s, %6$s, %7$s %8$s %9$s %10$s %11$s: changelog list item HTML. */
-					__('%3$s %4$s %5$s %6$s %7$s %8$s %9$s %10$s %11$s  <br> <strong>Check Changelogs for </strong> <a href="%1$s" target="__blank">%2$s</a>', 'adminify'),
+					__('%3$s %4$s <br> <strong>Check Changelogs for </strong> <a href="%1$s" target="__blank">%2$s</a>', 'adminify'),
 					esc_url_raw('https://wpadminify.com/changelogs'),
 					__('More about Updates ', 'adminify'),
 					/** Changelog Items
@@ -97,14 +97,7 @@ if (!class_exists('Latest_Updates')) {
 
 					'<h3 class="adminify-update-head">' . PXLBSADMINIFY . ' <span><small><em>v' . esc_html(PXLBSADMINIFY_VER) . '</em></small>' . __(' has some updates..', 'adminify') . '</span></h3><br>', // %3$s
 					// changelogs
-					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Security:</strong> Used $wpdb->prepare() for all dynamic post-type and taxonomy database queries. </span><br>', 'adminify'),
-					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Security:</strong> Validated the activate_plugin() target against the list of installed plugins. </span><br>', 'adminify'),
-					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Security:</strong> Added nonce and capability checks to the media-folder and options-save AJAX handlers. </span><br>', 'adminify'),
-					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Security:</strong> Sanitized raw $_POST and $_SERVER inputs across multiple modules. </span><br>', 'adminify'),
-					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Security:</strong> Escaped echoed variables and options throughout the framework field templates. </span><br>', 'adminify'),
-					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Compliance:</strong> Bundled FontAwesome, CodeMirror, Leaflet, and Web Font Loader locally instead of loading them from a remote CDN. </span><br>', 'adminify'),
-					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Compliance:</strong> Served the setup-wizard video thumbnail and custom avatar from local assets instead of remote services. </span><br>', 'adminify'),
-					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Compliance:</strong> Documented the GitHub add-ons list as an external service in the readme. </span><br>', 'adminify'),
+					__('<span class="dashicons dashicons-yes"></span> <span class="adminify-changes-list"> <strong>Fixed:</strong> Admin Bar Editor with Adminify UI white screen issue fixed. </span><br>', 'adminify'),
 				);
 				printf(wp_kses_post($pxlbsadminify_changelog_message));
 			}

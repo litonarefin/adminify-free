@@ -102,6 +102,9 @@ html[frame-adminify-app=true] #wpfooter {
   border: none;
 }
 
+#frame-adminify-app {
+  box-sizing: border-box;
+}
 #frame-adminify-app a {
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -109,9 +112,6 @@ html[frame-adminify-app=true] #wpfooter {
 #frame-adminify-app a:focus {
   border: none;
   box-shadow: none;
-}
-#frame-adminify-app {
-  box-sizing: border-box;
 }
 #frame-adminify-app .adminify-frame-wrapper {
   display: grid;
@@ -808,6 +808,8 @@ body.wp-adminify {
 #frame-adminify-app .adminify-frame-wrapper .frame-adminify-sidebar-wrap {
   width: var(--adminify-menu-width);
   background: var(--adminify-menu-bg);
+  transition: all 0.3s;
+  padding-right: 3px;
 }
 #frame-adminify-app .adminify-frame-wrapper .frame-adminify-sidebar-wrap .frame-adminify-menu-search {
   display: flex;
@@ -847,10 +849,6 @@ body.wp-adminify {
 #frame-adminify-app .adminify-frame-wrapper .frame-adminify-sidebar-wrap .frame-adminify-menu-search .frame-adminify-menu-search-input:focus {
   border: none !important;
   box-shadow: none !important;
-}
-#frame-adminify-app .adminify-frame-wrapper .frame-adminify-sidebar-wrap {
-  transition: all 0.3s;
-  padding-right: 3px;
 }
 #frame-adminify-app .adminify-frame-wrapper .frame-adminify-sidebar-wrap ul {
   margin: 0;

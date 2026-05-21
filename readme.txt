@@ -4,7 +4,7 @@ Tags: white label, admin menu editor, login customizer, admin columns, custom da
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 4.2.0
+Stable tag: 4.2.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -184,6 +184,8 @@ When you select a Google font and save Adminify settings, the plugin downloads t
 7. The module settings page showing available addons such as Activity Logs.
 
 == Changelog ==
+= Adminify - 4.2.2 (21-05-2026) =
+* Fixed: Admin Bar Editor with Adminify UI white screen issue fixed.
 
 = Adminify - 4.2.0 (20-05-2026) =
 * Security: Used $wpdb->prepare() for all dynamic post-type and taxonomy database queries.
@@ -283,3 +285,8 @@ When you select a Google font and save Adminify settings, the plugin downloads t
 * Fixed: Clearing cache via the Redis Object Cache plugin no longer incorrectly redirects to its settings page in the WordPress admin panel.
 
 [View Full Changelog](https://wpadminify.com/changelogs?utm_source=wordpressorg&utm_medium=readme&utm_campaign=adminify)
+
+
+== Upgrade Notice ==
+= 4.2.0 =
+Adminify Update with major changes with Database Migrations, Please backup first

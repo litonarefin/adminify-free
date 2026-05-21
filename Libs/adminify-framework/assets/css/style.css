@@ -121,6 +121,15 @@ body.wp-adminify {
   border-radius: 2px;
   width: 80%;
   margin: 60px auto;
+  /**
+  * Header
+  */
+  /**
+  * Body
+  */
+  /**
+  * Footer
+  */
 }
 .wp-adminify-settings .clear {
   display: none;
@@ -159,11 +168,6 @@ body.wp-adminify {
   background: transparent !important;
   color: #f04438 !important;
 }
-.wp-adminify-settings {
-  /**
-  * Header
-  */
-}
 .wp-adminify-settings .adminify-header {
   border-bottom: 1px solid #dedee7;
 }
@@ -191,15 +195,13 @@ body.wp-adminify {
   justify-content: center;
   gap: 8px;
 }
-.wp-adminify-settings {
-  /**
-  * Body
-  */
-}
 .wp-adminify-settings .adminify-wrapper {
   /**
   * Nav Menu
   * Horizontal Menu
+  */
+  /**
+  * Content
   */
 }
 .wp-adminify-settings .adminify-wrapper .adminify-nav > ul {
@@ -298,16 +300,6 @@ body.wp-adminify {
 .wp-adminify-settings .adminify-wrapper .adminify-nav .adminify-label-error {
   margin-left: 4px;
   vertical-align: top;
-}
-.wp-adminify-settings .adminify-wrapper {
-  /**
-  * Content
-  */
-}
-.wp-adminify-settings {
-  /**
-  * Footer
-  */
 }
 .wp-adminify-settings .adminify-footer {
   padding: 16px 24px;
@@ -778,6 +770,135 @@ body.wp-adminify {
   /**
   * 03. Fields
   */
+  /**
+  * 03. 02. Field: accordion
+  */
+  /**
+  * 03. 03. Field: background
+  */
+  /**
+  * 03. 04. Field: backup
+  */
+  /**
+  * 03. 05. Field: border, spacing, dimensions
+  */
+  /**
+  * 03. 06. Field: button_set
+  */
+  /**
+  * 03. 07. Field: checkbox, radio
+  */
+  /**
+  * 03. 08. Field: code_editor
+  */
+  /**
+  * 03. 09. Field: color
+  */
+  /**
+  * 03. 10. Field: color_group
+  */
+  /**
+  * 03. 11. Field: fieldset
+  */
+  /**
+  * 03. 12. Field: date
+  */
+  /**
+  * 03. 13. Field: datetime
+  */
+  /**
+  * 03. 14. Field: gallery
+  */
+  /**
+  * 03. 15. Field: group
+  */
+  /**
+  * 03. 16. Field: icon
+  */
+  /**
+  * 03. 17. Field: image_select
+  */
+  /**
+  * 03. 18. Field: link_color
+  */
+  /**
+  * 03. 19. Field: map
+  */
+  /**
+  * 03. 20. Field: media
+  */
+  /**
+  * 03. 21. Field: palette
+  */
+  /**
+  * 03. 22. Field: repeater
+  */
+  /**
+  * 03. 23. Field: select
+  */
+  /**
+  * 03. 24. Field: slider
+  */
+  /**
+  * 03. 25. Field: sortable
+  */
+  /**
+  * 03. 26. Field: sorter
+  */
+  /**
+  * 03. 27. Field: spinner
+  */
+  /**
+  * 03. 28. Field: switcher
+  */
+  /**
+  * 03. 29. Field: tabbed
+  */
+  /**
+  * 03. 30. Field: text
+  */
+  /**
+  * 03. 31. Field: textarea
+  */
+  /**
+  * 03. 32. Field: typography
+  */
+  /**
+  * 03. 33. Field: upload
+  */
+  /**
+  * 03. 34. Field: wp_editor
+  */
+  /**
+  * 03. 35. Field: heading
+  */
+  /**
+  * 03. 36. Field: subheading
+  */
+  /**
+  * 03. 37. Field: submessage
+  */
+  /**
+  * 03. 38. Field: notice
+  */
+  /**
+  * 03. 39. Field: number
+  */
+  /**
+  * 03. 40. Field: link
+  */
+  /**
+  * 03. 41 Field: Color Picker
+  */
+  /**
+  * 03. 42. Helps
+  */
+  /**
+  * 03. 43. Callback
+  */
+  /**
+  * 03. 44. others
+  */
 }
 .adminify-section .adminify-field {
   display: grid;
@@ -842,11 +963,6 @@ body.wp-adminify {
 .adminify-section .adminify-pseudo-field pre {
   display: none;
 }
-.adminify-section {
-  /**
-  * 03. 02. Field: accordion
-  */
-}
 .adminify-section .adminify-field-accordion .adminify-accordion-item {
   position: relative;
   margin-bottom: 5px;
@@ -900,11 +1016,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-accordion .adminify-accordion-open {
   display: block;
 }
-.adminify-section {
-  /**
-  * 03. 03. Field: background
-  */
-}
 .adminify-section .adminify-field-background .adminify-field {
   border: 0 !important;
   padding: 0;
@@ -933,11 +1044,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-background .adminify--attributes-hidden {
   display: none;
 }
-.adminify-section {
-  /**
-  * 03. 04. Field: backup
-  */
-}
 .adminify-section .adminify-field-backup textarea {
   width: 100%;
   min-height: 200px;
@@ -954,11 +1060,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-backup .adminify-export {
   display: inline-block;
-}
-.adminify-section {
-  /**
-  * 03. 05. Field: border, spacing, dimensions
-  */
 }
 .adminify-section .adminify-field-border .adminify--inputs,
 .adminify-section .adminify-field-spacing .adminify--inputs,
@@ -1037,11 +1138,6 @@ body.wp-adminify {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-.adminify-section {
-  /**
-  * 03. 06. Field: button_set
-  */
-}
 .adminify-section .adminify-field-button_set .adminify--buttons {
   display: inline-block;
 }
@@ -1068,11 +1164,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-button_set input {
   display: none;
-}
-.adminify-section {
-  /**
-  * 03. 07. Field: checkbox, radio
-  */
 }
 .adminify-section .adminify-field-checkbox ul,
 .adminify-section .adminify-field-radio ul {
@@ -1120,11 +1211,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-radio .adminify-checker {
   cursor: pointer;
 }
-.adminify-section {
-  /**
-  * 03. 08. Field: code_editor
-  */
-}
 .adminify-section .adminify-field-code_editor .CodeMirror {
   width: 100%;
   height: 400px;
@@ -1136,20 +1222,10 @@ body.wp-adminify {
   width: 100%;
   height: 400px;
 }
-.adminify-section {
-  /**
-  * 03. 09. Field: color
-  */
-}
 .adminify-section .adminify-field-color > input {
   opacity: 0.75;
   width: 115px;
   max-width: 100%;
-}
-.adminify-section {
-  /**
-  * 03. 10. Field: color_group
-  */
 }
 .adminify-section .adminify-field-color_group .adminify--left {
   float: left;
@@ -1159,11 +1235,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-color_group .adminify--title {
   color: #48455f;
   margin-bottom: 5px;
-}
-.adminify-section {
-  /**
-  * 03. 11. Field: fieldset
-  */
 }
 .adminify-section .adminify-field-fieldset .adminify-fieldset-content {
   background-color: #fff;
@@ -1177,11 +1248,6 @@ body.wp-adminify {
   letter-spacing: 0.1px;
   border-bottom: 1px solid #dedee7;
   line-height: 1.5em;
-}
-.adminify-section {
-  /**
-  * 03. 12. Field: date
-  */
 }
 .adminify-section .adminify-field-date input {
   margin: 0;
@@ -1317,11 +1383,6 @@ body.wp-adminify {
 .adminify-section .adminify-datepicker-wrapper td.ui-state-disabled .ui-state-default {
   opacity: 0.5;
 }
-.adminify-section {
-  /**
-  * 03. 13. Field: datetime
-  */
-}
 .adminify-section .adminify-field-datetime input {
   margin: 0;
 }
@@ -1338,11 +1399,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-flatpickr.open {
   z-index: 9999999 !important;
-}
-.adminify-section {
-  /**
-  * 03. 14. Field: gallery
-  */
 }
 .adminify-section .adminify-field-gallery ul {
   margin: 0;
@@ -1367,11 +1423,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-gallery .button {
   margin-right: 5px;
   margin-bottom: 5px;
-}
-.adminify-section {
-  /**
-  * 03. 15. Field: group
-  */
 }
 .adminify-section .adminify-field-group {
   display: block;
@@ -1492,11 +1543,6 @@ body.wp-adminify {
   text-decoration: none;
   font-weight: 500;
 }
-.adminify-section {
-  /**
-  * 03. 16. Field: icon
-  */
-}
 .adminify-section .adminify-field-icon .adminify-icon-select {
   display: flex;
   gap: 8px;
@@ -1518,11 +1564,6 @@ body.wp-adminify {
   background-color: #e9e9f6;
   border-radius: 3px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-}
-.adminify-section {
-  /**
-  * 03. 17. Field: image_select
-  */
 }
 .adminify-section .adminify-field-image_select .adminify--image {
   display: inline-block;
@@ -1579,11 +1620,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-image_select input {
   display: none;
 }
-.adminify-section {
-  /**
-  * 03. 18. Field: link_color
-  */
-}
 .adminify-section .adminify-field-link_color .adminify--left {
   float: left;
   margin-right: 10px;
@@ -1592,11 +1628,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-link_color .adminify--title {
   color: #777;
   margin-bottom: 5px;
-}
-.adminify-section {
-  /**
-  * 03. 19. Field: map
-  */
 }
 .adminify-section .adminify-field-map input {
   width: 100%;
@@ -1641,11 +1672,6 @@ body.wp-adminify {
   border-radius: 4px;
   overflow: hidden;
 }
-.adminify-section {
-  /**
-  * 03. 20. Field: media
-  */
-}
 .adminify-section .adminify-field-media .adminify--placeholder {
   display: flex;
   align-items: stretch;
@@ -1668,11 +1694,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-media .adminify--preview {
   position: relative;
-}
-.adminify-section {
-  /**
-  * 03. 21. Field: palette
-  */
 }
 .adminify-section .adminify-field-palette .adminify--palette {
   position: relative;
@@ -1721,11 +1742,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-palette input {
   display: none;
-}
-.adminify-section {
-  /**
-  * 03. 22. Field: repeater
-  */
 }
 .adminify-section .adminify-field-repeater .adminify-field-text input {
   width: 100%;
@@ -1802,11 +1818,6 @@ body.wp-adminify {
   margin-top: 8px;
   display: inline-block;
 }
-.adminify-section {
-  /**
-  * 03. 23. Field: select
-  */
-}
 .adminify-section .adminify-field-select .adminify-fieldset {
   min-height: 30px;
 }
@@ -1819,11 +1830,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-select .adminify-hide-select {
   display: none !important;
-}
-.adminify-section {
-  /**
-  * 03. 24. Field: slider
-  */
 }
 .adminify-section .adminify-field-slider .adminify--wrap {
   display: flex;
@@ -1896,11 +1902,6 @@ body.wp-adminify {
   cursor: pointer;
   background: var(--adminify-primary);
 }
-.adminify-section {
-  /**
-  * 03. 25. Field: sortable
-  */
-}
 .adminify-section .adminify-field-sortable .adminify-field-text input {
   width: 100%;
   max-width: 100%;
@@ -1959,11 +1960,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-sortable .ui-sortable-helper .adminify-sortable-content {
   display: none;
 }
-.adminify-section {
-  /**
-  * 03. 26. Field: sorter
-  */
-}
 .adminify-section .adminify-field-sorter .ui-sortable-placeholder {
   height: 20px;
   border: 1px dashed #f1c40f;
@@ -2021,11 +2017,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-sorter ul li:hover {
   border-color: #bbb;
-}
-.adminify-section {
-  /**
-  * 03. 27. Field: spinner
-  */
 }
 .adminify-section .adminify-field-spinner .adminify--spin {
   display: flex;
@@ -2119,11 +2110,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-spinner .ui-spinner-up {
   order: 4;
 }
-.adminify-section {
-  /**
-  * 03. 28. Field: switcher
-  */
-}
 .adminify-section .adminify-field-switcher .adminify--switcher {
   float: left;
   cursor: pointer;
@@ -2192,11 +2178,6 @@ body.wp-adminify {
   font-weight: 400;
   color: #8c89a9;
 }
-.adminify-section {
-  /**
-  * 03. 29. Field: tabbed
-  */
-}
 .adminify-section .adminify-field-tabbed {
   display: block;
 }
@@ -2243,20 +2224,10 @@ body.wp-adminify {
 .adminify-section .adminify-tabs-content .adminify-tabbed-contents .adminify-tabbed-content {
   padding: 40px 20px;
 }
-.adminify-section {
-  /**
-  * 03. 30. Field: text
-  */
-}
 .adminify-section .adminify-field-text input {
   width: 50%;
   max-width: 100%;
   margin: 0;
-}
-.adminify-section {
-  /**
-  * 03. 31. Field: textarea
-  */
 }
 .adminify-section .adminify-field-textarea textarea {
   width: 100%;
@@ -2266,11 +2237,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-textarea .adminify-shortcode-button {
   margin-bottom: 10px;
   margin-right: 5px;
-}
-.adminify-section {
-  /**
-  * 03. 32. Field: typography
-  */
 }
 .adminify-section .adminify-field-typography textarea,
 .adminify-section .adminify-field-typography select {
@@ -2357,11 +2323,6 @@ body.wp-adminify {
 .adminify-section .adminify-field-typography .adminify--block-extra-styles {
   margin-top: 5px;
 }
-.adminify-section {
-  /**
-  * 03. 33. Field: upload
-  */
-}
 .adminify-section .adminify-field-upload input {
   width: 100%;
   margin: 0;
@@ -2375,11 +2336,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-upload .adminify--preview {
   position: relative;
-}
-.adminify-section {
-  /**
-  * 03. 34. Field: wp_editor
-  */
 }
 .adminify-section .adminify-field-wp_editor .adminify-wp-editor {
   float: left;
@@ -2419,21 +2375,11 @@ body.wp-adminify {
   margin: 0;
   box-shadow: none;
 }
-.adminify-section {
-  /**
-  * 03. 35. Field: heading
-  */
-}
 .adminify-section .adminify-field-heading {
   font-size: 1.5em;
   font-weight: bold;
   color: #23282d;
   background-color: #f5f5f5;
-}
-.adminify-section {
-  /**
-  * 03. 36. Field: subheading
-  */
 }
 .adminify-section .adminify-field-subheading {
   font-size: 17px;
@@ -2442,11 +2388,6 @@ body.wp-adminify {
   padding-bottom: 16px;
   color: #23282d;
   background-color: #fff;
-}
-.adminify-section {
-  /**
-  * 03. 37. Field: submessage
-  */
 }
 .adminify-section .adminify-field-submessage {
   padding: 0 !important;
@@ -2486,11 +2427,6 @@ body.wp-adminify {
   border-color: #eee;
   background-color: #f7f7f7;
 }
-.adminify-section {
-  /**
-  * 03. 38. Field: notice
-  */
-}
 .adminify-section .adminify-field-notice {
   background-color: #f7f7f7;
 }
@@ -2508,11 +2444,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-notice .adminify-notice-normal {
   border-color: #222;
-}
-.adminify-section {
-  /**
-  * 03. 39. Field: number
-  */
 }
 .adminify-section .adminify-field-number input {
   width: 100%;
@@ -2541,11 +2472,6 @@ body.wp-adminify {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.adminify-section {
-  /**
-  * 03. 40. Field: link
-  */
 }
 .adminify-section .adminify-field-link .adminify--result {
   display: inline-block;
@@ -2589,11 +2515,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-link .hidden.adminify-btn {
   display: none;
-}
-.adminify-section {
-  /**
-  * 03. 41 Field: Color Picker
-  */
 }
 .adminify-section .adminify-fieldset .wp-picker-container .button {
   border-radius: 4px !important;
@@ -2652,22 +2573,12 @@ body.wp-adminify {
   border: 2px solid #f04438;
   background: #f04438;
 }
-.adminify-section {
-  /**
-  * 03. 42. Helps
-  */
-}
 .adminify-section .adminify-helps {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: end;
   gap: 8px;
-}
-.adminify-section {
-  /**
-  * 03. 43. Callback
-  */
 }
 .adminify-section .adminify-field-callback h2,
 .adminify-section .adminify-field-callback .wrap h1,
@@ -2698,11 +2609,6 @@ body.wp-adminify {
 }
 .adminify-section .adminify-field-callback .adminify-info-text-area {
   height: 70vh;
-}
-.adminify-section {
-  /**
-  * 03. 44. others
-  */
 }
 .adminify-section .adminify-help {
   cursor: help;

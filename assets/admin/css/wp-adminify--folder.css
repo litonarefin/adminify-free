@@ -195,6 +195,7 @@ body.wp-adminify {
   max-height: calc(100vh - 424px);
   overflow-y: auto;
   overflow-x: auto;
+  /* Handle on hover */
 }
 .wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists::-webkit-scrollbar {
   width: 4px;
@@ -202,9 +203,6 @@ body.wp-adminify {
 .wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 4px;
-}
-.wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists {
-  /* Handle on hover */
 }
 .wp-adminify .wp-adminify--folder-widget .wp-adminify--folder-app ul.folder--lists::-webkit-scrollbar-thumb:hover {
   background: transparent;

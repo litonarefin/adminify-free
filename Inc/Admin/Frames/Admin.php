@@ -268,7 +268,11 @@ if (!class_exists('Admin')) {
             // Admin Bar Exits
             if ( Utils::is_plugin_active('admin-bar/admin-bar.php') ) {
                 $admin_bar_items                  = get_option('pxlbsadminify_adminbar_settings');
-                if( empty($admin_bar_items) ) return;
+
+                // Only build the customized admin bar when settings exist.
+                // Otherwise fall through so the default admin bar data is still
+                // printed and `adminify_admin_bar_data` is always defined.
+                if ( !empty($admin_bar_items) ) {
 
                 $existing_admin_bar               = !empty($admin_bar_items['existing_admin_bar']) ? $admin_bar_items['existing_admin_bar'] : '';
                 $saved_admin_bar                  = !empty($admin_bar_items['saved_admin_bar']) ? $admin_bar_items['saved_admin_bar'] : [];
@@ -292,6 +296,8 @@ if (!class_exists('Admin')) {
                     }
                     $admin_bar_menu_data[$key] = $value;
                 }
+
+                } // end if ( !empty($admin_bar_items) )
             }
 
             unset($admin_bar_data_nested['wp-logo']);

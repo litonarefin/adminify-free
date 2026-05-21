@@ -10,15 +10,15 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./dev/vendors/adminify-icon-picker/css/icon-picker.scss"
+/***/ "./dev/vendors/adminify-icon-picker/css/icon-picker.scss":
 /*!***************************************************************!*\
   !*** ./dev/vendors/adminify-icon-picker/css/icon-picker.scss ***!
   \***************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://adminify/./dev/vendors/adminify-icon-picker/css/icon-picker.scss?\n}");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://adminify/./dev/vendors/adminify-icon-picker/css/icon-picker.scss?");
 
-/***/ }
+/***/ })
 
 /******/ 	});
 /************************************************************************/
@@ -43,7 +43,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-ext
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./dev/vendors/adminify-icon-picker/css/icon-picker.scss"](0,__webpack_exports__,__webpack_require__);
+/******/ 	__webpack_modules__["./dev/vendors/adminify-icon-picker/css/icon-picker.scss"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

@@ -1,4 +1,7 @@
 == Changelog ==
+= Adminify - 4.2.2 (21-05-2026) =
+* Fixed: Admin Bar Editor with Adminify UI white screen issue fixed.
+
 = Adminify - 4.2.0 (20-05-2026) =
 * Security: Used $wpdb->prepare() for all dynamic post-type and taxonomy database queries.
 * Security: Validated the activate_plugin() target against the list of installed plugins.

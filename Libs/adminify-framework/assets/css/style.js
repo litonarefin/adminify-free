@@ -10,15 +10,15 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./dev/scss/adminify-framework/style.scss"
+/***/ "./dev/scss/adminify-framework/style.scss":
 /*!************************************************!*\
   !*** ./dev/scss/adminify-framework/style.scss ***!
   \************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://adminify/./dev/scss/adminify-framework/style.scss?\n}");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://adminify/./dev/scss/adminify-framework/style.scss?");
 
-/***/ }
+/***/ })
 
 /******/ 	});
 /************************************************************************/
@@ -43,7 +43,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-ext
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./dev/scss/adminify-framework/style.scss"](0,__webpack_exports__,__webpack_require__);
+/******/ 	__webpack_modules__["./dev/scss/adminify-framework/style.scss"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;
